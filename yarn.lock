@@ -52,6 +52,15 @@
     picomatch "^2.3.1"
     slash "^3.0.0"
 
+"@adonisjs/auth@^8.0.12":
+  version "8.0.12"
+  resolved "https://registry.yarnpkg.com/@adonisjs/auth/-/auth-8.0.12.tgz#7d2bb9f043cc4d8a4788cc4107a7c7479d28c25c"
+  integrity sha512-LoNsg+z289hlxBbzQJTA68cIhMLV5N4ty64A40Yly6+tDo51+n4Q/sqHpAj9OKZHlGbMK5fP3DRgLdRl/Uli+w==
+  dependencies:
+    "@poppinss/hooks" "^5.0.2"
+    "@poppinss/utils" "^4.0.2"
+    luxon "^2.3.1"
+
 "@adonisjs/bodyparser@^8.1.0":
   version "8.1.0"
   resolved "https://registry.yarnpkg.com/@adonisjs/bodyparser/-/bodyparser-8.1.0.tgz#43aeb5355f09a7a109cb94f554b3fc96b127af0d"
