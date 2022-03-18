@@ -6,7 +6,7 @@
     "@adonisjs/repl/build/commands",
     "@adonisjs/lucid/build/commands"
   ],
-  "exceptionHandlerNamespace": "App/Exceptions/Handler",
+  "exceptionHandlerNamespace": "App/Shared/Exceptions/Handler",
   "aliases": {
     "App": "app",
     "Config": "config",
