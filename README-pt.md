@@ -1,5 +1,5 @@
 <h1 style="text-align: center;">
-  <img src="https://www.tkcbusiness.com.br/uploads/logotipo.png?t=1619470606" height="100px" alt="Happy">
+  <img src=".github/assets/images/logo.png" height="100px" alt="TKC">
 </h1>
 
 <div style="text-align: center;">
