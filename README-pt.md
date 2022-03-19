@@ -1,8 +1,8 @@
-<h1 style="text-align: center;">
+<h1 align="center">
   <img src=".github/assets/images/logo.png" height="100px" alt="TKC">
 </h1>
 
-<div style="text-align: center;">
+<p align="center">
   <img src="https://img.shields.io/github/license/gabrielmaialva33/mindset-tkc-api?color=00b8d3?style=flat&logo=appveyor" alt="License" />
   <img src="https://img.shields.io/github/languages/top/gabrielmaialva33/mindset-tkc-api?style=flat&logo=appveyor" alt="GitHub top language" >
   <img src="https://img.shields.io/github/languages/count/gabrielmaialva33/mindset-tkc-api?style=flat&logo=appveyor" alt="GitHub language count" >
@@ -11,23 +11,23 @@
     <img src="https://img.shields.io/github/last-commit/gabrielmaialva33/mindset-tkc-api?style=flat&logo=appveyor" alt="GitHub last commit" >
   <img src="https://img.shields.io/badge/made%20by-Maia-15c3d6?style=flat&logo=appveyor" alt="Maia" >
   </a>
-</div>
+</p>
 
 <br>
 
-<div style="text-align: center;">
+<p align="center">
     <a href="README.md">English</a>
     ·
     <a href="README-pt.md">Portuguese</a>
-</div>
+</p>
 
-<div style="text-align: center;">
+<p align="center">
   <a href="#bookmark-about">About</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#computer-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#wrench-tools">Tools</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#package-installation">Installation</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#memo-license">License</a>
-</div>
+</p>
 <br>
 
 
