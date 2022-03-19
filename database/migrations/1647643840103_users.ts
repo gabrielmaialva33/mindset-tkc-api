@@ -10,7 +10,7 @@ export default class UsersSchema extends BaseSchema {
         table.uuid('id').primary().defaultTo(this.db.rawQuery('uuid_generate_v4()').knexQuery)
 
         table.string('name', 80).notNullable()
-        table.string('email', 255).notNullable()
+        table.string('email', 255).notNullable().unique({ indexName: 'email' })
         table.string('password', 180).nullable()
 
         table.string('remember_me_token').nullable()
