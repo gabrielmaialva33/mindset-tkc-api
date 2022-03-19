@@ -78,7 +78,7 @@ The following software must be installed:
 
 <br>
 
-### :arrow_forward: **Running the applications**
+### :arrow_forward: **Running the application**
 
 - :package: API
 
