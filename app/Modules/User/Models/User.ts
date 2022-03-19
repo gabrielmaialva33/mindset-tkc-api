@@ -22,7 +22,7 @@ export default class User extends BaseModel {
   public email: string
 
   @column({ serializeAs: null })
-  public password: string
+  public password?: string
 
   @column()
   public rememberMeToken?: string
@@ -48,9 +48,7 @@ export default class User extends BaseModel {
    */
   @beforeSave()
   public static async hashPassword(user: User) {
-    if (user.$dirty.password) {
-      user.password = await Hash.make(user.password)
-    }
+    if (user.$dirty.password) if (user.password) user.password = await Hash.make(user.password)
   }
 
   /**
