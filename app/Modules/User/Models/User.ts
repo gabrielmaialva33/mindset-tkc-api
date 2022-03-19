@@ -1,8 +1,12 @@
 import { DateTime } from 'luxon'
+import { column, beforeSave, BaseModel, manyToMany, ManyToMany } from '@ioc:Adonis/Lucid/Orm'
+
 import Hash from '@ioc:Adonis/Core/Hash'
-import { column, beforeSave, BaseModel } from '@ioc:Adonis/Lucid/Orm'
+import Token from 'App/Modules/User/Models/Token'
 
 export default class User extends BaseModel {
+  public static table = 'users'
+
   /**
    * ------------------------------------------------------
    * Columns
@@ -36,6 +40,14 @@ export default class User extends BaseModel {
    * ------------------------------------------------------
    * - define User model relationships
    */
+  @manyToMany(() => Token, {
+    localKey: 'id',
+    pivotForeignKey: 'user_id',
+    pivotTable: 'user_tokens',
+    relatedKey: 'id',
+    pivotRelatedForeignKey: 'token_id',
+  })
+  public tokens: ManyToMany<typeof Token>
 
   /**
    * ------------------------------------------------------

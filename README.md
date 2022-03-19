@@ -9,7 +9,7 @@
   <img src="https://img.shields.io/github/repo-size/gabrielmaialva33/mindset-tkc-api?style=flat&logo=appveyor" alt="Repository size" >
   <a href="https://github.com/gabrielmaialva33/mindset-tkc-api/commits/master">
     <img src="https://img.shields.io/github/last-commit/gabrielmaialva33/mindset-tkc-api?style=flat&logo=appveyor" alt="GitHub last commit" >
-  <img src="https://img.shields.io/badge/feito%20por-Maia-15c3d6?style=flat&logo=appveyor" alt="Maia" >
+    <img src="https://img.shields.io/badge/made%20by-Maia-15c3d6?style=flat&logo=appveyor" alt="Maia" >  
   </a>
 </p>
 
