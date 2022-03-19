@@ -14,5 +14,5 @@ export default interface BaseInterface extends Helpers {
  * Helpers
  */
 interface Helpers {
-  findBy(key: string, value: any)
+  findBy<T extends LucidModel>(this: T, key: string, value: any): Promise<LucidRow | null>
 }

@@ -13,10 +13,7 @@ export default class User extends BaseModel {
   public id: string
 
   @column()
-  public first_name: string
-
-  @column()
-  public last_name?: string
+  public name: string
 
   @column()
   public email: string
@@ -27,10 +24,10 @@ export default class User extends BaseModel {
   @column()
   public rememberMeToken?: string
 
-  @column.dateTime({ autoCreate: true })
+  @column.dateTime({ autoCreate: true, serializeAs: null })
   public created_at: DateTime
 
-  @column.dateTime({ autoCreate: true, autoUpdate: true })
+  @column.dateTime({ autoCreate: true, autoUpdate: true, serializeAs: null })
   public updated_at: DateTime
 
   /**

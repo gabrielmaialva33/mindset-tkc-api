@@ -5,15 +5,13 @@ export namespace IUser {
 
   export namespace DTO {
     export interface Store {
-      first_name: string
-      last_name?: string
+      name: string
       email: string
       password?: string
     }
 
     export interface Update {
-      first_name?: string
-      last_name?: string
+      name?: string
       email?: string
       password?: string
     }

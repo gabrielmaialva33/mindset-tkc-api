@@ -27,3 +27,5 @@ Route.get('/', async ({ response }: HttpContextContract) => {
 
   return report.healthy ? response.ok(report) : response.badRequest(report)
 })
+
+import 'App/Modules/User/Routes/UserRoutes'
