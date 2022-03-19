@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src=".github/assets/images/logo.png" height="100px" alt="TKC">
+  <img src=".github/assets/images/tkc2.png" height="200px" alt="TKC">
 </h1>
 
 <p align="center">
@@ -35,7 +35,7 @@
 ## :bookmark: Sobre
 
 **Diagnóstico mindset** é um site de pesquisa avaliativa para ajudar as pessoas com sua mentalidade.
-
+**[Protótipo](https://xd.adobe.com/view/1cd00465-5018-4347-94a0-cea970e02810-4983/)**
 <br>
 
 ## :computer: Tecnologias

@@ -1,8 +1,6 @@
 <h1 align="center">
-  <img src=".github/assets/images/logo.png" height="100px" alt="TKC">
+  <img src=".github/assets/images/tkc2.png" height="200px" alt="TKC">
 </h1>
-
-
 
 <p align="center">
   <img src="https://img.shields.io/github/license/gabrielmaialva33/mindset-tkc-api?color=00b8d3?style=flat&logo=appveyor" alt="License" />
@@ -36,16 +34,17 @@
 ## :bookmark: About
 
 **Diagnostic mindset** is an evaluative research site in order to help people with their mindset.
+**[Prototype](https://xd.adobe.com/view/1cd00465-5018-4347-94a0-cea970e02810-4983/)**
 
 <br>
 
 ## :computer: Technologies
 
--  **[Typescript](https://www.typescriptlang.org/)**
--  **[Node.js](https://nodejs.org/)**
--  **[AdonisJS](https://adonisjs.com/)**
--  **[PostgreSQL](https://www.postgresql.org/)**
--  **[TSyringe](https://github.com/microsoft/tsyringe/)**
+- **[Typescript](https://www.typescriptlang.org/)**
+- **[Node.js](https://nodejs.org/)**
+- **[AdonisJS](https://adonisjs.com/)**
+- **[PostgreSQL](https://www.postgresql.org/)**
+- **[TSyringe](https://github.com/microsoft/tsyringe/)**
 
 <br>
 
@@ -79,7 +78,7 @@ The following software must be installed:
 
 <br>
 
-### :arrow_forward:	**Running the applications**
+### :arrow_forward: **Running the applications**
 
 - :package: API
 
