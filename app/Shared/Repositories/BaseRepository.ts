@@ -1,5 +1,5 @@
 import BaseInterface from 'App/Shared/Interfaces/BaseInterface'
-import { BaseModel, LucidRow, ModelAttributes } from '@ioc:Adonis/Lucid/Orm'
+import { BaseModel, LucidModel, LucidRow, ModelAttributes } from '@ioc:Adonis/Lucid/Orm'
 
 export default class BaseRepository implements BaseInterface {
   protected model: typeof BaseModel
@@ -20,7 +20,10 @@ export default class BaseRepository implements BaseInterface {
   /**
    * Helpers
    */
-  public async findBy(key: string, value: any) {
-    return this.model.findBy(key, value)
+  public async findBy<T extends LucidModel>(
+    key: Partial<ModelAttributes<InstanceType<T>>>,
+    value: any
+  ): Promise<LucidRow | null> {
+    return this.model.findBy(String(key), value)
   }
 }
