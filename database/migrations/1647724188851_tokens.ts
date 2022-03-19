@@ -11,11 +11,11 @@ export default class Tokens extends BaseSchema {
       table.string('token').notNullable()
       table.string('type').notNullable().defaultTo('common')
 
-      table.string('is_revoked').notNullable().defaultTo(false)
+      table.boolean('is_revoked').notNullable().defaultTo(false)
 
       table.timestamp('created_at', { useTz: true })
       table.timestamp('updated_at', { useTz: true })
-      table.timestamp('expired_at', { useTz: true }).notNullable()
+      table.timestamp('expired_at', { useTz: true }).nullable()
     })
   }
 
