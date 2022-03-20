@@ -1,8 +1,8 @@
 import { inject, injectable } from 'tsyringe'
-import { LucidRow } from '@ioc:Adonis/Lucid/Orm'
 
-import UsersRepository from 'App/Modules/User/Repositories/UsersRepository'
 import { IUser } from 'App/Modules/User/Interfaces/UserInterface'
+import User from 'App/Modules/User/Models/User'
+import UsersRepository from 'App/Modules/User/Repositories/UsersRepository'
 
 @injectable()
 export class StoreUserService {
@@ -11,7 +11,7 @@ export class StoreUserService {
     private usersRepository: UsersRepository
   ) {}
 
-  public async init(data: IUser.DTO.Store): Promise<LucidRow> {
+  public async init(data: IUser.DTO.Store): Promise<User> {
     return this.usersRepository.store(data)
   }
 }

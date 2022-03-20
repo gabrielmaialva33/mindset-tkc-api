@@ -10,7 +10,7 @@ export default class UserTokens extends BaseSchema {
       table
         .uuid('user_id')
         .references('id')
-        .inTable('users.id')
+        .inTable('users')
         .notNullable()
         .onDelete('CASCADE')
         .onUpdate('CASCADE')
@@ -18,7 +18,7 @@ export default class UserTokens extends BaseSchema {
       table
         .uuid('token_id')
         .references('id')
-        .inTable('tokens.id')
+        .inTable('tokens')
         .notNullable()
         .onDelete('CASCADE')
         .onUpdate('CASCADE')

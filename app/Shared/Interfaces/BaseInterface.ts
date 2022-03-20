@@ -1,22 +1,22 @@
-import { LucidModel, LucidRow, ModelAttributes } from '@ioc:Adonis/Lucid/Orm'
+import { ModelAdapterOptions, ModelAttributes } from '@ioc:Adonis/Lucid/Orm'
+import BaseCustomModel from 'App/Shared/Model/BaseModel'
 
-export default interface BaseInterface extends Helpers {
+export default interface BaseInterface<Model extends typeof BaseCustomModel>
+  extends Helpers<Model> {
   /**
    * Repository
    */
-  store<T extends LucidModel>(
-    this: T,
-    values: Partial<ModelAttributes<InstanceType<T>>>
-  ): Promise<LucidRow>
+  store(
+    this: Model,
+    values: Partial<ModelAttributes<InstanceType<Model>>>
+  ): Promise<InstanceType<Model>>
 }
 
-/**
- * Helpers
- */
-interface Helpers {
-  findBy<T extends LucidModel>(
-    this: T,
-    key: Partial<ModelAttributes<InstanceType<T>>>,
-    value: any
-  ): Promise<LucidRow | null>
+interface Helpers<Model extends typeof BaseCustomModel> {
+  findBy(
+    this: Model,
+    key: string,
+    value: any,
+    options?: ModelAdapterOptions
+  ): Promise<null | InstanceType<Model>>
 }

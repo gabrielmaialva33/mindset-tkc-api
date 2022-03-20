@@ -1,29 +1,30 @@
 import BaseInterface from 'App/Shared/Interfaces/BaseInterface'
-import { BaseModel, LucidModel, LucidRow, ModelAttributes } from '@ioc:Adonis/Lucid/Orm'
 
-export default class BaseRepository implements BaseInterface {
-  protected model: typeof BaseModel
+import { ModelAttributes } from '@ioc:Adonis/Lucid/Orm'
+import BaseCustomModel from 'App/Shared/Model/BaseModel'
 
-  constructor(model: typeof BaseModel) {
+export default class BaseRepository<Model extends typeof BaseCustomModel>
+  implements BaseInterface<Model>
+{
+  protected model: Model
+
+  constructor(model: Model) {
     this.model = model
   }
 
   /**
    * Repository
    */
-  public async store<T extends typeof BaseModel>(
-    values: Partial<ModelAttributes<InstanceType<T>>>
-  ): Promise<LucidRow> {
+  public async store(
+    values: Partial<ModelAttributes<InstanceType<Model>>>
+  ): Promise<InstanceType<Model>> {
     return this.model.create(values)
   }
 
   /**
    * Helpers
    */
-  public async findBy<T extends LucidModel>(
-    key: Partial<ModelAttributes<InstanceType<T>>>,
-    value: any
-  ): Promise<LucidRow | null> {
-    return this.model.findBy(String(key), value)
+  public async findBy(key: string, value: any): Promise<InstanceType<Model> | null> {
+    return this.model.findBy(key, value)
   }
 }

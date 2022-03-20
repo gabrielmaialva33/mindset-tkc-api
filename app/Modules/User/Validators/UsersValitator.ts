@@ -10,7 +10,7 @@ export class Store {
       rules.email({}),
       rules.unique({ table: 'users', column: 'email' }),
     ]),
-    password: schema.string.optional({ trim: true }),
+    password: schema.string.optional({ trim: true }, [rules.confirmed()]),
   })
 
   public messages = {

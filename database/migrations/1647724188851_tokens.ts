@@ -8,10 +8,12 @@ export default class Tokens extends BaseSchema {
       table.uuid('id').primary().defaultTo(this.db.rawQuery('uuid_generate_v4()').knexQuery)
 
       table.string('name').nullable()
-      table.string('token').notNullable()
+      table.string('code').notNullable().unique()
+      table.string('hash').notNullable()
       table.string('type').notNullable().defaultTo('common')
 
       table.boolean('is_revoked').notNullable().defaultTo(false)
+      table.boolean('is_lifetime').notNullable().defaultTo(false)
 
       table.timestamp('created_at', { useTz: true })
       table.timestamp('updated_at', { useTz: true })

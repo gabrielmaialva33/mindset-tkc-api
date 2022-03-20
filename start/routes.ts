@@ -29,3 +29,4 @@ Route.get('/', async ({ response }: HttpContextContract) => {
 })
 
 import 'App/Modules/User/Routes/UserRoutes'
+import 'App/Modules/User/Routes/TokenRoutes'

@@ -1,10 +1,11 @@
 import { DateTime } from 'luxon'
-import { column, beforeSave, BaseModel, manyToMany, ManyToMany } from '@ioc:Adonis/Lucid/Orm'
+import { column, beforeSave, manyToMany, ManyToMany } from '@ioc:Adonis/Lucid/Orm'
 
 import Hash from '@ioc:Adonis/Core/Hash'
 import Token from 'App/Modules/User/Models/Token'
+import BaseCustomModel from 'App/Shared/Model/BaseModel'
 
-export default class User extends BaseModel {
+export default class User extends BaseCustomModel {
   public static table = 'users'
 
   /**

@@ -17,7 +17,10 @@ export default class Token extends BaseModel {
   public name?: string
 
   @column({})
-  public token: string
+  public code: string
+
+  @column({})
+  public hash: string
 
   @column({})
   public type: string
@@ -25,13 +28,16 @@ export default class Token extends BaseModel {
   @column({})
   public is_revoked: boolean
 
+  @column({})
+  public is_lifetime: boolean
+
   @column.dateTime({ autoCreate: true, serializeAs: null })
   public created_at: DateTime
 
   @column.dateTime({ autoCreate: true, autoUpdate: true, serializeAs: null })
   public updated_at: DateTime
 
-  @column.dateTime({ serializeAs: null })
+  @column.dateTime({})
   public expired_at: DateTime
 
   /**
