@@ -1,6 +1,6 @@
-import BaseInterface from 'App/Shared/Interfaces/BaseInterface'
 import { DateTime } from 'luxon'
 
+import BaseInterface from 'App/Shared/Interfaces/BaseInterface'
 import Token from 'App/Modules/User/Models/Token'
 
 export namespace IToken {

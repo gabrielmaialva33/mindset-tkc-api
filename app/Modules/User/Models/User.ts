@@ -1,7 +1,7 @@
 import { DateTime } from 'luxon'
 import { column, beforeSave, manyToMany, ManyToMany } from '@ioc:Adonis/Lucid/Orm'
-
 import Hash from '@ioc:Adonis/Core/Hash'
+
 import Token from 'App/Modules/User/Models/Token'
 import BaseCustomModel from 'App/Shared/Model/BaseModel'
 
