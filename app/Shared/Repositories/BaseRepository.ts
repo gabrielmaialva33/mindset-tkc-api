@@ -20,7 +20,6 @@ export default class BaseRepository<Model extends typeof BaseCustomModel>
   /**
    * Repository
    */
-
   public async store<T extends Model>(values: ModelType<T>): Promise<InstanceType<T>> {
     return this.model.create(values)
   }

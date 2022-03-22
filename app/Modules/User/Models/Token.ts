@@ -1,7 +1,8 @@
-import { BaseModel, column } from '@ioc:Adonis/Lucid/Orm'
+import { column } from '@ioc:Adonis/Lucid/Orm'
 import { DateTime } from 'luxon'
+import BaseCustomModel from 'App/Shared/Model/BaseModel'
 
-export default class Token extends BaseModel {
+export default class Token extends BaseCustomModel {
   public static table = 'tokens'
 
   /**
