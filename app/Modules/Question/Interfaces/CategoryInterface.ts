@@ -5,8 +5,16 @@ export namespace ICategory {
   export interface Repository extends BaseInterface<typeof Category> {}
 
   export namespace DTO {
-    export interface Store {}
+    export interface Store {
+      name: string
+      description?: string
+      order?: number
+    }
 
-    export interface Update {}
+    export interface Update {
+      name?: string
+      description?: string
+      order?: number
+    }
   }
 }

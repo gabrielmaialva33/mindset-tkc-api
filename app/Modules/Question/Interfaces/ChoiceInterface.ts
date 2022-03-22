@@ -5,8 +5,17 @@ export namespace IChoice {
   export interface Repository extends BaseInterface<typeof Choice> {}
 
   export namespace DTO {
-    export interface Store {}
+    export interface Store {
+      question_id: string
+      sentence?: string
+      value: number
+      order?: number
+    }
 
-    export interface Update {}
+    export interface Update {
+      sentence?: string
+      value?: number
+      order?: number
+    }
   }
 }

@@ -5,8 +5,16 @@ export namespace IQuestion {
   export interface Repository extends BaseInterface<typeof Question> {}
 
   export namespace DTO {
-    export interface Store {}
+    export interface Store {
+      category_id: string
+      sentence: string
+      order?: number
+    }
 
-    export interface Update {}
+    export interface Update {
+      category_id?: string
+      sentence?: string
+      order?: number
+    }
   }
 }

@@ -24,7 +24,7 @@ export default class Question extends BaseCustomModel {
   public sentence: string
 
   @column()
-  public order: number
+  public order?: number
 
   @column({ serializeAs: null })
   public is_deleted: boolean

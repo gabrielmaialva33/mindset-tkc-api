@@ -26,7 +26,7 @@ export default class Choice extends BaseCustomModel {
   public value: number
 
   @column()
-  public order: number
+  public order?: number
 
   @column({ serializeAs: null })
   public is_deleted: boolean
