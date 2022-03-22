@@ -3593,6 +3593,11 @@ pretty-hrtime@^1.0.3:
   resolved "https://registry.yarnpkg.com/pretty-hrtime/-/pretty-hrtime-1.0.3.tgz#b7e3ea42435a4c9b2759d99e0f201eb195802ee1"
   integrity sha1-t+PqQkNaTJsnWdmeDyAesZWALuE=
 
+pretty-list-routes@^0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/pretty-list-routes/-/pretty-list-routes-0.0.5.tgz#843b0d4445c10f9f0f967a4dbadbd8e60ecfe169"
+  integrity sha512-+BI6MZ3GeZlH9OdDCbHuqNHHHy1SbhyAlABKzdf45PV4xM28fECdIh2uhG7ucw5XOoqOwJmyY5Jv+jXP/CfUIg==
+
 printable-characters@^1.0.42:
   version "1.0.42"
   resolved "https://registry.yarnpkg.com/printable-characters/-/printable-characters-1.0.42.tgz#3f18e977a9bd8eb37fcc4ff5659d7be90868b3d8"

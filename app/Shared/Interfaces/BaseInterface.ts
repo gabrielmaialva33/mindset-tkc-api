@@ -1,22 +1,43 @@
-import { ModelAdapterOptions, ModelAttributes } from '@ioc:Adonis/Lucid/Orm'
+import { LucidRow, ModelAttributes, ModelPaginatorContract } from '@ioc:Adonis/Lucid/Orm'
+
 import BaseCustomModel from 'App/Shared/Model/BaseModel'
+import { SimplePaginatorContract } from '@ioc:Adonis/Lucid/Database'
 
 export default interface BaseInterface<Model extends typeof BaseCustomModel>
-  extends Helpers<Model> {
+  extends BaseHelpers<Model> {
   /**
    * Repository
    */
-  store(
+  index<T extends Model>(
     this: Model,
-    values: Partial<ModelAttributes<InstanceType<Model>>>
-  ): Promise<InstanceType<Model>>
+    { page, perPage }: PaginateParams,
+    closers?: ModelClause<T>
+  ): Promise<
+    ModelPaginatorContract<LucidRow & InstanceType<T>> | SimplePaginatorContract<InstanceType<T>>
+  >
+
+  store<T extends Model>(
+    this: T,
+    values: Partial<ModelAttributes<InstanceType<T>>>
+  ): Promise<InstanceType<T>>
 }
 
-interface Helpers<Model extends typeof BaseCustomModel> {
-  findBy(
-    this: Model,
-    key: string,
-    value: any,
-    options?: ModelAdapterOptions
-  ): Promise<null | InstanceType<Model>>
+/**
+ * Helpers
+ */
+export interface BaseHelpers<Model extends typeof BaseCustomModel> {
+  findBy<T extends Model>(this: T, key: string, value: any): Promise<null | InstanceType<T>>
+}
+
+export interface ModelClause<Model extends typeof BaseCustomModel> {
+  onWhere: ModelType<Model>
+}
+
+export type ModelType<Model extends typeof BaseCustomModel> = Partial<
+  ModelAttributes<InstanceType<Model>>
+>
+
+export interface PaginateParams {
+  page: number
+  perPage: number
 }

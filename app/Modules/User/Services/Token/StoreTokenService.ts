@@ -1,25 +1,25 @@
-import { injectable, inject } from 'tsyringe'
-import { LucidRow } from '@ioc:Adonis/Lucid/Orm'
+import { inject, singleton } from 'tsyringe'
 import { DateTime } from 'luxon'
+import validator from 'validator'
 import argon2 from '@phc/argon2'
 
 import { IToken } from 'App/Modules/User/Interfaces/TokenInterface'
+import Token from 'App/Modules/User/Models/Token'
 import TokensRepository from 'App/Modules/User/Repositories/TokensRepository'
+
+import isBefore = validator.isBefore
+import Store = IToken.DTO.Store
 
 import BadRequestException from 'App/Shared/Exceptions/BadRequestException'
 
-import Store = IToken.DTO.Store
-import validator from 'validator'
-import isBefore = validator.isBefore
-
-@injectable()
+@singleton()
 export class StoreTokenService {
   constructor(
     @inject(TokensRepository)
     private tokensRepository: TokensRepository
   ) {}
 
-  public async init(data: Store): Promise<LucidRow> {
+  public async init(data: Store): Promise<Token> {
     if (data.expired_at)
       if (isBefore(data.expired_at.toString(), DateTime.now().toString()))
         throw new BadRequestException(
@@ -32,6 +32,7 @@ export class StoreTokenService {
       )
 
     const hash = await argon2.hash(data.code)
+
     return this.tokensRepository.store({ ...data, hash })
   }
 }

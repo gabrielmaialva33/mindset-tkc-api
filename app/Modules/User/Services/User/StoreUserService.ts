@@ -12,6 +12,6 @@ export class StoreUserService {
   ) {}
 
   public async init(data: IUser.DTO.Store): Promise<User> {
-    return this.usersRepository.store(data)
+    return this.usersRepository.store<typeof User>(data)
   }
 }

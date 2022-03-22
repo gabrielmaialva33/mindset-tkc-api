@@ -19,7 +19,7 @@ export default class Token extends BaseModel {
   @column({})
   public code: string
 
-  @column({})
+  @column({ serializeAs: null })
   public hash: string
 
   @column({})

@@ -411,6 +411,61 @@
           "description": "Drop all custom types (Postgres only)"
         }
       ]
+    },
+    "routes:pretty-list": {
+      "settings": {
+        "loadApp": true,
+        "stayAlive": false
+      },
+      "commandPath": "pretty-list-routes/build/commands/PrettyRoute",
+      "commandName": "routes:pretty-list",
+      "description": "",
+      "args": [],
+      "aliases": [],
+      "flags": [
+        {
+          "name": "verbose",
+          "propertyName": "verbose",
+          "type": "boolean",
+          "alias": "f",
+          "description": "Display more information"
+        },
+        {
+          "name": "reverse",
+          "propertyName": "reverse",
+          "type": "boolean",
+          "alias": "r",
+          "description": "Reverse routes display"
+        },
+        {
+          "name": "json",
+          "propertyName": "json",
+          "type": "boolean",
+          "alias": "j",
+          "description": "Output to JSNO"
+        },
+        {
+          "name": "method",
+          "propertyName": "methodFilter",
+          "type": "string",
+          "alias": "m",
+          "description": "Filter routes by method"
+        },
+        {
+          "name": "path",
+          "propertyName": "pathFilter",
+          "type": "string",
+          "alias": "p",
+          "description": "Filter routes by path"
+        },
+        {
+          "name": "name",
+          "propertyName": "nameFilter",
+          "type": "string",
+          "alias": "n",
+          "description": "Filter routes by name"
+        }
+      ]
     }
   },
   "aliases": {}

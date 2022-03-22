@@ -34,6 +34,7 @@
     "luxon": "^2.3.1",
     "pg": "^8.7.3",
     "phc-argon2": "^1.1.3",
+    "pretty-list-routes": "^0.0.5",
     "proxy-addr": "^2.0.7",
     "reflect-metadata": "^0.1.13",
     "source-map-support": "^0.5.21",
