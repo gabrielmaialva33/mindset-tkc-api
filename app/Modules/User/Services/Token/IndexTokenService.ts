@@ -1,6 +1,5 @@
 import { inject, singleton } from 'tsyringe'
 
-import Token from 'App/Modules/User/Models/Token'
 import TokensRepository from 'App/Modules/User/Repositories/TokensRepository'
 import { PaginateParams } from 'App/Shared/Interfaces/BaseInterface'
 
