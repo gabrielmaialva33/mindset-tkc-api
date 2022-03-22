@@ -1,8 +1,8 @@
 import BaseSchema from '@ioc:Adonis/Lucid/Schema'
 import Logger from '@ioc:Adonis/Core/Logger'
 
-export default class UserTokens extends BaseSchema {
-  protected tableName = 'user_tokens'
+export default class Answers extends BaseSchema {
+  protected tableName = 'answers'
 
   public async up() {
     if (!(await this.schema.hasTable(this.tableName)))
@@ -18,9 +18,9 @@ export default class UserTokens extends BaseSchema {
           .onUpdate('CASCADE')
 
         table
-          .uuid('token_id')
+          .uuid('choice_id')
           .references('id')
-          .inTable('tokens')
+          .inTable('choices')
           .notNullable()
           .onDelete('CASCADE')
           .onUpdate('CASCADE')
@@ -32,7 +32,7 @@ export default class UserTokens extends BaseSchema {
           .timestamp('updated_at', { useTz: true })
           .defaultTo(this.db.rawQuery('now()').knexQuery)
       })
-    else Logger.info('Users Tokens migration already running')
+    else Logger.info('Choices migration already running')
   }
 
   public async down() {

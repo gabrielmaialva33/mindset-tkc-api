@@ -4,6 +4,9 @@ import { IUser } from 'App/Modules/User/Interfaces/UserInterface'
 import User from 'App/Modules/User/Models/User'
 import UsersRepository from 'App/Modules/User/Repositories/UsersRepository'
 
+/**
+ * Services
+ */
 import { ValidateTokenService } from 'App/Modules/User/Services/Token'
 import { AttachUserOnTokenService } from 'App/Modules/User/Services/User'
 
@@ -21,7 +24,7 @@ export class StoreUserService {
 
   public async init({ name, email, password, code }: IUser.DTO.Store): Promise<User> {
     const isValid = await this.validate.init(code)
-    if (!isValid) throw new BadRequestException('Code inválido.', 404)
+    if (!isValid) throw new BadRequestException('Code inválido.', 401)
 
     const user = await this.usersRepository.store<typeof User>({ name, email, password })
 
