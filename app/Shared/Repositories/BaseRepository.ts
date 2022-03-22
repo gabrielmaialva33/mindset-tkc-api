@@ -51,4 +51,8 @@ export default class BaseRepository<Model extends typeof BaseCustomModel>
     if (closers) model.where({ ...closers.where })
     return model.paginate(page, perPage)
   }
+
+  public async update<T extends BaseCustomModel>(model: T): Promise<T> {
+    return model.save()
+  }
 }

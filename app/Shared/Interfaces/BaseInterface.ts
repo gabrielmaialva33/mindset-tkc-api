@@ -20,6 +20,8 @@ export default interface BaseInterface<Model extends typeof BaseCustomModel>
     this: T,
     values: Partial<ModelAttributes<InstanceType<T>>>
   ): Promise<InstanceType<T>>
+
+  update<T extends BaseCustomModel>(this: T, model: T): Promise<T>
 }
 
 /**
