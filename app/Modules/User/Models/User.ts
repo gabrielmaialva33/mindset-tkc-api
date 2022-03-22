@@ -27,7 +27,7 @@ export default class User extends BaseCustomModel {
   public password?: string
 
   @column()
-  public rememberMeToken?: string
+  public remember_me_token?: string
 
   @column.dateTime({ autoCreate: true, serializeAs: null })
   public created_at: DateTime

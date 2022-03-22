@@ -10,9 +10,10 @@ export default class Categories extends BaseSchema {
         table.uuid('id').primary().defaultTo(this.db.rawQuery('uuid_generate_v4()').knexQuery)
 
         table.string('name', 80).notNullable()
-        table.text('destination').nullable()
+        table.text('description').nullable()
 
         table.integer('order').defaultTo(0)
+        table.boolean('is_deleted').defaultTo(false)
 
         table.timestamp('created_at', { useTz: true })
         table.timestamp('updated_at', { useTz: true })

@@ -18,6 +18,8 @@ export default class Questionnaires extends BaseSchema {
           .onUpdate('CASCADE')
 
         table.text('sentence').notNullable()
+
+        table.integer('order').defaultTo(0)
         table.boolean('is_deleted').defaultTo(false)
 
         table.timestamp('created_at', { useTz: true })
