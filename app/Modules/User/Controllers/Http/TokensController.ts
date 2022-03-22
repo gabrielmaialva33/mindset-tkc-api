@@ -52,8 +52,11 @@ export default class TokensController {
     if (!code) throw new BadRequestException('Por favor passe um code a ser validado')
 
     const validateService = container.resolve(ValidateTokenService)
-    const isValid = await validateService.init(code)
+    await validateService.init(code)
 
-    return response.json(isValid)
+    return response.json({
+      message: 'Code está válido.',
+      status: 200,
+    })
   }
 }

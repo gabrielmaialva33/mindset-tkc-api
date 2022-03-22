@@ -28,8 +28,17 @@ export default class BaseRepository<Model extends typeof BaseCustomModel>
   /**
    * Helpers
    */
-  public async findBy<T extends Model>(key: string, value: any): Promise<InstanceType<T> | null> {
-    return this.model.findBy(key, value)
+  public async findBy<T extends Model>(
+    key: string,
+    value: any,
+    closers?: ModelClause<T>
+  ): Promise<InstanceType<T> | null> {
+    const model = this.model.query()
+    model.where(key, value)
+
+    if (closers) model.where({ ...closers.where })
+
+    return model.first()
   }
 
   public async index<T extends Model>(

@@ -23,8 +23,8 @@ export default class UserTokens extends BaseSchema {
         .onDelete('CASCADE')
         .onUpdate('CASCADE')
 
-      table.timestamp('created_at', { useTz: true })
-      table.timestamp('updated_at', { useTz: true })
+      table.timestamp('created_at', { useTz: true }).defaultTo(this.db.rawQuery('now()').knexQuery)
+      table.timestamp('updated_at', { useTz: true }).defaultTo(this.db.rawQuery('now()').knexQuery)
     })
   }
 

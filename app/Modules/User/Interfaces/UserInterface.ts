@@ -9,6 +9,7 @@ export namespace IUser {
       name: string
       email: string
       password?: string
+      code: string
     }
 
     export interface Update {

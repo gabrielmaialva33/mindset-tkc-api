@@ -13,7 +13,7 @@ export class ValidateTokenService {
   ) {}
 
   public async init(code: string): Promise<boolean> {
-    const token = await this.tokensRepository.findBy('code', code)
+    const token = await this.tokensRepository.findBy('code', code, { where: { is_revoked: false } })
     if (!token) throw new NotFoundException('Code não encontrado ou invalido.')
 
     return argon2.verify(token.hash, code)
