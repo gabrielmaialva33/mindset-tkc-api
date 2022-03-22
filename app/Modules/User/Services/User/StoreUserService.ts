@@ -3,6 +3,7 @@ import { container, inject, singleton } from 'tsyringe'
 import { IUser } from 'App/Modules/User/Interfaces/UserInterface'
 import User from 'App/Modules/User/Models/User'
 import UsersRepository from 'App/Modules/User/Repositories/UsersRepository'
+
 import { ValidateTokenService } from 'App/Modules/User/Services/Token'
 import { AttachUserOnTokenService } from 'App/Modules/User/Services/User'
 
@@ -25,6 +26,7 @@ export class StoreUserService {
     const user = await this.usersRepository.store<typeof User>({ name, email, password })
 
     await this.attach.init(user, code)
+
     await user.refresh()
     await user.load('tokens')
 
