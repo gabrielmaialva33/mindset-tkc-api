@@ -15,9 +15,10 @@ export default class TokensController {
   public async index({ request, response }: HttpContextContract): Promise<void> {
     const page = request.input('page', 1)
     const perPage = request.input('perPage', 20)
+    const closer = request.input('closer', '')
 
     const indexService = container.resolve(IndexTokenService)
-    const tokens = await indexService.init({ page, perPage })
+    const tokens = await indexService.init({ page, perPage }, closer)
 
     return response.json(tokens)
   }

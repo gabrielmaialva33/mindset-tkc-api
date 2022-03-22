@@ -40,7 +40,7 @@ export default class BaseRepository<Model extends typeof BaseCustomModel>
   > {
     const model = this.model.query()
 
-    if (closers) model.where({ ...closers })
+    if (closers) model.where({ ...closers.where })
     return model.paginate(page, perPage)
   }
 }

@@ -30,7 +30,7 @@ export interface BaseHelpers<Model extends typeof BaseCustomModel> {
 }
 
 export interface ModelClause<Model extends typeof BaseCustomModel> {
-  onWhere: ModelType<Model>
+  where: ModelType<Model>
 }
 
 export type ModelType<Model extends typeof BaseCustomModel> = Partial<

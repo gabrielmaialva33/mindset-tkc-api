@@ -11,7 +11,23 @@ export class IndexTokenService {
     private tokensRepository: TokensRepository
   ) {}
 
-  public async init({ page, perPage }: PaginateParams) {
-    return this.tokensRepository.index<typeof Token>({ page, perPage })
+  public async init({ page, perPage }: PaginateParams, closer: string) {
+    if (closer === 'revoked')
+      return this.tokensRepository.index(
+        { page, perPage },
+        {
+          where: { is_revoked: true },
+        }
+      )
+
+    if (closer === 'lifetime')
+      return this.tokensRepository.index(
+        { page, perPage },
+        {
+          where: { is_lifetime: true },
+        }
+      )
+
+    return this.tokensRepository.index({ page, perPage })
   }
 }
