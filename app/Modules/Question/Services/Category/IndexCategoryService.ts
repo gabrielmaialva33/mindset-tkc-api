@@ -1,6 +1,6 @@
 import { singleton, inject } from 'tsyringe'
 
-import { PaginateParams } from 'App/Shared/Interfaces/BaseInterface'
+import { PaginateContract } from 'App/Shared/Interfaces/BaseInterface'
 import CategoriesRepository from 'App/Modules/Question/Repositories/CategoriesRepository'
 import Category from 'App/Modules/Question/Models/Category'
 
@@ -11,7 +11,14 @@ export class IndexCategoryService {
     private categoriesRepository: CategoriesRepository
   ) {}
 
-  public async init(params: PaginateParams) {
-    return this.categoriesRepository.index<typeof Category>(params)
+  public async init(params: PaginateContract<typeof Category>) {
+    return this.categoriesRepository.index({
+      ...params,
+      closers: { where: { is_deleted: false } },
+      order: {
+        column: 'order',
+        direction: 'asc',
+      },
+    })
   }
 }

@@ -4,7 +4,7 @@ import { SimplePaginatorContract } from '@ioc:Adonis/Lucid/Database'
 import BaseInterface, {
   ModelClause,
   ModelType,
-  PaginateParams,
+  PaginateContract,
 } from 'App/Shared/Interfaces/BaseInterface'
 import BaseCustomModel from 'App/Shared/Model/BaseModel'
 
@@ -40,15 +40,19 @@ export default class BaseRepository<Model extends typeof BaseCustomModel>
     return model.first()
   }
 
-  public async index<T extends Model>(
-    { page, perPage }: PaginateParams,
-    closers?: ModelClause<T>
-  ): Promise<
+  public async index<T extends Model>({
+    page,
+    perPage,
+    closers,
+    order,
+  }: PaginateContract<T>): Promise<
     ModelPaginatorContract<LucidRow & InstanceType<T>> | SimplePaginatorContract<InstanceType<T>>
   > {
     const model = this.model.query()
 
     if (closers) model.where({ ...closers.where })
+    if (order) model.orderBy(order.column, order.direction)
+
     return model.paginate(page, perPage)
   }
 

@@ -29,6 +29,9 @@ export default class User extends BaseCustomModel {
   @column()
   public remember_me_token?: string
 
+  @column({ serializeAs: null })
+  public is_deleted: boolean
+
   @column.dateTime({ autoCreate: true, serializeAs: null })
   public created_at: DateTime
 

@@ -10,8 +10,7 @@ export default interface BaseInterface<Model extends typeof BaseCustomModel>
    */
   index<T extends Model>(
     this: Model,
-    { page, perPage }: PaginateParams,
-    closers?: ModelClause<T>
+    { page, perPage, closers, order }: PaginateContract<T>
   ): Promise<
     ModelPaginatorContract<LucidRow & InstanceType<T>> | SimplePaginatorContract<InstanceType<T>>
   >
@@ -31,15 +30,23 @@ export interface BaseHelpers<Model extends typeof BaseCustomModel> {
   findBy<T extends Model>(this: T, key: string, value: any): Promise<null | InstanceType<T>>
 }
 
+/***/
 export interface ModelClause<Model extends typeof BaseCustomModel> {
   where: ModelType<Model>
+}
+
+export interface OrderBy {
+  column: string
+  direction?: 'asc' | 'desc'
 }
 
 export type ModelType<Model extends typeof BaseCustomModel> = Partial<
   ModelAttributes<InstanceType<Model>>
 >
 
-export interface PaginateParams {
+export interface PaginateContract<Model extends typeof BaseCustomModel> {
   page: number
   perPage: number
+  closers?: ModelClause<Model>
+  order?: OrderBy
 }

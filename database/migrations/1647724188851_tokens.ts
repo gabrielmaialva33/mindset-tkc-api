@@ -16,6 +16,7 @@ export default class Tokens extends BaseSchema {
 
         table.boolean('is_revoked').notNullable().defaultTo(false)
         table.boolean('is_lifetime').notNullable().defaultTo(false)
+        table.boolean('is_deleted').defaultTo(false)
 
         table.timestamp('created_at', { useTz: true })
         table.timestamp('updated_at', { useTz: true })

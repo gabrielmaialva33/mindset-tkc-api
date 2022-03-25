@@ -32,6 +32,9 @@ export default class Token extends BaseCustomModel {
   @column({})
   public is_lifetime: boolean
 
+  @column({ serializeAs: null })
+  public is_deleted: boolean
+
   @column.dateTime({ autoCreate: true, serializeAs: null })
   public created_at: DateTime
 
