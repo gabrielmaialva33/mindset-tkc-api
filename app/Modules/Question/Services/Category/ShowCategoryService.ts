@@ -14,7 +14,13 @@ export class ShowCategoryService {
 
   public async init(categoryId: string): Promise<Category> {
     const category = await this.categoriesRepository.findBy<typeof Category>('id', categoryId)
-    if (!category) throw new NotFoundException('Categoria inválida ou nao encontrada.')
+    if (!category) throw new NotFoundException('Category not found or not available.')
+
+    await category.load('questions', (questionsQuery) =>
+      questionsQuery.whereNot({
+        is_deleted: true,
+      })
+    )
 
     return category
   }

@@ -15,7 +15,7 @@ export class UpdateQuestionService {
 
   public async init(questionId: string, data: IQuestion.DTO.Update): Promise<Question> {
     const question = await this.questionsRepository.findBy<typeof Question>('id', questionId)
-    if (!question) throw new NotFoundException('Questão não encontrada.')
+    if (!question) throw new NotFoundException('Question not found or not available.')
 
     question.merge(data)
     await this.questionsRepository.update<Question>(question)

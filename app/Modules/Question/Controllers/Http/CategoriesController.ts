@@ -55,8 +55,8 @@ export default class CategoriesController {
     const { id: categoryId } = params
 
     const destroyService = container.resolve(DestroyCategoryService)
-    const category = await destroyService.init(categoryId)
+    await destroyService.init(categoryId)
 
-    return response.json(category)
+    return response.json({ message: 'Category deleted successfully' })
   }
 }

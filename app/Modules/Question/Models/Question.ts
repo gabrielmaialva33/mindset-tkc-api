@@ -41,7 +41,7 @@ export default class Question extends BaseCustomModel {
    * ------------------------------------------------------
    * - define Question model relationships
    */
-  @belongsTo(() => Category)
+  @belongsTo(() => Category, { localKey: 'id', foreignKey: 'category_id' })
   public category: BelongsTo<typeof Category>
 
   @hasMany(() => Choice)

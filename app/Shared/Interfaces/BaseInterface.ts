@@ -28,6 +28,10 @@ export default interface BaseInterface<Model extends typeof BaseCustomModel>
  */
 export interface BaseHelpers<Model extends typeof BaseCustomModel> {
   findBy<T extends Model>(this: T, key: string, value: any): Promise<null | InstanceType<T>>
+  firstOrCreate<T extends Model>(
+    searchPayload: ModelType<T>,
+    savePayload: ModelType<T>
+  ): Promise<InstanceType<T>>
 }
 
 /***/

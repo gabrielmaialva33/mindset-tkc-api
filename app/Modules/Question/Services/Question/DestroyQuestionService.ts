@@ -13,7 +13,7 @@ export class DestroyQuestionService {
 
   public async init(questionId: string): Promise<void> {
     const question = await this.questionsRepository.findBy<typeof Question>('id', questionId)
-    if (!question) throw new NotFoundException('Questão não encontrada.')
+    if (!question) throw new NotFoundException('Question not found or not available.')
 
     question.merge({ is_deleted: true })
     await this.questionsRepository.update<Question>(question)

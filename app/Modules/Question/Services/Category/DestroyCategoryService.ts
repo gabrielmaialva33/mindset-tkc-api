@@ -14,7 +14,7 @@ export class DestroyCategoryService {
 
   public async init(categoryId: string): Promise<void> {
     const category = await this.categoriesRepository.findBy<typeof Category>('id', categoryId)
-    if (!category) throw new NotFoundException('Categoria inválida ou nao encontrada.')
+    if (!category) throw new NotFoundException('Category not found or not available.')
 
     category.merge({ is_deleted: true })
 

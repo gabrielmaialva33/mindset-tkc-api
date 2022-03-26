@@ -40,7 +40,7 @@ export default class Category extends BaseCustomModel {
    * ------------------------------------------------------
    * - define Question model relationships
    */
-  @hasMany(() => Question)
+  @hasMany(() => Question, { localKey: 'id', foreignKey: 'category_id' })
   public questions: HasMany<typeof Question>
   /**
    * ------------------------------------------------------

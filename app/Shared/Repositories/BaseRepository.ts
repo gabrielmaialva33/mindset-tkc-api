@@ -17,11 +17,31 @@ export default class BaseRepository<Model extends typeof BaseCustomModel>
     this.model = model
   }
 
+  public async index<T extends Model>({
+    page,
+    perPage,
+    closers,
+    order,
+  }: PaginateContract<T>): Promise<
+    ModelPaginatorContract<LucidRow & InstanceType<T>> | SimplePaginatorContract<InstanceType<T>>
+  > {
+    const model = this.model.query()
+
+    if (closers) model.where({ ...closers.where })
+    if (order) model.orderBy(order.column, order.direction)
+
+    return model.paginate(page, perPage)
+  }
+
   /**
    * Repository
    */
   public async store<T extends Model>(values: ModelType<T>): Promise<InstanceType<T>> {
     return this.model.create(values)
+  }
+
+  public async update<T extends BaseCustomModel>(model: T): Promise<T> {
+    return model.save()
   }
 
   /**
@@ -40,23 +60,10 @@ export default class BaseRepository<Model extends typeof BaseCustomModel>
     return model.first()
   }
 
-  public async index<T extends Model>({
-    page,
-    perPage,
-    closers,
-    order,
-  }: PaginateContract<T>): Promise<
-    ModelPaginatorContract<LucidRow & InstanceType<T>> | SimplePaginatorContract<InstanceType<T>>
-  > {
-    const model = this.model.query()
-
-    if (closers) model.where({ ...closers.where })
-    if (order) model.orderBy(order.column, order.direction)
-
-    return model.paginate(page, perPage)
-  }
-
-  public async update<T extends BaseCustomModel>(model: T): Promise<T> {
-    return model.save()
+  public async firstOrCreate<T extends Model>(
+    searchPayload: ModelType<T>,
+    savePayload: ModelType<T>
+  ): Promise<InstanceType<T>> {
+    return this.model.firstOrCreate(searchPayload, savePayload)
   }
 }
