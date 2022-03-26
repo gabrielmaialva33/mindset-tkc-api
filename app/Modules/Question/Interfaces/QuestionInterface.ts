@@ -8,12 +8,18 @@ export namespace IQuestion {
     export interface Store {
       category_id: string
       sentence: string
+      type?: string
+      min_choice?: number
+      max_choice?: number
       order?: number
     }
 
     export interface Update {
       category_id?: string
       sentence?: string
+      type?: string
+      min_choice?: number
+      max_choice?: number
       order?: number
     }
   }

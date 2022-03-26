@@ -24,6 +24,15 @@ export default class Question extends BaseCustomModel {
   public sentence: string
 
   @column()
+  public type: string
+
+  @column()
+  public min_choice: number
+
+  @column()
+  public max_choice: number
+
+  @column()
   public order?: number
 
   @column({ serializeAs: null })

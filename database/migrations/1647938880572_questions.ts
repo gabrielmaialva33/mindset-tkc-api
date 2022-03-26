@@ -19,6 +19,10 @@ export default class Questionnaires extends BaseSchema {
 
         table.text('sentence').notNullable()
 
+        table.string('type').notNullable().defaultTo('common')
+        table.integer('min_choice').nullable().defaultTo(null)
+        table.integer('max_choice').nullable().defaultTo(null)
+
         table.integer('order').defaultTo(0)
         table.boolean('is_deleted').defaultTo(false)
 

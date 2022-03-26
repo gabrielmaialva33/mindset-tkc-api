@@ -13,6 +13,9 @@ export default class UpdateQuestionValidator {
       }),
     ]),
     sentence: schema.string.optional({ escape: true, trim: true }, []),
+    type: schema.enum.optional(['common', 'multiple'] as const),
+    min_choice: schema.number.optional([rules.requiredWhen('type', '=', 'multiple')]),
+    max_choice: schema.number.optional([rules.requiredWhen('type', '=', 'multiple')]),
     order: schema.number.optional([rules.unsigned()]),
   })
 
