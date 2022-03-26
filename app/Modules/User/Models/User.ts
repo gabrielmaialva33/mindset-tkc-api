@@ -4,6 +4,7 @@ import Hash from '@ioc:Adonis/Core/Hash'
 
 import Token from 'App/Modules/User/Models/Token'
 import BaseCustomModel from 'App/Shared/Model/BaseModel'
+import Choice from 'App/Modules/Question/Models/Choice'
 
 export default class User extends BaseCustomModel {
   public static table = 'users'
@@ -52,6 +53,15 @@ export default class User extends BaseCustomModel {
     pivotRelatedForeignKey: 'token_id',
   })
   public tokens: ManyToMany<typeof Token>
+
+  @manyToMany(() => Choice, {
+    localKey: 'id',
+    pivotForeignKey: 'user_id',
+    pivotTable: 'answers',
+    relatedKey: 'id',
+    pivotRelatedForeignKey: 'choice_id',
+  })
+  public choices: ManyToMany<typeof Choice>
 
   /**
    * ------------------------------------------------------
