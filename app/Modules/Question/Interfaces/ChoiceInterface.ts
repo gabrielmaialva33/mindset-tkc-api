@@ -7,7 +7,7 @@ export namespace IChoice {
   export namespace DTO {
     export interface Store {
       question_id: string
-      sentence?: string
+      sentence: string
       value: number
       order?: number
     }

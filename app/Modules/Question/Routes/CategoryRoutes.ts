@@ -1,4 +1,5 @@
 import Route from '@ioc:Adonis/Core/Route'
+
 import CategoriesController from 'App/Modules/Question/Controllers/Http/CategoriesController'
 
 Route.group(() => {

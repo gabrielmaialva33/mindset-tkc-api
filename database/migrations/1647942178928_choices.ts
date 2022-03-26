@@ -17,7 +17,7 @@ export default class Choices extends BaseSchema {
           .onDelete('CASCADE')
           .onUpdate('CASCADE')
 
-        table.text('sentence').nullable()
+        table.text('sentence').notNullable()
         table.integer('value').defaultTo(0)
 
         table.integer('order').defaultTo(0)

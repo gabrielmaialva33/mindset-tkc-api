@@ -20,7 +20,7 @@ export default class Choice extends BaseCustomModel {
   public question_id: string
 
   @column()
-  public sentence?: string
+  public sentence: string
 
   @column()
   public value: number

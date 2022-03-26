@@ -22,14 +22,10 @@ export class StoreTokenService {
   public async init(data: Store): Promise<Token> {
     if (data.expired_at)
       if (isBefore(data.expired_at.toString(), DateTime.now().toString()))
-        throw new BadRequestException(
-          'A data de expiração já passou. Por favor coloque uma data válida.'
-        )
+        throw new BadRequestException('The expiration date has passed. Please enter a valid date.')
 
     if (data.is_lifetime && data.expired_at)
-      throw new BadRequestException(
-        'Você não pode definir uma data de expiração pata um token vitalício.'
-      )
+      throw new BadRequestException('You cannot set an expiration date for a lifetime token.')
 
     const hash = await argon2.hash(data.code)
 

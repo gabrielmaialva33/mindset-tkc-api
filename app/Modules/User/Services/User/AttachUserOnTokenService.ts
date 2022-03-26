@@ -17,7 +17,7 @@ export class AttachUserOnTokenService {
       where: { is_revoked: false },
     })
 
-    if (!token) throw new BadRequestException('Code não encontrado ou invalido.')
+    if (!token) throw new BadRequestException('Code not found or not available.')
 
     token.merge({ is_revoked: true })
     await token.save()
