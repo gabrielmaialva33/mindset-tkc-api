@@ -43,7 +43,7 @@ export default class Choice extends BaseCustomModel {
    * ------------------------------------------------------
    * - define Choice model relationships
    */
-  @belongsTo(() => Question)
+  @belongsTo(() => Question, { localKey: 'id', foreignKey: 'question_id' })
   public question: BelongsTo<typeof Question>
   /**
    * ------------------------------------------------------

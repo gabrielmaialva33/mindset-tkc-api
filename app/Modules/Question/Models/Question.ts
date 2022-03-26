@@ -53,7 +53,7 @@ export default class Question extends BaseCustomModel {
   @belongsTo(() => Category, { localKey: 'id', foreignKey: 'category_id' })
   public category: BelongsTo<typeof Category>
 
-  @hasMany(() => Choice)
+  @hasMany(() => Choice, { localKey: 'id', foreignKey: 'question_id' })
   public choices: HasMany<typeof Choice>
 
   /**
