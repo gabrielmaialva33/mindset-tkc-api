@@ -12,33 +12,43 @@ export const CategoriesDefault: Array<ICategory.DTO.Store> = [
     order: 2,
   },
   {
-    name: 'Análise Gerencial',
+    name: 'Assertividade',
     description: '',
     order: 3,
   },
   {
-    name: 'Assertividade',
+    name: 'Análise Gerencial',
     description: '',
     order: 4,
   },
   {
-    name: 'Diagnóstico Conexão',
+    name: 'Predominância Cerebral',
     description: '',
     order: 5,
   },
   {
-    name: 'Burnout',
+    name: 'Gestão do Tempo',
     description: '',
     order: 6,
   },
   {
-    name: 'Autorresponsabilidade',
+    name: 'Burnout',
     description: '',
     order: 7,
   },
   {
-    name: 'Direcional',
+    name: 'Diagnóstico Conexão',
     description: '',
     order: 8,
+  },
+  {
+    name: 'Autorresponsabilidade',
+    description: '',
+    order: 9,
+  },
+  {
+    name: 'Direcional',
+    description: '',
+    order: 10,
   },
 ]

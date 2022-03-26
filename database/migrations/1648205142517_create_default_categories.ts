@@ -10,6 +10,6 @@ export default class CreateDefaultCategories extends BaseSchema {
   }
 
   public async down() {
-    this.schema.dropTableIfExists('modules')
+    this.db.rawQuery('truncate categories;').knexQuery
   }
 }
