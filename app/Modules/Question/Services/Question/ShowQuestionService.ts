@@ -16,7 +16,9 @@ export class ShowQuestionService {
     const question = await this.questionsRepository.findBy<typeof Question>('id', questionId)
     if (!question) throw new NotFoundException('Question not found or not available.')
 
-    await question.load('choices', (choicesQuery) => choicesQuery.whereNot({ is_deleted: true }))
+    await question.load('choices', (choicesQuery) =>
+      choicesQuery.whereNot({ is_deleted: true }).orderBy('order')
+    )
 
     return question
   }

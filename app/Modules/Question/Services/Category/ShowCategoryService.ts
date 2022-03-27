@@ -17,9 +17,11 @@ export class ShowCategoryService {
     if (!category) throw new NotFoundException('Category not found or not available.')
 
     await category.load('questions', (questionsQuery) =>
-      questionsQuery.whereNot({
-        is_deleted: true,
-      })
+      questionsQuery
+        .whereNot({
+          is_deleted: true,
+        })
+        .orderBy('order')
     )
 
     return category

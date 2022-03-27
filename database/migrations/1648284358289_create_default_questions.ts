@@ -19,6 +19,7 @@ import {
 export default class CreateDefaultQuestions extends BaseSchema {
   public async up() {
     const storeDefaultQuestion = container.resolve(StoreDefaultQuestionService)
+
     await storeDefaultQuestion.init(ImpulsoresQuestionsDefault, 1)
     await storeDefaultQuestion.init(MotivadoresQuestionsDefault, 2)
     await storeDefaultQuestion.init(AssertividadeQuestionsDefault, 3)
