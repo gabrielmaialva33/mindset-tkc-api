@@ -102,7 +102,7 @@ The following software must be installed:
 
 Get routes for insomnia
 
-<a href="https://raw.githubusercontent.com/gabrielmaialva33/mindset-tkc-api/master/.github/assets/insomnia/Insomnia.json"  download>
+<a download="Insomnia.json" href=".github/assets/insomnia/Insomnia.json">
   Download Insomnia file
 </a>
 
