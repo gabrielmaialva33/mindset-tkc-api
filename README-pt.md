@@ -31,7 +31,6 @@
 
 <br>
 
-
 ## :bookmark: Sobre
 
 **Diagnóstico mindset** é um site de pesquisa avaliativa para ajudar as pessoas com sua mentalidade.
@@ -40,11 +39,11 @@
 
 ## :computer: Tecnologias
 
--  **[Typescript](https://www.typescriptlang.org/)**
--  **[Node.js](https://nodejs.org/)**
--  **[AdonisJS](https://adonisjs.com/)**
--  **[PostgreSQL](https://www.postgresql.org/)**
--  **[TSyringe](https://github.com/microsoft/tsyringe/)**
+- **[Typescript](https://www.typescriptlang.org/)**
+- **[Node.js](https://nodejs.org/)**
+- **[AdonisJS](https://adonisjs.com/)**
+- **[PostgreSQL](https://www.postgresql.org/)**
+- **[TSyringe](https://github.com/microsoft/tsyringe/)**
 
 <br>
 
@@ -78,7 +77,7 @@ Os seguintes softwares devem estar instalados:
 
 <br>
 
-### :arrow_forward:	**Rodando o backend**
+### :arrow_forward: **Rodando o backend**
 
 - :package: API
 

@@ -1,10 +1,11 @@
 import { DateTime } from 'luxon'
-import { column, beforeSave, manyToMany, ManyToMany } from '@ioc:Adonis/Lucid/Orm'
+import { column, beforeSave, manyToMany, ManyToMany, hasMany, HasMany } from '@ioc:Adonis/Lucid/Orm'
 import Hash from '@ioc:Adonis/Core/Hash'
 
-import Token from 'App/Modules/User/Models/Token'
 import BaseCustomModel from 'App/Shared/Model/BaseModel'
+import Token from 'App/Modules/User/Models/Token'
 import Choice from 'App/Modules/Question/Models/Choice'
+import Reply from 'App/Modules/Question/Models/Reply'
 
 export default class User extends BaseCustomModel {
   public static table = 'users'
@@ -29,6 +30,9 @@ export default class User extends BaseCustomModel {
 
   @column()
   public remember_me_token?: string
+
+  @column()
+  public was_sent_email: boolean
 
   @column({ serializeAs: null })
   public is_deleted: boolean
@@ -62,6 +66,9 @@ export default class User extends BaseCustomModel {
     pivotRelatedForeignKey: 'choice_id',
   })
   public choices: ManyToMany<typeof Choice>
+
+  @hasMany(() => Reply, { localKey: 'id', foreignKey: 'user_id' })
+  public replies: HasMany<typeof Reply>
 
   /**
    * ------------------------------------------------------
