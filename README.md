@@ -45,6 +45,7 @@
 - **[AdonisJS](https://adonisjs.com/)**
 - **[PostgreSQL](https://www.postgresql.org/)**
 - **[TSyringe](https://github.com/microsoft/tsyringe/)**
+- **[Docker](https://www.docker.com/)**
 
 <br>
 
@@ -89,7 +90,7 @@ The following software must be installed:
   # Config environment system
   $ cp .env.example .env
   # Data base creation.
-  $ node ace migration:run
+  $ node ace migration:run # or docker-compose up --build 
   # API start
   $ node ace serve --watch # or yarn dev or npm dev
 ```
