@@ -26,6 +26,7 @@
   <a href="#computer-technologies">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#wrench-tools">Ferramentas</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#package-installation">Instalação</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#twisted_rightwards_arrows-routes">Routes</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;  
   <a href="#memo-license">Licença</a>
 </p>
 
@@ -46,6 +47,7 @@
 - **[TSyringe](https://github.com/microsoft/tsyringe/)**
 - **[Docker](https://www.docker.com/)**
 
+
 <br>
 
 ## :wrench: Ferramentas
@@ -54,6 +56,7 @@
 - **[Insomnia](https://insomnia.rest/)**
 - **[Edge Microsoft](https://www.microsoft.com/pt-br/edge/)**
 - **[DataGrip](https://www.jetbrains.com/datagrip/)**
+- **[Insomnia](https://insomnia.rest)**
 
 <br>
 
@@ -95,6 +98,11 @@ Os seguintes softwares devem estar instalados:
 ```
 
 <br>
+
+## :twisted_rightwards_arrows: Routes
+
+Arquivo de rotas [Donwload](https://raw.githubusercontent.com/gabrielmaialva33/mindset-tkc-api/master/.github/assets/insomnia/Insomnia.json.zip)
+
 
 ## :memo: Licença
 

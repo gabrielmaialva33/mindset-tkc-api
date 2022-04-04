@@ -56,6 +56,7 @@
 - **[Insomnia](https://insomnia.rest/)**
 - **[Edge Microsoft](https://www.microsoft.com/en-us/edge/)**
 - **[DataGrip](https://www.jetbrains.com/datagrip/)**
+- **[Insomnia](https://insomnia.rest)**
 
 <br>
 
