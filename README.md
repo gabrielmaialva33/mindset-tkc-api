@@ -100,11 +100,7 @@ The following software must be installed:
 
 ## :twisted_rightwards_arrows: Routes
 
-Get routes for insomnia
-
-<a download="Insomnia.json" href="https://raw.githubusercontent.com/gabrielmaialva33/mindset-tkc-api/master/.github/assets/insomnia/Insomnia.json">
-  Download Insomnia file
-</a>
+Get routes for insomnia [Donwload](https://raw.githubusercontent.com/gabrielmaialva33/mindset-tkc-api/master/.github/assets/insomnia/Insomnia.json.zip)
 
 ## :memo: License
 
