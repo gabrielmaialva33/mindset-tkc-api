@@ -2,11 +2,13 @@ FROM library/postgres
 COPY ./init.sql /docker-entrypoint-initdb.d/
 
 # Build AdonisJS
-FROM node:lts as builder
+FROM node:lts-alpine as builder
 # Set directory for all files
 WORKDIR /home/api
 # Copy over package.json files
 COPY package*.json ./
+# Absence of Python library.
+RUN apk add --update python3 make g++ && rm -rf /var/cache/apk/*
 # Install all packages
 RUN yarn
 # Copy over source code
@@ -22,6 +24,8 @@ ENV NODE_ENV=development
 WORKDIR /home/base_rbac_api
 # Copy over built files
 COPY --from=builder /home/api/build .
+# Absence of Python library.
+RUN apk add --update python3 make g++ && rm -rf /var/cache/apk/*
 # Install only required packages
 RUN rm -rf node_modules && yarn install --frozen-lockfile --production
 # Expose port to outside world
