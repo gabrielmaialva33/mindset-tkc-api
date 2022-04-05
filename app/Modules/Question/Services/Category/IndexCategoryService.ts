@@ -1,14 +1,15 @@
-import { singleton, inject } from 'tsyringe'
+import { injectable, inject } from 'tsyringe'
+
+import Category from 'App/Modules/Question/Models/Category'
+import { ICategory } from 'App/Modules/Question/Interfaces/CategoryInterface'
 
 import { PaginateContract } from 'App/Shared/Interfaces/BaseInterface'
-import CategoriesRepository from 'App/Modules/Question/Repositories/CategoriesRepository'
-import Category from 'App/Modules/Question/Models/Category'
 
-@singleton()
+@injectable()
 export class IndexCategoryService {
   constructor(
-    @inject(CategoriesRepository)
-    private categoriesRepository: CategoriesRepository
+    @inject('CategoriesRepository')
+    private categoriesRepository: ICategory.Repository
   ) {}
 
   public async init(params: PaginateContract<typeof Category>) {

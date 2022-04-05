@@ -16,12 +16,5 @@ export default class StoreUserValidator {
     password: schema.string.optional({ trim: true }, [rules.confirmed()]),
   })
 
-  public messages = {
-    'email': 'E-mail não é valido.',
-    'unique': 'Já foi usado.',
-    'minLength': 'Requer mais que 3 caracteres.',
-    'maxLength': 'Não pode ter mais que 80 caracteres.',
-    'required': 'Não pode ficar em branco.',
-    'code.exists': 'Code não encontrado ou invalido.',
-  }
+  public messages = {}
 }

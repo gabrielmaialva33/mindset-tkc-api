@@ -1,8 +1,7 @@
-import { container, inject, singleton } from 'tsyringe'
+import { container, inject, injectable } from 'tsyringe'
 
 import { IUser } from 'App/Modules/User/Interfaces/UserInterface'
 import User from 'App/Modules/User/Models/User'
-import UsersRepository from 'App/Modules/User/Repositories/UsersRepository'
 
 /**
  * Services
@@ -12,11 +11,11 @@ import { AttachUserOnTokenService } from 'App/Modules/User/Services/User'
 
 import BadRequestException from 'App/Shared/Exceptions/BadRequestException'
 
-@singleton()
+@injectable()
 export class StoreUserService {
   constructor(
-    @inject(UsersRepository)
-    private usersRepository: UsersRepository
+    @inject('UsersRepository')
+    private usersRepository: IUser.Repository
   ) {}
 
   private validate = container.resolve(ValidateTokenService)

@@ -1,5 +1,6 @@
-import { column } from '@ioc:Adonis/Lucid/Orm'
+import { BaseModel, beforeFind, column, ModelQueryBuilderContract } from '@ioc:Adonis/Lucid/Orm'
 import { DateTime } from 'luxon'
+
 import BaseCustomModel from 'App/Shared/Model/BaseModel'
 
 export default class Token extends BaseCustomModel {
@@ -57,7 +58,12 @@ export default class Token extends BaseCustomModel {
    * ------------------------------------------------------
    * - define auto behaviors
    */
-
+  @beforeFind()
+  public static async ignoreRevoked(
+    query: ModelQueryBuilderContract<typeof BaseModel>
+  ): Promise<void> {
+    query.whereNot('is_revoked', true)
+  }
   /**
    * ------------------------------------------------------
    * Query Scopes

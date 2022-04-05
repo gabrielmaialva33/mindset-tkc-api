@@ -1,17 +1,16 @@
-import { inject, singleton } from 'tsyringe'
+import { inject, injectable } from 'tsyringe'
 
+import { ICategory } from 'App/Modules/Question/Interfaces/CategoryInterface'
 import { IChoice } from 'App/Modules/Question/Interfaces/ChoiceInterface'
 import Choice from 'App/Modules/Question/Models/Choice'
-import ChoicesRepository from 'App/Modules/Question/Repositories/ChoicesRepository'
-import CategoriesRepository from 'App/Modules/Question/Repositories/CategoriesRepository'
 
-@singleton()
+@injectable()
 export class StoreDefaultChoicesService {
   constructor(
-    @inject(CategoriesRepository)
-    private categoriesRepository: CategoriesRepository,
-    @inject(ChoicesRepository)
-    private choicesRepository: ChoicesRepository
+    @inject('CategoriesRepository')
+    private categoriesRepository: ICategory.Repository,
+    @inject('ChoicesRepository')
+    private choicesRepository: IChoice.Repository
   ) {}
 
   public async init(ChoicesDefault: Array<IChoice.DTO.Update>, order: number): Promise<void> {

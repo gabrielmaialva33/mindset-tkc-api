@@ -1,15 +1,15 @@
-import { inject, singleton } from 'tsyringe'
+import { inject, injectable } from 'tsyringe'
 
+import { IQuestion } from 'App/Modules/Question/Interfaces/QuestionInterface'
 import Question from 'App/Modules/Question/Models/Question'
-import QuestionsRepository from 'App/Modules/Question/Repositories/QuestionsRepository'
 
 import NotFoundException from 'App/Shared/Exceptions/NotFoundException'
 
-@singleton()
+@injectable()
 export class ShowQuestionService {
   constructor(
-    @inject(QuestionsRepository)
-    private questionsRepository: QuestionsRepository
+    @inject('QuestionsRepository')
+    private questionsRepository: IQuestion.Repository
   ) {}
 
   public async init(questionId: string): Promise<Question> {

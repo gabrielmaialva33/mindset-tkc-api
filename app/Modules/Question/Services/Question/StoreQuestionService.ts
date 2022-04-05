@@ -1,14 +1,13 @@
-import { singleton, inject } from 'tsyringe'
+import { inject, injectable } from 'tsyringe'
 
 import { IQuestion } from 'App/Modules/Question/Interfaces/QuestionInterface'
-import QuestionsRepository from 'App/Modules/Question/Repositories/QuestionsRepository'
 import Question from 'App/Modules/Question/Models/Question'
 
-@singleton()
+@injectable()
 export class StoreQuestionService {
   constructor(
-    @inject(QuestionsRepository)
-    private questionsRepository: QuestionsRepository
+    @inject('QuestionsRepository')
+    private questionsRepository: IQuestion.Repository
   ) {}
 
   public async init(data: IQuestion.DTO.Store): Promise<Question> {

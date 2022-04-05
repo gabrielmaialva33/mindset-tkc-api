@@ -1,20 +1,20 @@
-import { inject, singleton } from 'tsyringe'
-
-import { IAnswer } from 'App/Modules/Question/Interfaces/AnswerInterface'
-import UsersRepository from 'App/Modules/User/Repositories/UsersRepository'
-import ChoicesRepository from 'App/Modules/Question/Repositories/ChoicesRepository'
-
-import NotFoundException from 'App/Shared/Exceptions/NotFoundException'
+import { inject, injectable } from 'tsyringe'
 import Database from '@ioc:Adonis/Lucid/Database'
 
-@singleton()
+import { IChoice } from 'App/Modules/Question/Interfaces/ChoiceInterface'
+import { IAnswer } from 'App/Modules/Question/Interfaces/AnswerInterface'
+import { IUser } from 'App/Modules/User/Interfaces/UserInterface'
+
+import NotFoundException from 'App/Shared/Exceptions/NotFoundException'
+
+@injectable()
 export class AttachAnswerService {
   constructor(
-    @inject(UsersRepository)
-    private usersRepository: UsersRepository,
+    @inject('UsersRepository')
+    private usersRepository: IUser.Repository,
 
-    @inject(ChoicesRepository)
-    public choicesRepository: ChoicesRepository
+    @inject('ChoicesRepository')
+    public choicesRepository: IChoice.Repository
   ) {}
 
   public async init({ user_id, choices }: IAnswer.DTO.Store): Promise<void> {

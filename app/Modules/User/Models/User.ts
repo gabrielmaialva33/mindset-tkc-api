@@ -3,6 +3,7 @@ import { column, beforeSave, manyToMany, ManyToMany, hasMany, HasMany } from '@i
 import Hash from '@ioc:Adonis/Core/Hash'
 
 import BaseCustomModel from 'App/Shared/Model/BaseModel'
+
 import Token from 'App/Modules/User/Models/Token'
 import Choice from 'App/Modules/Question/Models/Choice'
 import Reply from 'App/Modules/Question/Models/Reply'

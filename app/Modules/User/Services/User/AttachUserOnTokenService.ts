@@ -1,21 +1,20 @@
-import { inject, singleton } from 'tsyringe'
+import { inject, injectable } from 'tsyringe'
 
+import { IToken } from 'App/Modules/User/Interfaces/TokenInterface'
 import User from 'App/Modules/User/Models/User'
-import TokensRepository from 'App/Modules/User/Repositories/TokensRepository'
+import Token from 'App/Modules/User/Models/Token'
 
 import BadRequestException from 'App/Shared/Exceptions/BadRequestException'
 
-@singleton()
+@injectable()
 export class AttachUserOnTokenService {
   constructor(
-    @inject(TokensRepository)
-    private tokensRepository: TokensRepository
+    @inject('TokensRepository')
+    private tokensRepository: IToken.Repository
   ) {}
 
   public async init(user: User, code: string): Promise<void> {
-    const token = await this.tokensRepository.findBy('code', code, {
-      where: { is_revoked: false },
-    })
+    const token = await this.tokensRepository.findBy<typeof Token>('code', code)
 
     if (!token) throw new BadRequestException('Code not found or not available.')
 

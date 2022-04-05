@@ -1,17 +1,17 @@
-import { inject, singleton } from 'tsyringe'
+import { inject, injectable } from 'tsyringe'
 
 import { ModelType } from 'App/Shared/Interfaces/BaseInterface'
 
-import CategoriesRepository from 'App/Modules/Question/Repositories/CategoriesRepository'
+import { ICategory } from 'App/Modules/Question/Interfaces/CategoryInterface'
 import Category from 'App/Modules/Question/Models/Category'
 
 import { CategoriesDefault } from 'App/Modules/Question/Defaults/CategoriesDefault'
 
-@singleton()
+@injectable()
 export class StoreDefaultCategoriesService {
   constructor(
-    @inject(CategoriesRepository)
-    private categoriesRepository: CategoriesRepository
+    @inject('CategoriesRepository')
+    private categoriesRepository: ICategory.Repository
   ) {}
 
   public async init(): Promise<void> {

@@ -92,7 +92,7 @@ The following software must be installed:
   # Config environment system
   $ cp .env.example .env
   # Data base creation.
-  $ node ace migration:run # or docker-compose up --build 
+  $ node ace migration:run # or docker-compose up --build
   # API start
   $ node ace serve --watch # or yarn dev or npm dev
 ```

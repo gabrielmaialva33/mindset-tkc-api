@@ -25,7 +25,6 @@ export default class BaseCustomModel extends BaseModel {
       query: ModelQueryBuilderContract<typeof BaseModel>
     ]
   ) {
-    queries[0].whereNot('is_deleted', true)
-    queries[1].whereNot('is_deleted', true)
+    for (const query of queries) query.whereNot('is_deleted', true)
   }
 }

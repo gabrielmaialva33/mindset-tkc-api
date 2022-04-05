@@ -1,16 +1,15 @@
-import { inject, singleton } from 'tsyringe'
+import { inject, injectable } from 'tsyringe'
 
 import { ICategory } from 'App/Modules/Question/Interfaces/CategoryInterface'
-import CategoriesRepository from 'App/Modules/Question/Repositories/CategoriesRepository'
 import Category from 'App/Modules/Question/Models/Category'
 
 import NotFoundException from 'App/Shared/Exceptions/NotFoundException'
 
-@singleton()
+@injectable()
 export class UpdateCategoryService {
   constructor(
-    @inject(CategoriesRepository)
-    private categoriesRepository: CategoriesRepository
+    @inject('CategoriesRepository')
+    private categoriesRepository: ICategory.Repository
   ) {}
 
   public async init(categoryId: string, data: ICategory.DTO.Update): Promise<Category> {

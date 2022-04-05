@@ -47,7 +47,6 @@
 - **[TSyringe](https://github.com/microsoft/tsyringe/)**
 - **[Docker](https://www.docker.com/)**
 
-
 <br>
 
 ## :wrench: Ferramentas
@@ -102,7 +101,6 @@ Os seguintes softwares devem estar instalados:
 ## :twisted_rightwards_arrows: Routes
 
 Arquivo de rotas [Donwload](https://raw.githubusercontent.com/gabrielmaialva33/mindset-tkc-api/master/.github/assets/insomnia/Insomnia.json.zip)
-
 
 ## :memo: Licença
 

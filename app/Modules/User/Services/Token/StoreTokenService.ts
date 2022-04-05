@@ -1,22 +1,21 @@
-import { inject, singleton } from 'tsyringe'
+import { inject, injectable } from 'tsyringe'
 import { DateTime } from 'luxon'
 import validator from 'validator'
 import argon2 from '@phc/argon2'
 
 import { IToken } from 'App/Modules/User/Interfaces/TokenInterface'
 import Token from 'App/Modules/User/Models/Token'
-import TokensRepository from 'App/Modules/User/Repositories/TokensRepository'
 
 import isBefore = validator.isBefore
 import Store = IToken.DTO.Store
 
 import BadRequestException from 'App/Shared/Exceptions/BadRequestException'
 
-@singleton()
+@injectable()
 export class StoreTokenService {
   constructor(
-    @inject(TokensRepository)
-    private tokensRepository: TokensRepository
+    @inject('TokensRepository')
+    private tokensRepository: IToken.Repository
   ) {}
 
   public async init(data: Store): Promise<Token> {

@@ -1,14 +1,15 @@
-import { inject, singleton } from 'tsyringe'
+import { inject, injectable } from 'tsyringe'
 
-import { PaginateContract } from 'App/Shared/Interfaces/BaseInterface'
-import TokensRepository from 'App/Modules/User/Repositories/TokensRepository'
+import { IToken } from 'App/Modules/User/Interfaces/TokenInterface'
 import Token from 'App/Modules/User/Models/Token'
 
-@singleton()
+import { PaginateContract } from 'App/Shared/Interfaces/BaseInterface'
+
+@injectable()
 export class IndexTokenService {
   constructor(
-    @inject(TokensRepository)
-    private tokensRepository: TokensRepository
+    @inject('TokensRepository')
+    private tokensRepository: IToken.Repository
   ) {}
 
   public async init({ page, perPage }: PaginateContract<typeof Token>, closer: string) {
