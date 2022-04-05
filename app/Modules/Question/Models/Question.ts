@@ -17,7 +17,7 @@ export default class Question extends BaseCustomModel {
   @column({ isPrimary: true })
   public id: string
 
-  @column()
+  @column({ serializeAs: null })
   public category_id: string
 
   @column()

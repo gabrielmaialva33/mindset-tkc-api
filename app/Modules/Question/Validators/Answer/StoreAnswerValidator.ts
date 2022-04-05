@@ -12,13 +12,24 @@ export default class StoreAnswerValidator {
         whereNot: { is_deleted: true },
       }),
     ]),
-    choice_id: schema.string({ escape: true, trim: true }, [
-      rules.exists({
-        table: 'choices',
-        column: 'id',
-        whereNot: { is_deleted: true },
-      }),
-    ]),
+    choices: schema.array([]).members(
+      schema.object([]).members({
+        question_id: schema.string({}, [
+          rules.exists({
+            table: 'questions',
+            column: 'id',
+            whereNot: { is_deleted: true },
+          }),
+        ]),
+        choice_id: schema.string({ escape: true, trim: true }, [
+          rules.exists({
+            table: 'choices',
+            column: 'id',
+            whereNot: { is_deleted: true },
+          }),
+        ]),
+      })
+    ),
   })
 
   public messages = {}

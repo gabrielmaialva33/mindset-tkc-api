@@ -21,14 +21,14 @@ export default interface BaseInterface<Model extends typeof BaseCustomModel>
     values: Partial<ModelAttributes<InstanceType<T>>>
   ): Promise<InstanceType<T>>
 
-  update<T extends BaseCustomModel>(this: T, model: T): Promise<T>
+  update<T extends BaseCustomModel>(model: T): Promise<T>
 }
 
 /**
  * Helpers
  */
 export interface BaseHelpers<Model extends typeof BaseCustomModel> {
-  findBy<T extends Model>(this: T, key: string, value: any): Promise<null | InstanceType<T>>
+  findBy<T extends Model>(key: string, value: any): Promise<null | InstanceType<T>>
 
   firstOrCreate<T extends Model>(
     searchPayload: ModelType<T>,

@@ -16,7 +16,7 @@ export default class Choice extends BaseCustomModel {
   @column({ isPrimary: true })
   public id: string
 
-  @column()
+  @column({ serializeAs: null })
   public question_id: string
 
   @column()

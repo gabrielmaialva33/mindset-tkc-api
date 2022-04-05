@@ -16,13 +16,19 @@ export class ShowCategoryService {
     const category = await this.categoriesRepository.findBy<typeof Category>('id', categoryId)
     if (!category) throw new NotFoundException('Category not found or not available.')
 
-    await category.load('questions', (questionsQuery) =>
+    /**
+     * load category relationships
+     */
+    await category.load('questions', (questionsQuery) => {
       questionsQuery
         .whereNot({
           is_deleted: true,
         })
+        .preload('choices', (choicesQuery) =>
+          choicesQuery.whereNot({ is_deleted: true }).orderBy('order')
+        )
         .orderBy('order')
-    )
+    })
 
     return category
   }

@@ -18,6 +18,14 @@ export default class Answers extends BaseSchema {
           .onUpdate('CASCADE')
 
         table
+          .uuid('question_id')
+          .references('id')
+          .inTable('questions')
+          .notNullable()
+          .onDelete('CASCADE')
+          .onUpdate('CASCADE')
+
+        table
           .uuid('choice_id')
           .references('id')
           .inTable('choices')

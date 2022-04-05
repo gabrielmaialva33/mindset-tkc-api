@@ -5,6 +5,7 @@ import UsersRepository from 'App/Modules/User/Repositories/UsersRepository'
 import ChoicesRepository from 'App/Modules/Question/Repositories/ChoicesRepository'
 
 import NotFoundException from 'App/Shared/Exceptions/NotFoundException'
+import Database from '@ioc:Adonis/Lucid/Database'
 
 @singleton()
 export class AttachAnswerService {
@@ -16,13 +17,19 @@ export class AttachAnswerService {
     public choicesRepository: ChoicesRepository
   ) {}
 
-  public async init({ user_id, choice_id }: IAnswer.DTO.Store): Promise<void> {
+  public async init({ user_id, choices }: IAnswer.DTO.Store): Promise<void> {
     const user = await this.usersRepository.findBy('id', user_id)
     if (!user) throw new NotFoundException('User not found or not available.')
 
-    const choice = await this.choicesRepository.findBy('id', choice_id)
-    if (!choice) throw new NotFoundException('Choice not found or not available.')
+    for (let i = 0; i < choices.length; i++) {
+      const choice = await this.choicesRepository.findBy('id', choices[i].choice_id)
+      if (!choice) throw new NotFoundException('Choice not found or not available.')
 
-    return user.related('choices').attach([choice.id])
+      await Database.insertQuery().table('answers').insert({
+        user_id: user_id,
+        question_id: choices[i].question_id,
+        choice_id: choices[i].choice_id,
+      })
+    }
   }
 }
