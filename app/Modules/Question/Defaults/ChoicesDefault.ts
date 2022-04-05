@@ -3,26 +3,31 @@ import { IChoice } from 'App/Modules/Question/Interfaces/ChoiceInterface'
 export const LikertChoicesDefault: Array<IChoice.DTO.Update> = [
   {
     sentence: 'NUNCA',
+    label: '0',
     value: 0,
     order: 1,
   },
   {
     sentence: 'QUASE NUNCA',
+    label: '1',
     value: 1,
     order: 2,
   },
   {
     sentence: 'ALGUMAS VEZES',
+    label: '2',
     value: 2,
     order: 3,
   },
   {
     sentence: 'QUASE SEMPRE',
+    label: '3',
     value: 3,
     order: 4,
   },
   {
     sentence: 'SEMPRE',
+    label: '4',
     value: 4,
     order: 5,
   },

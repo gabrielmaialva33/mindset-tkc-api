@@ -19,8 +19,11 @@ export default class Choice extends BaseCustomModel {
   @column()
   public question_id: string
 
-  @column({ serializeAs: 'label' })
+  @column()
   public sentence: string
+
+  @column()
+  public label: string
 
   @column()
   public value: number

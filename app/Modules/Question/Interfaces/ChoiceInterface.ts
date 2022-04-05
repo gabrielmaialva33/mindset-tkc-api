@@ -8,12 +8,14 @@ export namespace IChoice {
     export interface Store {
       question_id: string
       sentence: string
+      label: string
       value: number
       order?: number
     }
 
     export interface Update {
       sentence?: string
+      label?: string
       value?: number
       order?: number
     }

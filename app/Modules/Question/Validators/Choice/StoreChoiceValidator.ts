@@ -13,6 +13,7 @@ export default class StoreChoiceValidator {
       }),
     ]),
     sentence: schema.string({ escape: true, trim: true }, []),
+    label: schema.string({ escape: true, trim: true }, []),
     value: schema.number([rules.unsigned()]),
     order: schema.number.optional([rules.unsigned()]),
   })

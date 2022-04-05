@@ -24,6 +24,7 @@ export class StoreDefaultChoicesService {
           await this.choicesRepository.store<typeof Choice>({
             question_id: questions[i].id,
             sentence: ChoicesDefault[j].sentence,
+            label: ChoicesDefault[j].label,
             value: ChoicesDefault[j].value,
             order: ChoicesDefault[j].order,
           })
