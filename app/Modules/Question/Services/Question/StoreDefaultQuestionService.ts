@@ -17,14 +17,11 @@ export class StoreDefaultQuestionService {
   public async init(QuestionsDefault: Array<DTO.Edit>, order: number): Promise<void> {
     let category = await this.categoriesRepository.findBy('order', order)
     if (category)
-      for (let index = 0; index < QuestionsDefault.length; index++)
-        await this.questionsRepository.findOrStore(
-          { sentence: QuestionsDefault[index].sentence },
-          {
-            category_id: category.id,
-            sentence: QuestionsDefault[index].sentence,
-            order: QuestionsDefault[index].order,
-          }
-        )
+      for (let i = 0; i < QuestionsDefault.length; i++)
+        await this.questionsRepository.store({
+          category_id: category.id,
+          sentence: QuestionsDefault[i].sentence,
+          order: QuestionsDefault[i].order,
+        })
   }
 }
