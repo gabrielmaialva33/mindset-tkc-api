@@ -1,57 +1,107 @@
-import { LucidRow, ModelAttributes, ModelPaginatorContract } from '@ioc:Adonis/Lucid/Orm'
+import {
+  ExtractScopes,
+  LucidModel,
+  LucidRow,
+  ModelAttributes,
+  ModelPaginatorContract,
+} from '@ioc:Adonis/Lucid/Orm'
 import { SimplePaginatorContract } from '@ioc:Adonis/Lucid/Database'
 
-import BaseCustomModel from 'App/Shared/Model/BaseModel'
-
-export default interface BaseInterface<Model extends typeof BaseCustomModel>
-  extends BaseHelpers<Model> {
+/**
+ * ------------------------------------------------------
+ * Base Repository Interface
+ * ------------------------------------------------------
+ * - This a base interface methods for model repositories
+ */
+export default interface BaseInterface<Model extends LucidModel> extends Helpers<Model> {
   /**
-   * Repository
+   * Fetch all rows with clauses
    */
-  index<T extends Model>({
-    page,
-    perPage,
-    closers,
-    order,
-  }: PaginateContract<T>): Promise<
-    ModelPaginatorContract<LucidRow & InstanceType<T>> | SimplePaginatorContract<InstanceType<T>>
-  >
+  list(params?: ContextParams<Model>): Promise<Array<InstanceType<Model>>>
 
-  store<T extends Model>(
-    values: Partial<ModelAttributes<InstanceType<T>>>
-  ): Promise<InstanceType<T>>
+  /**
+   * Create model and return its instance back
+   */
+  store(values: Partial<ModelAttributes<InstanceType<Model>>>): Promise<InstanceType<Model>>
 
-  update<T extends BaseCustomModel>(model: T): Promise<T>
+  /**
+   * Create many of model instances
+   */
+  storeMany(values: Array<ModelType<Model>>): Promise<Array<InstanceType<Model>>>
+
+  /**
+   * Save or update model instance
+   */
+  save<T extends InstanceType<Model>>(model: T): Promise<T>
 }
 
 /**
- * Helpers
+ * ------------------------------------------------------
+ * Helpers Interface
+ * ------------------------------------------------------
+ * - This a base helpers methods for model repositories
  */
-export interface BaseHelpers<Model extends typeof BaseCustomModel> {
-  findBy<T extends Model>(key: string, value: any): Promise<null | InstanceType<T>>
+interface Helpers<Model extends LucidModel> {
+  /**
+   * Fetch all rows with clauses and pagination
+   */
+  listWithPagination(params: PaginateParams<Model>): Promise<PaginateContractType<Model>>
 
-  firstOrCreate<T extends Model>(
-    searchPayload: ModelType<T>,
-    savePayload: ModelType<T>
-  ): Promise<InstanceType<T>>
+  /**
+   * Find one using a key-value pair
+   */
+  findBy(
+    key: string,
+    value: any,
+    params?: ContextParams<Model>
+  ): Promise<InstanceType<Model> | null>
+
+  /**
+   * Returns the first row or save it to the database
+   */
+  findOrStore(
+    searchPayload: ModelType<Model>,
+    savePayload: ModelType<Model>
+  ): Promise<InstanceType<Model>>
+
+  /**
+   * Get plucked values with given params
+   * and return a resolved any array promise
+   */
+  pluckBy(column: string, closers?: ModelClause<Model>): Promise<any[]>
 }
 
-export interface ModelClause<Model extends typeof BaseCustomModel> {
-  where: ModelType<Model>
+/**
+ * Types
+ */
+export type ModelType<Model extends LucidModel> = Partial<ModelAttributes<InstanceType<Model>>>
+
+export type ModelKeysType<Model extends LucidModel> = keyof ModelType<Model>
+
+export type PaginateContractType<Model extends LucidModel> =
+  | ModelPaginatorContract<LucidRow & InstanceType<Model>>
+  | SimplePaginatorContract<InstanceType<Model>>
+
+/**
+ * Interfaces
+ */
+export interface ContextParams<Model extends LucidModel> {
+  clauses?: ModelClause<Model>
+  orders?: Array<OrderBy<Model>>
+  scopes?: <Scopes extends ExtractScopes<Model>>(scopes: Scopes) => void
 }
 
-export interface OrderBy {
-  column: string
-  direction?: 'asc' | 'desc'
-}
-
-export type ModelType<Model extends typeof BaseCustomModel> = Partial<
-  ModelAttributes<InstanceType<Model>>
->
-
-export interface PaginateContract<Model extends typeof BaseCustomModel> {
+export interface PaginateParams<Model extends LucidModel> extends ContextParams<Model> {
   page: number
   perPage: number
-  closers?: ModelClause<Model>
-  order?: OrderBy
+}
+
+export interface ModelClause<Model extends LucidModel> {
+  where?: ModelType<Model>
+  like?: { column: ModelKeysType<Model>; match: string }
+}
+
+export interface OrderBy<Model extends LucidModel> {
+  column: ModelKeysType<Model>
+  direction?: 'asc' | 'desc'
 }

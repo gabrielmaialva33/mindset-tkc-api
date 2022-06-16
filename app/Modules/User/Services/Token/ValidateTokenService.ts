@@ -2,7 +2,6 @@ import { inject, injectable } from 'tsyringe'
 import argon2 from '@phc/argon2'
 
 import { IToken } from 'App/Modules/User/Interfaces/TokenInterface'
-import Token from 'App/Modules/User/Models/Token'
 
 import NotFoundException from 'App/Shared/Exceptions/NotFoundException'
 
@@ -14,7 +13,7 @@ export class ValidateTokenService {
   ) {}
 
   public async init(code: string): Promise<boolean> {
-    const token = await this.tokensRepository.findBy<typeof Token>('code', code)
+    const token = await this.tokensRepository.findBy('code', code)
     if (!token) throw new NotFoundException('Code not found or not available.')
 
     return argon2.verify(token.hash, code)

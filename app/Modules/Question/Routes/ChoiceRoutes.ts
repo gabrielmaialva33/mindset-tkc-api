@@ -4,6 +4,6 @@ import ChoicesController from 'App/Modules/Question/Controllers/Http/ChoicesCont
 
 Route.group(() => {
   Route.post('/', new ChoicesController().store).as('choice.store')
-  Route.put('/:id', new ChoicesController().update).as('choice.update')
-  Route.delete('/:id', new ChoicesController().destroy).as('choice.destroy')
+  Route.put('/:id', new ChoicesController().edit).as('choice.edit')
+  Route.delete('/:id', new ChoicesController().delete).as('choice.delete')
 }).prefix('choices')

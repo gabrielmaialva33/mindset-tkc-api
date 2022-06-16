@@ -1,4 +1,4 @@
-export * from './IndexTokenService'
+export * from './ListTokenService'
 export * from './StoreTokenService'
 
 export * from './GenerateTokenService'

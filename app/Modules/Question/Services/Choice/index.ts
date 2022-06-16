@@ -1,5 +1,5 @@
 export * from './StoreChoiceService'
-export * from './UpdateChoiceService'
-export * from './DestroyChoiceService'
+export * from './EditChoiceService'
+export * from './DeleteChoiceService'
 
 export * from './StoreDefaultChoicesService'

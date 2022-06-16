@@ -6,17 +6,19 @@ import Choice from 'App/Modules/Question/Models/Choice'
 import NotFoundException from 'App/Shared/Exceptions/NotFoundException'
 
 @injectable()
-export class DestroyChoiceService {
+export class EditChoiceService {
   constructor(
     @inject('ChoicesRepository')
     public choicesRepository: IChoice.Repository
   ) {}
 
-  public async init(choiceId): Promise<void> {
-    const choice = await this.choicesRepository.findBy<typeof Choice>('id', choiceId)
+  public async init(choiceId: string, data: IChoice.DTO.Update): Promise<Choice> {
+    const choice = await this.choicesRepository.findBy('id', choiceId)
     if (!choice) throw new NotFoundException('Choice not found or not available.')
 
-    choice.merge({ is_deleted: true })
-    await this.choicesRepository.update<Choice>(choice)
+    choice.merge(data)
+    await this.choicesRepository.save(choice)
+
+    return choice
   }
 }

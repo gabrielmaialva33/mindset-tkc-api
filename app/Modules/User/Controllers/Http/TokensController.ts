@@ -2,7 +2,7 @@ import { container } from 'tsyringe'
 import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 
 import {
-  IndexTokenService,
+  ListTokenService,
   StoreTokenService,
   GenerateTokenService,
   ValidateTokenService,
@@ -12,13 +12,13 @@ import StoreTokenValidator from 'App/Modules/User/Validators/Token/StoreTokenVal
 import BadRequestException from 'App/Shared/Exceptions/BadRequestException'
 
 export default class TokensController {
-  public async index({ request, response }: HttpContextContract): Promise<void> {
+  public async list({ request, response }: HttpContextContract): Promise<void> {
     const page = request.input('page', 1)
     const perPage = request.input('perPage', 20)
     const closer = request.input('closer', '')
 
-    const indexService = container.resolve(IndexTokenService)
-    const tokens = await indexService.init({ page, perPage }, closer)
+    const listTokens = container.resolve(ListTokenService)
+    const tokens = await listTokens.init({ page, perPage }, closer)
 
     return response.json(tokens)
   }
@@ -26,8 +26,8 @@ export default class TokensController {
   public async store({ request, response }: HttpContextContract): Promise<void> {
     const tokenDTO = await request.validate(StoreTokenValidator)
 
-    const storeService = container.resolve(StoreTokenService)
-    const token = await storeService.init(tokenDTO)
+    const storeToken = container.resolve(StoreTokenService)
+    const token = await storeToken.init(tokenDTO)
 
     return response.json(token)
   }
@@ -51,8 +51,8 @@ export default class TokensController {
     const { code } = params
     if (!code) throw new BadRequestException('Por favor passe um code a ser validado')
 
-    const validateService = container.resolve(ValidateTokenService)
-    await validateService.init(code)
+    const validateToken = container.resolve(ValidateTokenService)
+    await validateToken.init(code)
 
     return response.json({
       message: 'Code está válido.',

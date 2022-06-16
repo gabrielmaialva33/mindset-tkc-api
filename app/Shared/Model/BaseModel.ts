@@ -1,30 +1,26 @@
 import {
-  BaseModel,
+  BaseModel as BaseAdonisModel,
   beforeFetch,
   beforeFind,
   beforePaginate,
   ModelQueryBuilderContract,
 } from '@ioc:Adonis/Lucid/Orm'
 
-export default class BaseCustomModel extends BaseModel {
+export default class BaseModel extends BaseAdonisModel {
   /**
    * Hooks
    */
   @beforeFind()
   @beforeFetch()
-  public static async ignoreDeleted(
-    query: ModelQueryBuilderContract<typeof BaseModel>
-  ): Promise<void> {
-    query.whereNot('is_deleted', true)
+  public static async ignoreDeleted(query: ModelQueryBuilderContract<any>): Promise<void> {
+    if (query.model.$getColumn('is_deleted')) query.whereNot('is_deleted', true)
   }
 
   @beforePaginate()
   public static ignoreDeletedPaginate(
-    queries: [
-      countQuery: ModelQueryBuilderContract<typeof BaseModel>,
-      query: ModelQueryBuilderContract<typeof BaseModel>
-    ]
+    queries: [countQuery: ModelQueryBuilderContract<any>, query: ModelQueryBuilderContract<any>]
   ) {
-    for (const query of queries) query.whereNot('is_deleted', true)
+    for (const query of queries)
+      if (query.model.$getColumn('is_deleted')) query.whereNot('is_deleted', true)
   }
 }

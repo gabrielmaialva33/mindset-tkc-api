@@ -11,6 +11,6 @@ export class StoreChoiceService {
   ) {}
 
   public async init(data: IChoice.DTO.Store): Promise<Choice> {
-    return this.choicesRepository.store<typeof Choice>(data)
+    return this.choicesRepository.store(data)
   }
 }

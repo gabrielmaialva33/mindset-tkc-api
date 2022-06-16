@@ -1,6 +1,6 @@
-export * from './ShowQuestionService'
+export * from './GetQuestionService'
 export * from './StoreQuestionService'
-export * from './UpdateQuestionService'
-export * from './DestroyQuestionService'
+export * from './EditQuestionService'
+export * from './DeleteQuestionService'
 
 export * from './StoreDefaultQuestionService'

@@ -17,11 +17,7 @@ export class StoreDefaultCategoriesService {
   public async init(): Promise<void> {
     for (let index = 0; index < CategoriesDefault.length; index++) {
       const category: ModelType<typeof Category> = CategoriesDefault[index]
-
-      await this.categoriesRepository.firstOrCreate<typeof Category>(
-        { name: category.name },
-        category
-      )
+      await this.categoriesRepository.findOrStore({ name: category.name }, category)
     }
   }
 }

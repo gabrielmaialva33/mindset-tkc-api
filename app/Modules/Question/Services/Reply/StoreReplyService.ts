@@ -13,6 +13,6 @@ export class StoreReplyService {
   ) {}
 
   public async init(data: DTO.Store): Promise<Reply> {
-    return this.repliesRepository.store<typeof Reply>(data)
+    return this.repliesRepository.store(data)
   }
 }

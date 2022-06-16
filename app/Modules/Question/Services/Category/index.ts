@@ -1,7 +1,7 @@
-export * from './IndexCategoryService'
-export * from './ShowCategoryService'
+export * from './ListCategoryService'
+export * from './GetCategoryService'
 export * from './StoreCategoryService'
-export * from './UpdateCategoryService'
-export * from './DestroyCategoryService'
+export * from './EditCategoryService'
+export * from './DeleteCategoryService'
 
 export * from './StoreDefaultCategoriesService'

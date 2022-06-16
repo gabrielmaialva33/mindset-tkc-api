@@ -3,5 +3,5 @@ import RepliesController from 'App/Modules/Question/Controllers/Http/RepliesCont
 
 Route.group(() => {
   Route.post('/', new RepliesController().store).as('reply.store')
-  Route.put('/:id', new RepliesController().store).as('reply.update')
+  Route.put('/:id', new RepliesController().edit).as('reply.edit')
 }).prefix('replies')

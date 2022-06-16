@@ -8,8 +8,8 @@ export default class UsersController {
   public async store({ request, response }: HttpContextContract): Promise<void> {
     const data = await request.validate(StoreUserValidator)
 
-    const storeService = container.resolve(StoreUserService)
-    const user = await storeService.init(data)
+    const storeUser = container.resolve(StoreUserService)
+    const user = await storeUser.init(data)
 
     return response.json(user)
   }

@@ -8,18 +8,17 @@ import DTO = IReply.DTO
 import NotFoundException from 'App/Shared/Exceptions/NotFoundException'
 
 @injectable()
-export class UpdateReplyService {
+export class EditReplyService {
   constructor(
     @inject('RepliesRepository')
     private repliesRepository: IReply.Repository
   ) {}
 
   public async init(replyId: string, data: DTO.Update): Promise<Reply> {
-    const reply = await this.repliesRepository.findBy<typeof Reply>('id', replyId)
+    const reply = await this.repliesRepository.findBy('id', replyId)
     if (!reply) throw new NotFoundException('Question not found or not available.')
 
     reply.merge(data)
-
-    return this.repliesRepository.store<typeof Reply>(data)
+    return this.repliesRepository.store(data)
   }
 }

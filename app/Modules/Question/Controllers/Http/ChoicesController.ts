@@ -3,39 +3,39 @@ import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 
 import {
   StoreChoiceService,
-  UpdateChoiceService,
-  DestroyChoiceService,
+  EditChoiceService,
+  DeleteChoiceService,
 } from 'App/Modules/Question/Services/Choice'
 
 import StoreChoiceValidator from 'App/Modules/Question/Validators/Choice/StoreChoiceValidator'
-import UpdateChoiceValidator from 'App/Modules/Question/Validators/Choice/UpdateChoiceValidator'
+import EditChoiceValidator from 'App/Modules/Question/Validators/Choice/EditChoiceValidator'
 
 export default class ChoicesController {
   public async store({ request, response }: HttpContextContract): Promise<void> {
     const choiceDTO = await request.validate(StoreChoiceValidator)
 
-    const storeService = container.resolve(StoreChoiceService)
-    const choice = await storeService.init(choiceDTO)
+    const storeChoice = container.resolve(StoreChoiceService)
+    const choice = await storeChoice.init(choiceDTO)
 
     return response.json(choice)
   }
 
-  public async update({ request, params, response }: HttpContextContract): Promise<void> {
+  public async edit({ request, params, response }: HttpContextContract): Promise<void> {
     const { id: choiceId } = params
-    const choiceDTO = await request.validate(UpdateChoiceValidator)
+    const choiceDTO = await request.validate(EditChoiceValidator)
 
-    const updateService = container.resolve(UpdateChoiceService)
-    const choice = await updateService.init(choiceId, choiceDTO)
+    const editChoice = container.resolve(EditChoiceService)
+    const choice = await editChoice.init(choiceId, choiceDTO)
 
     return response.json(choice)
   }
 
-  public async destroy({ params, response }: HttpContextContract): Promise<void> {
+  public async delete({ params, response }: HttpContextContract): Promise<void> {
     const { id: choiceId } = params
 
-    const destroyService = container.resolve(DestroyChoiceService)
-    await destroyService.init(choiceId)
+    const deleteChoice = container.resolve(DeleteChoiceService)
+    await deleteChoice.init(choiceId)
 
-    return response.json({ message: 'Choice destroy successfully' })
+    return response.json({ message: 'Choice destroy successfully.' })
   }
 }

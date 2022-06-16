@@ -23,10 +23,9 @@ export class StoreUserService {
 
   public async init({ name, email, password, code }: IUser.DTO.Store): Promise<User> {
     const isValid = await this.validate.init(code)
-    if (!isValid) throw new BadRequestException('Invalid code.', 401)
+    if (!isValid) throw new BadRequestException('Token invalid.', 401)
 
-    const user = await this.usersRepository.store<typeof User>({ name, email, password })
-
+    const user = await this.usersRepository.store({ name, email, password })
     await this.attach.init(user, code)
 
     await user.refresh()

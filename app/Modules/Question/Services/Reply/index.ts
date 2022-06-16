@@ -1,2 +1,2 @@
 export * from './StoreReplyService'
-export * from './UpdateReplyService'
+export * from './EditReplyService'

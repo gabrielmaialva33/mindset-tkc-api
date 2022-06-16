@@ -6,20 +6,20 @@ import Category from 'App/Modules/Question/Models/Category'
 import NotFoundException from 'App/Shared/Exceptions/NotFoundException'
 
 @injectable()
-export class ShowCategoryService {
+export class GetCategoryService {
   constructor(
     @inject('CategoriesRepository')
     private categoriesRepository: ICategory.Repository
   ) {}
 
   public async init(categoryId: string): Promise<Category> {
-    const category = await this.categoriesRepository.findBy<typeof Category>('id', categoryId)
+    const category = await this.categoriesRepository.findBy('id', categoryId)
     if (!category) throw new NotFoundException('Category not found or not available.')
 
     /**
      * load category relationships
      */
-    await category.load('questions', (questionsQuery) => {
+    await category.load('questions', (questionsQuery) =>
       questionsQuery
         .whereNot({
           is_deleted: true,
@@ -28,7 +28,7 @@ export class ShowCategoryService {
           choicesQuery.whereNot({ is_deleted: true }).orderBy('order')
         )
         .orderBy('order')
-    })
+    )
 
     return category
   }

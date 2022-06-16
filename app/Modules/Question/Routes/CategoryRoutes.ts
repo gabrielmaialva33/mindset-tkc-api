@@ -3,9 +3,9 @@ import Route from '@ioc:Adonis/Core/Route'
 import CategoriesController from 'App/Modules/Question/Controllers/Http/CategoriesController'
 
 Route.group(() => {
-  Route.get('/', new CategoriesController().index).as('category.index')
-  Route.get('/:id', new CategoriesController().show).as('category.show')
+  Route.get('/', new CategoriesController().list).as('category.list')
+  Route.get('/:id', new CategoriesController().get).as('category.get')
   Route.post('/', new CategoriesController().store).as('category.store')
-  Route.put('/:id', new CategoriesController().update).as('category.update')
-  Route.delete('/:id', new CategoriesController().destroy).as('category.destroy')
+  Route.put('/:id', new CategoriesController().edit).as('category.edit')
+  Route.delete('/:id', new CategoriesController().delete).as('category.delete')
 }).prefix('/categories')

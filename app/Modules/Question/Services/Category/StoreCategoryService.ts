@@ -11,6 +11,6 @@ export class StoreCategoryService {
   ) {}
 
   public async init(data: ICategory.DTO.Store): Promise<Category> {
-    return this.categoriesRepository.store<typeof Category>(data)
+    return this.categoriesRepository.store(data)
   }
 }

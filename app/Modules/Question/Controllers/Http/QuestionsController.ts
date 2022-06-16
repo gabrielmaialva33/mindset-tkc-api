@@ -2,21 +2,21 @@ import { container } from 'tsyringe'
 import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 
 import {
-  ShowQuestionService,
+  GetQuestionService,
   StoreQuestionService,
-  UpdateQuestionService,
-  DestroyQuestionService,
+  EditQuestionService,
+  DeleteQuestionService,
 } from 'App/Modules/Question/Services/Question'
 
 import StoreQuestionValidator from 'App/Modules/Question/Validators/Question/StoreQuestionValidator'
-import UpdateQuestionValidator from 'App/Modules/Question/Validators/Question/UpdateQuestionValidator'
+import EditQuestionValidator from 'App/Modules/Question/Validators/Question/EditQuestionValidator'
 
 export default class QuestionsController {
-  public async show({ params, response }: HttpContextContract): Promise<void> {
+  public async get({ params, response }: HttpContextContract): Promise<void> {
     const { id: questionId } = params
 
-    const showService = container.resolve(ShowQuestionService)
-    const question = await showService.init(questionId)
+    const getQuestion = container.resolve(GetQuestionService)
+    const question = await getQuestion.init(questionId)
 
     return response.json(question)
   }
@@ -24,28 +24,28 @@ export default class QuestionsController {
   public async store({ request, response }: HttpContextContract): Promise<void> {
     const questionDTO = await request.validate(StoreQuestionValidator)
 
-    const storeService = container.resolve(StoreQuestionService)
-    const question = await storeService.init(questionDTO)
+    const storeQuestion = container.resolve(StoreQuestionService)
+    const question = await storeQuestion.init(questionDTO)
 
     return response.json(question)
   }
 
-  public async update({ request, params, response }: HttpContextContract): Promise<void> {
+  public async edit({ request, params, response }: HttpContextContract): Promise<void> {
     const { id: questionId } = params
-    const questionDTO = await request.validate(UpdateQuestionValidator)
+    const questionDTO = await request.validate(EditQuestionValidator)
 
-    const updateService = container.resolve(UpdateQuestionService)
-    const question = await updateService.init(questionId, questionDTO)
+    const editQuestion = container.resolve(EditQuestionService)
+    const question = await editQuestion.init(questionId, questionDTO)
 
     return response.json(question)
   }
 
-  public async destroy({ params, response }: HttpContextContract): Promise<void> {
+  public async delete({ params, response }: HttpContextContract): Promise<void> {
     const { id: questionId } = params
 
-    const destroyService = container.resolve(DestroyQuestionService)
-    await destroyService.init(questionId)
+    const deleteQuestion = container.resolve(DeleteQuestionService)
+    await deleteQuestion.init(questionId)
 
-    return response.json({ message: 'Question deleted successfully' })
+    return response.json({ message: 'Question deleted successfully.' })
   }
 }

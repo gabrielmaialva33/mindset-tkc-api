@@ -1,19 +1,21 @@
 import { rules, schema } from '@ioc:Adonis/Core/Validator'
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 
-export default class UpdateChoiceValidator {
+export default class EditQuestionValidator {
   constructor(protected ctx: HttpContextContract) {}
 
   public schema = schema.create({
-    question_id: schema.string.optional({ escape: true, trim: true }, [
+    category_id: schema.string.optional({ escape: true, trim: true }, [
       rules.exists({
-        table: 'questions',
+        table: 'categories',
         column: 'id',
         whereNot: { is_deleted: true },
       }),
     ]),
     sentence: schema.string.optional({ escape: true, trim: true }, []),
-    value: schema.number.optional([rules.unsigned()]),
+    type: schema.enum.optional(['common', 'multiple'] as const),
+    min_choice: schema.number.optional([rules.requiredWhen('type', '=', 'multiple')]),
+    max_choice: schema.number.optional([rules.requiredWhen('type', '=', 'multiple')]),
     order: schema.number.optional([rules.unsigned()]),
   })
 
