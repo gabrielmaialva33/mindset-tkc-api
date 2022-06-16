@@ -13,7 +13,7 @@ export default class AnswersController {
     const attachAnswer = container.resolve(AttachAnswerService)
     await attachAnswer.init(answerDto)
 
-    return response.json({ message: 'Attached answer successfully' })
+    return response.json({ message: 'Attached answer successfully.' })
   }
 
   public async detach({ request, response }: HttpContextContract): Promise<void> {
@@ -22,6 +22,6 @@ export default class AnswersController {
     const detachAnswer = container.resolve(DetachAnswerService)
     await detachAnswer.init(answerDto)
 
-    return response.json({ message: 'Detached answer successfully' })
+    return response.json({ message: 'Detached answer successfully.' })
   }
 }
