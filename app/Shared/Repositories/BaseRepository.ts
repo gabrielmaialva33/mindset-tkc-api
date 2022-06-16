@@ -96,7 +96,7 @@ export default class BaseRepository<Model extends LucidModel> implements IBaseRe
 
           if (key === 'like') {
             const { column, match } = value
-            if (column && match) model.where(column, 'LIKE', `%${match}%`)
+            if (column && match) model.where(column, 'ILIKE', `%${match}%`)
           }
         })
 

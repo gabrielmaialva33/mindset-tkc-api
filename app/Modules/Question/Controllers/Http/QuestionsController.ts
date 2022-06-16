@@ -6,12 +6,21 @@ import {
   StoreQuestionService,
   EditQuestionService,
   DeleteQuestionService,
+  ListQuestionService,
 } from 'App/Modules/Question/Services/Question'
 
 import StoreQuestionValidator from 'App/Modules/Question/Validators/Question/StoreQuestionValidator'
 import EditQuestionValidator from 'App/Modules/Question/Validators/Question/EditQuestionValidator'
 
 export default class QuestionsController {
+  public async list({ params, response }: HttpContextContract): Promise<void> {
+    const { name } = params
+    const listQuestions = container.resolve(ListQuestionService)
+    const questions = await listQuestions.init(name)
+
+    return response.json(questions)
+  }
+
   public async get({ params, response }: HttpContextContract): Promise<void> {
     const { id: questionId } = params
 

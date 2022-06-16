@@ -57,14 +57,20 @@ export default class Category extends BaseCustomModel {
    */
   @afterFind()
   public static async loadRelationsOnGet(category: Category): Promise<void> {
-    await category.load('questions', (builder) => builder.orderBy('order'))
+    await category.load('questions', (builder) => {
+      builder.preload('choices')
+      builder.orderBy('order')
+    })
   }
 
   @afterFetch()
   @afterPaginate()
   public static async loadRelationsOnPaginate(categories: Array<Category>): Promise<void> {
     for (const category of categories)
-      await category.load('questions', (builder) => builder.orderBy('order'))
+      await category.load('questions', (builder) => {
+        builder.preload('choices')
+        builder.orderBy('order')
+      })
   }
   /**
    * ------------------------------------------------------

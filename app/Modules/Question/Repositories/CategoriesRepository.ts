@@ -10,4 +10,8 @@ export default class CategoriesRepository
   constructor() {
     super(Category)
   }
+
+  public async getQuestionsByName(name: string): Promise<Category | null> {
+    return this.orm.query().where('name', 'ILIKE', `%${name}%`).first()
+  }
 }

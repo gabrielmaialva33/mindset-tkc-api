@@ -1,13 +1,4 @@
-import {
-  afterFetch,
-  afterFind,
-  afterPaginate,
-  BelongsTo,
-  belongsTo,
-  column,
-  HasMany,
-  hasMany,
-} from '@ioc:Adonis/Lucid/Orm'
+import { BelongsTo, belongsTo, column, HasMany, hasMany } from '@ioc:Adonis/Lucid/Orm'
 import { DateTime } from 'luxon'
 
 import BaseCustomModel from 'App/Shared/Model/BaseModel'
@@ -70,16 +61,7 @@ export default class Choice extends BaseCustomModel {
    * ------------------------------------------------------
    * - define auto behaviors
    */
-  @afterFind()
-  public static async loadRelationsOnGet(choice: Choice): Promise<void> {
-    await choice.load('question')
-  }
 
-  @afterFetch()
-  @afterPaginate()
-  public static async loadRelationsOnPaginate(choices: Array<Choice>): Promise<void> {
-    for (const choice of choices) await choice.load('question')
-  }
   /**
    * ------------------------------------------------------
    * Query Scopes
