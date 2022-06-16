@@ -16,12 +16,11 @@ export default class RepliesController {
     return response.json(reply)
   }
 
-  public async edit({ request, params, response }: HttpContextContract): Promise<void> {
-    const { id: replyId } = params
+  public async edit({ request, response }: HttpContextContract): Promise<void> {
     const replyDTO = await request.validate(EditReplyValidator)
 
     const editReply = container.resolve(EditReplyService)
-    const reply = await editReply.init(replyId, replyDTO)
+    const reply = await editReply.init(replyDTO)
 
     return response.json(reply)
   }

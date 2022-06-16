@@ -14,7 +14,7 @@ export default class StoreAnswerValidator {
     ]),
     choices: schema.array([]).members(
       schema.object([]).members({
-        question_id: schema.string({}, [
+        question_id: schema.string({ escape: true, trim: true }, [
           rules.exists({
             table: 'questions',
             column: 'id',

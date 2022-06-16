@@ -20,10 +20,10 @@ export default class Reply extends BaseCustomModel {
   public user_id: string
 
   @column()
-  public reply_id: string
+  public choice: string
 
   @column()
-  public value: string
+  public value: number
 
   @column({ serializeAs: null })
   public is_deleted: boolean

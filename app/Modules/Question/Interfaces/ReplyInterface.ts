@@ -7,14 +7,18 @@ export namespace IReply {
   export namespace DTO {
     export type Store = {
       user_id: string
-      reply_id: string
-      value: string
+      replies: Array<{
+        choice: string
+        value: number
+      }>
     }
 
     export type Edit = {
-      user_id?: string
-      reply_id?: string
-      value?: string
+      user_id: string
+      replies: Array<{
+        choice: string
+        value?: number
+      }>
     }
   }
 }

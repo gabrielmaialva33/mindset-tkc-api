@@ -17,8 +17,8 @@ export default class Replies extends BaseSchema {
           .onDelete('CASCADE')
           .onUpdate('CASCADE')
 
-        table.string('reply_id')
-        table.string('value')
+        table.string('choice')
+        table.integer('value')
 
         table.boolean('is_deleted').defaultTo(false)
 

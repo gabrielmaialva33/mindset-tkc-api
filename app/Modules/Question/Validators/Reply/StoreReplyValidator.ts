@@ -12,8 +12,12 @@ export default class StoreReplyValidator {
         whereNot: { is_deleted: true },
       }),
     ]),
-    reply_id: schema.string({ escape: true, trim: true }, []),
-    value: schema.string({ escape: true, trim: true }, []),
+    replies: schema.array([]).members(
+      schema.object([]).members({
+        choice: schema.string({ trim: true, escape: true }, []),
+        value: schema.number([rules.unsigned()]),
+      })
+    ),
   })
 
   public messages = {}

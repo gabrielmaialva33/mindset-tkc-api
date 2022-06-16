@@ -5,27 +5,20 @@ export default class EditReplyValidator {
   constructor(protected ctx: HttpContextContract) {}
 
   public schema = schema.create({
-    user_id: schema.string.optional({ escape: true, trim: true }, [
+    user_id: schema.string({ escape: true, trim: true }, [
       rules.exists({
         table: 'users',
         column: 'id',
         whereNot: { is_deleted: true },
       }),
     ]),
-    reply_id: schema.string.optional({ escape: true, trim: true }, []),
-    value: schema.string.optional({ escape: true, trim: true }, []),
+    replies: schema.array([]).members(
+      schema.object([]).members({
+        choice: schema.string({ trim: true, escape: true }, []),
+        value: schema.number.optional([rules.unsigned()]),
+      })
+    ),
   })
 
-  /**
-   * Custom messages for validation failures. You can make use of dot notation `(.)`
-   * for targeting nested fields and array expressions `(*)` for targeting all
-   * children of an array. For example:
-   *
-   * {
-   *   'profile.username.required': 'Username is required',
-   *   'scores.*.number': 'Define scores as valid numbers'
-   * }
-   *
-   */
   public messages = {}
 }
