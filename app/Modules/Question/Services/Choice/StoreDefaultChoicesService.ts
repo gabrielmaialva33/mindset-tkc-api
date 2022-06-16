@@ -13,7 +13,7 @@ export class StoreDefaultChoicesService {
     private choicesRepository: IChoice.Repository
   ) {}
 
-  public async init(ChoicesDefault: Array<DTO.Update>, order: number): Promise<void> {
+  public async init(ChoicesDefault: Array<DTO.Edit>, order: number): Promise<void> {
     const category = await this.categoriesRepository.findBy('order', order)
     if (category) {
       await category.load('questions')

@@ -5,13 +5,13 @@ export namespace ICategory {
   export interface Repository extends BaseInterface<typeof Category> {}
 
   export namespace DTO {
-    export interface Store {
+    export type Store = {
       name: string
       description?: string
       order?: number
     }
 
-    export interface Update {
+    export type Edit = {
       name?: string
       description?: string
       order?: number

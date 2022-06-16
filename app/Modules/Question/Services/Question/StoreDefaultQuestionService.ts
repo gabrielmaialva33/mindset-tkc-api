@@ -14,7 +14,7 @@ export class StoreDefaultQuestionService {
     private questionsRepository: IQuestion.Repository
   ) {}
 
-  public async init(QuestionsDefault: Array<DTO.Update>, order: number): Promise<void> {
+  public async init(QuestionsDefault: Array<DTO.Edit>, order: number): Promise<void> {
     let category = await this.categoriesRepository.findBy('order', order)
     if (category)
       for (let index = 0; index < QuestionsDefault.length; index++)

@@ -1,6 +1,6 @@
 import { IQuestion } from 'App/Modules/Question/Interfaces/QuestionInterface'
 
-export const ImpulsoresQuestionsDefault: Array<IQuestion.DTO.Update> = [
+export const ImpulsoresQuestionsDefault: Array<IQuestion.DTO.Edit> = [
   {
     sentence:
       'Cada vez que faço algo, exijo de mim a maior perfeição ainda a que atividade demore mais.',
@@ -137,7 +137,7 @@ export const ImpulsoresQuestionsDefault: Array<IQuestion.DTO.Update> = [
   },
 ]
 
-export const MotivadoresQuestionsDefault: Array<IQuestion.DTO.Update> = [
+export const MotivadoresQuestionsDefault: Array<IQuestion.DTO.Edit> = [
   { sentence: 'O que mais incentiva e estimula o meu desempenho é:', order: 1 },
   {
     sentence: 'Se eu tiver que escolher entre duas organizações para trabalhar prefiro aquela que:',
@@ -220,7 +220,7 @@ export const MotivadoresQuestionsDefault: Array<IQuestion.DTO.Update> = [
   { sentence: 'A minha produtividade pode ser prejudicada quando:', order: 30 },
 ]
 
-export const AssertividadeQuestionsDefault: Array<IQuestion.DTO.Update> = [
+export const AssertividadeQuestionsDefault: Array<IQuestion.DTO.Edit> = [
   {
     sentence:
       'Suponha que você está numa roda de amigos e surge um desentendimento entre dois deles. A situação vai se complicando e você sente muito medo. O que faz?',
@@ -354,7 +354,7 @@ export const AssertividadeQuestionsDefault: Array<IQuestion.DTO.Update> = [
   },
 ]
 
-export const GerencialQuestionsDefault: Array<IQuestion.DTO.Update> = [
+export const GerencialQuestionsDefault: Array<IQuestion.DTO.Edit> = [
   { sentence: 'Tomada de decisão', order: 1 },
   { sentence: 'Programação de atividades', order: 2 },
   { sentence: 'Execução de atividades', order: 3 },
@@ -362,7 +362,7 @@ export const GerencialQuestionsDefault: Array<IQuestion.DTO.Update> = [
   { sentence: 'Mudanças organizacionais', order: 5 },
 ]
 
-export const CerebralQuestionsDefault: Array<IQuestion.DTO.Update> = [
+export const CerebralQuestionsDefault: Array<IQuestion.DTO.Edit> = [
   {
     sentence:
       'Selecione 5 (cinco) sentidos ou situações que fazem você se sentir mais motivado no trabalho:',
@@ -409,7 +409,7 @@ export const CerebralQuestionsDefault: Array<IQuestion.DTO.Update> = [
   },
 ]
 
-export const TempoQuestionsDefault: Array<IQuestion.DTO.Update> = [
+export const TempoQuestionsDefault: Array<IQuestion.DTO.Edit> = [
   {
     sentence:
       'Costumo ir a eventos, festas ou cursos, mesmo que contra minha vontade, para agradar meu chefe, meus amigos ou família.',
@@ -492,7 +492,7 @@ export const TempoQuestionsDefault: Array<IQuestion.DTO.Update> = [
   },
 ]
 
-export const BurnoutQuestionsDefault: Array<IQuestion.DTO.Update> = [
+export const BurnoutQuestionsDefault: Array<IQuestion.DTO.Edit> = [
   { sentence: 'Sinto-me esgotado(a) emocionalmente em relação ao meu trabalho.', order: 1 },
   { sentence: 'Sinto-me excessivamente exausto ao final da minha jornada de trabalho.', order: 2 },
   { sentence: 'Levanto-me cansado(a) e sem disposição para realizar o meu trabalho.', order: 3 },
@@ -518,7 +518,7 @@ export const BurnoutQuestionsDefault: Array<IQuestion.DTO.Update> = [
   { sentence: 'Sinto que não acredito mais na profissão que exerço.', order: 20 },
 ]
 
-export const ConexaoQuestionsDefault: Array<IQuestion.DTO.Update> = [
+export const ConexaoQuestionsDefault: Array<IQuestion.DTO.Edit> = [
   { sentence: 'O trabalho que eu executo tem grande significado para mim.', order: 1 },
   { sentence: 'Eu faço a diferença na vida das pessoas.', order: 2 },
   { sentence: 'Sou visto pelos meus colegas como um bom companheiro de equipe.', order: 3 },
@@ -547,7 +547,7 @@ export const ConexaoQuestionsDefault: Array<IQuestion.DTO.Update> = [
   { sentence: 'Sinto-me apreciado e considerado pelas pessoas.', order: 15 },
 ]
 
-export const AutorresponsabilidadeQuestionsDefault: Array<IQuestion.DTO.Update> = [
+export const AutorresponsabilidadeQuestionsDefault: Array<IQuestion.DTO.Edit> = [
   {
     sentence:
       'Costumo falar não quero, quanto surgem atividades ou tarefas, que me tiram da minha zona de conforto e exigem mais de mim.',
@@ -600,7 +600,7 @@ export const AutorresponsabilidadeQuestionsDefault: Array<IQuestion.DTO.Update> 
   },
 ]
 
-export const DirecionalQuestionsDefault: Array<IQuestion.DTO.Update> = [
+export const DirecionalQuestionsDefault: Array<IQuestion.DTO.Edit> = [
   {
     sentence: 'Novas ideias e novos projetos às vezes me distraem dos anteriores.',
     order: 1,

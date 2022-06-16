@@ -14,7 +14,7 @@ export class EditReplyService {
     private repliesRepository: IReply.Repository
   ) {}
 
-  public async init(replyId: string, data: DTO.Update): Promise<Reply> {
+  public async init(replyId: string, data: DTO.Edit): Promise<Reply> {
     const reply = await this.repliesRepository.findBy('id', replyId)
     if (!reply) throw new NotFoundException('Question not found or not available.')
 

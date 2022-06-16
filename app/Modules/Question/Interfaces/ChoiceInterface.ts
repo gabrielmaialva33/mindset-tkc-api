@@ -5,7 +5,7 @@ export namespace IChoice {
   export interface Repository extends BaseInterface<typeof Choice> {}
 
   export namespace DTO {
-    export interface Store {
+    export type Store = {
       question_id: string
       sentence: string
       label: string
@@ -13,7 +13,7 @@ export namespace IChoice {
       order?: number
     }
 
-    export interface Update {
+    export type Edit = {
       sentence?: string
       label?: string
       value?: number

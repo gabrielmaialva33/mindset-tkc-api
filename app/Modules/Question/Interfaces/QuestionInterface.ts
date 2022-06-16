@@ -5,7 +5,7 @@ export namespace IQuestion {
   export interface Repository extends BaseInterface<typeof Question> {}
 
   export namespace DTO {
-    export interface Store {
+    export type Store = {
       category_id: string
       sentence: string
       type?: string
@@ -14,7 +14,7 @@ export namespace IQuestion {
       order?: number
     }
 
-    export interface Update {
+    export type Edit = {
       category_id?: string
       sentence?: string
       type?: string

@@ -1,6 +1,6 @@
 import { IChoice } from 'App/Modules/Question/Interfaces/ChoiceInterface'
 
-export const LikertChoicesDefault: Array<IChoice.DTO.Update> = [
+export const LikertChoicesDefault: Array<IChoice.DTO.Edit> = [
   {
     sentence: 'NUNCA',
     label: '0',
@@ -33,7 +33,7 @@ export const LikertChoicesDefault: Array<IChoice.DTO.Update> = [
   },
 ]
 
-export const TimeChoicesDefault: Array<IChoice.DTO.Update> = [
+export const TimeChoicesDefault: Array<IChoice.DTO.Edit> = [
   {
     sentence: 'NUNCA',
     value: 1,
@@ -61,7 +61,7 @@ export const TimeChoicesDefault: Array<IChoice.DTO.Update> = [
   },
 ]
 
-export const OpinionChoicesDefault: Array<IChoice.DTO.Update> = [
+export const OpinionChoicesDefault: Array<IChoice.DTO.Edit> = [
   { sentence: 'DISCORDO TOTALMENTE', value: 1, order: 1 },
   { sentence: 'DISCORDO EM BOA PARTE', value: 2, order: 2 },
   { sentence: 'NÃO CONCORDO NEM DISCORDO', value: 3, order: 3 },
@@ -69,7 +69,7 @@ export const OpinionChoicesDefault: Array<IChoice.DTO.Update> = [
   { sentence: 'CONCORDO TOTALMENTE', value: 5, order: 5 },
 ]
 
-export const BinaryChoicesDefault: Array<IChoice.DTO.Update> = [
+export const BinaryChoicesDefault: Array<IChoice.DTO.Edit> = [
   {
     sentence: 'SIM',
     value: 1,
@@ -82,7 +82,7 @@ export const BinaryChoicesDefault: Array<IChoice.DTO.Update> = [
   },
 ]
 
-export const MeasurableChoicesDefault: Array<IChoice.DTO.Update> = [
+export const MeasurableChoicesDefault: Array<IChoice.DTO.Edit> = [
   {
     sentence: 'Nada',
     value: 0,
@@ -110,7 +110,7 @@ export const MeasurableChoicesDefault: Array<IChoice.DTO.Update> = [
   },
 ]
 
-export const NumberChoicesDefault: Array<IChoice.DTO.Update> = [
+export const NumberChoicesDefault: Array<IChoice.DTO.Edit> = [
   {
     sentence: '0',
     value: 0,
@@ -133,7 +133,7 @@ export const NumberChoicesDefault: Array<IChoice.DTO.Update> = [
   },
 ]
 
-export const MotivadoresChoicesDefault: Array<IChoice.DTO.Update> = [
+export const MotivadoresChoicesDefault: Array<IChoice.DTO.Edit> = [
   {
     sentence: 'um salário compatível com as minhas necessidades básicas e as de minha família.',
     value: 0,

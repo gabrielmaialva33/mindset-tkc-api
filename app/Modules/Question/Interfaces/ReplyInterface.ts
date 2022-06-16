@@ -5,13 +5,13 @@ export namespace IReply {
   export interface Repository extends BaseInterface<typeof Reply> {}
 
   export namespace DTO {
-    export interface Store {
+    export type Store = {
       user_id: string
       reply_id: string
       value: string
     }
 
-    export interface Update {
+    export type Edit = {
       user_id?: string
       reply_id?: string
       value?: string
