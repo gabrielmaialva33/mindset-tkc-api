@@ -6,6 +6,7 @@ import { IAnswer } from 'App/Modules/Question/Interfaces/AnswerInterface'
 import { IUser } from 'App/Modules/User/Interfaces/UserInterface'
 
 import NotFoundException from 'App/Shared/Exceptions/NotFoundException'
+import DTO = IAnswer.DTO
 
 @injectable()
 export class AttachAnswerService {
@@ -16,7 +17,7 @@ export class AttachAnswerService {
     public choicesRepository: IChoice.Repository
   ) {}
 
-  public async init({ user_id, choices }: IAnswer.DTO.Store): Promise<void> {
+  public async init({ user_id, choices }: DTO.Store): Promise<void> {
     const user = await this.usersRepository.findBy('id', user_id)
     if (!user) throw new NotFoundException('User not found or not available.')
 

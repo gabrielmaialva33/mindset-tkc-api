@@ -3,9 +3,6 @@ import { container, inject, injectable } from 'tsyringe'
 import { IUser } from 'App/Modules/User/Interfaces/UserInterface'
 import User from 'App/Modules/User/Models/User'
 
-/**
- * Services
- */
 import { ValidateTokenService } from 'App/Modules/User/Services/Token'
 import { AttachUserOnTokenService } from 'App/Modules/User/Services/User'
 

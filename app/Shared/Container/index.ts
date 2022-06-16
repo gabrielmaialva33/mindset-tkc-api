@@ -15,6 +15,9 @@ import QuestionsRepository from 'App/Modules/Question/Repositories/QuestionsRepo
 import { IChoice } from 'App/Modules/Question/Interfaces/ChoiceInterface'
 import ChoicesRepository from 'App/Modules/Question/Repositories/ChoicesRepository'
 
+import { IAnswer } from 'App/Modules/Question/Interfaces/AnswerInterface'
+import AnswersRepository from 'App/Modules/Question/Repositories/AnswersRepository'
+
 import { IReply } from 'App/Modules/Question/Interfaces/ReplyInterface'
 import RepliesRepository from 'App/Modules/Question/Repositories/RepliesRepository'
 
@@ -47,6 +50,11 @@ container.registerSingleton<IQuestion.Repository>(
 container.registerSingleton<IChoice.Repository>(
   'ChoicesRepository',
   delay(() => ChoicesRepository)
+)
+
+container.registerSingleton<IAnswer.Repository>(
+  'AnswersRepository',
+  delay(() => AnswersRepository)
 )
 
 container.registerSingleton<IReply.Repository>(

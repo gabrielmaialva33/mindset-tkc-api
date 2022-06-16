@@ -1,5 +1,16 @@
 import { DateTime } from 'luxon'
-import { column, beforeSave, manyToMany, ManyToMany, hasMany, HasMany } from '@ioc:Adonis/Lucid/Orm'
+import {
+  column,
+  beforeSave,
+  manyToMany,
+  ManyToMany,
+  hasMany,
+  HasMany,
+  scope,
+  afterFind,
+  afterFetch,
+  afterPaginate,
+} from '@ioc:Adonis/Lucid/Orm'
 import Hash from '@ioc:Adonis/Core/Hash'
 
 import BaseCustomModel from 'App/Shared/Model/BaseModel'
@@ -82,9 +93,34 @@ export default class User extends BaseCustomModel {
     if (user.$dirty.password) if (user.password) user.password = await Hash.make(user.password)
   }
 
+  @afterFind()
+  public static async loadRelationsOnGet(user: User): Promise<void> {
+    await user.load('tokens')
+    await user.load('choices', (builder) => builder.orderBy('created_at'))
+  }
+
+  @afterFetch()
+  @afterPaginate()
+  public static async loadRelationsOnPaginate(users: Array<User>): Promise<void> {
+    for (const user of users) {
+      await user.load('tokens')
+      await user.load('choices', (builder) => builder.orderBy('created_at'))
+    }
+  }
+
   /**
    * ------------------------------------------------------
    * Query Scopes
    * ------------------------------------------------------
    */
+  public static searchQueryScope = scope((query, search) => {
+    const fields = ['name', 'email']
+    let sql = ''
+
+    fields.forEach(
+      (field, i) => (sql = `${sql} ${i !== 0 ? ' or ' : ' '} ${field} ilike '%${search}%'`)
+    )
+
+    return query.whereRaw(`(${sql})`)
+  })
 }

@@ -1,21 +1,12 @@
-import {
-  afterFetch,
-  afterFind,
-  afterPaginate,
-  BelongsTo,
-  belongsTo,
-  column,
-  HasMany,
-  hasMany,
-} from '@ioc:Adonis/Lucid/Orm'
-import { DateTime } from 'luxon'
-
 import BaseCustomModel from 'App/Shared/Model/BaseModel'
+import { BelongsTo, belongsTo, column } from '@ioc:Adonis/Lucid/Orm'
+import { DateTime } from 'luxon'
+import User from 'App/Modules/User/Models/User'
 import Question from 'App/Modules/Question/Models/Question'
-import Answer from './Answer'
+import Choice from 'App/Modules/Question/Models/Choice'
 
-export default class Choice extends BaseCustomModel {
-  public static table = 'choices'
+export default class Answer extends BaseCustomModel {
+  public static table = 'answers'
 
   /**
    * ------------------------------------------------------
@@ -27,22 +18,13 @@ export default class Choice extends BaseCustomModel {
   public id: string
 
   @column()
+  public user_id: string
+
+  @column()
   public question_id: string
 
   @column()
-  public sentence: string
-
-  @column()
-  public label: string
-
-  @column()
-  public value: number
-
-  @column()
-  public order?: number
-
-  @column({ serializeAs: null })
-  public is_deleted: boolean
+  public choice_id: string
 
   @column.dateTime({ autoCreate: true, serializeAs: null })
   public created_at: DateTime
@@ -54,32 +36,33 @@ export default class Choice extends BaseCustomModel {
    * ------------------------------------------------------
    * Relationships
    * ------------------------------------------------------
-   * - define Choice model relationships
+   * - define Question model relationships
    */
-  @belongsTo(() => Question, { localKey: 'id', foreignKey: 'question_id' })
+  @belongsTo(() => User, {
+    localKey: 'id',
+    foreignKey: 'user_id',
+  })
+  public user: BelongsTo<typeof User>
+
+  @belongsTo(() => Question, {
+    localKey: 'id',
+    foreignKey: 'question_id',
+  })
   public question: BelongsTo<typeof Question>
 
-  @hasMany(() => Answer, {
+  @belongsTo(() => Choice, {
     localKey: 'id',
-    foreignKey: 'choice_id',
+    foreignKey: 'question_id',
   })
-  public answers: HasMany<typeof Answer>
+  public choice: BelongsTo<typeof Choice>
+
   /**
    * ------------------------------------------------------
    * Hooks
    * ------------------------------------------------------
    * - define auto behaviors
    */
-  @afterFind()
-  public static async loadRelationsOnGet(choice: Choice): Promise<void> {
-    await choice.load('question')
-  }
 
-  @afterFetch()
-  @afterPaginate()
-  public static async loadRelationsOnPaginate(choices: Array<Choice>): Promise<void> {
-    for (const choice of choices) await choice.load('question')
-  }
   /**
    * ------------------------------------------------------
    * Query Scopes

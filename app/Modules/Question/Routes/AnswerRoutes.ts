@@ -3,5 +3,5 @@ import AnswersController from 'App/Modules/Question/Controllers/Http/AnswersCont
 
 Route.group(() => {
   Route.post('/', new AnswersController().attach).as('answers.attach')
-  Route.delete('/', new AnswersController().detach).as('answers.detach')
+  Route.put('/', new AnswersController().detach).as('answers.detach')
 }).prefix('answers')
