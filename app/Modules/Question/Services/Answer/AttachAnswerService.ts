@@ -12,7 +12,6 @@ export class AttachAnswerService {
   constructor(
     @inject('UsersRepository')
     private usersRepository: IUser.Repository,
-
     @inject('ChoicesRepository')
     public choicesRepository: IChoice.Repository
   ) {}

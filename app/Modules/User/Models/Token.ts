@@ -64,6 +64,7 @@ export default class Token extends BaseCustomModel {
   ): Promise<void> {
     query.whereNot('is_revoked', true)
   }
+
   /**
    * ------------------------------------------------------
    * Query Scopes

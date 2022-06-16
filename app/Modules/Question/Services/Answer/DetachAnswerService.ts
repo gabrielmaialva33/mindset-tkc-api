@@ -11,7 +11,6 @@ export class DetachAnswerService {
   constructor(
     @inject(UsersRepository)
     private usersRepository: UsersRepository,
-
     @inject(ChoicesRepository)
     public choicesRepository: ChoicesRepository
   ) {}
