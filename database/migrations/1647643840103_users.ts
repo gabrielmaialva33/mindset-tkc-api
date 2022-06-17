@@ -13,6 +13,10 @@ export default class UsersSchema extends BaseSchema {
         table.string('email', 255).notNullable().unique({ indexName: 'email' })
         table.string('password', 180).nullable()
 
+        table.date('birth_date').nullable()
+        table.float('daily_workload').nullable()
+        table.integer('retirement').nullable()
+
         table.string('remember_me_token').nullable()
         table.boolean('was_sent_email').defaultTo(false)
 

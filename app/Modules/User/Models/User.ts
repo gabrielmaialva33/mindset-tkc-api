@@ -41,6 +41,15 @@ export default class User extends BaseCustomModel {
   public password?: string
 
   @column()
+  public birth_date?: DateTime
+
+  @column()
+  public daily_workload?: number
+
+  @column()
+  public retirement?: number
+
+  @column()
   public remember_me_token?: string
 
   @column()

@@ -1,8 +1,9 @@
 import { container } from 'tsyringe'
 import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 
-import { ListUserService, StoreUserService } from 'App/Modules/User/Services/User'
+import { EditUserService, ListUserService, StoreUserService } from 'App/Modules/User/Services/User'
 import StoreUserValidator from 'App/Modules/User/Validators/User/StoreUserValidator'
+import EditUserValidator from 'App/Modules/User/Validators/User/EditUserValidator'
 
 export default class UsersController {
   public async list({ request, response }: HttpContextContract): Promise<void> {
@@ -21,6 +22,16 @@ export default class UsersController {
 
     const storeUser = container.resolve(StoreUserService)
     const user = await storeUser.init(data)
+
+    return response.json(user)
+  }
+
+  public async edit({ request, params, response }: HttpContextContract): Promise<void> {
+    const { id: userId } = params
+    const userDto = await request.validate(EditUserValidator)
+
+    const editUser = container.resolve(EditUserService)
+    const user = await editUser.init(userId, userDto)
 
     return response.json(user)
   }
