@@ -405,7 +405,7 @@ export const CerebralQuestionsDefault: Array<IQuestion.DTO.Edit> = [
   {
     sentence:
       'Quais as frases que mais se aproximam do que você diz (selecione 3 (três) alternativas):',
-    order: 11,
+    order: 12,
   },
 ]
 
