@@ -39,6 +39,10 @@
 **[Protótipo](https://xd.adobe.com/view/1cd00465-5018-4347-94a0-cea970e02810-4983/)**
 <br>
 
+<kbd>
+  <img src=".github/assets/images/schema.svg" alt="schema">
+</kbd>
+
 ## :computer: Tecnologias
 
 - **[Typescript](https://www.typescriptlang.org/)**

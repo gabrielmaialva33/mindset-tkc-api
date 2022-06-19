@@ -38,6 +38,10 @@
 **Diagnostic mindset** is an evaluative research site in order to help people with their mindset.
 **[Prototype](https://xd.adobe.com/view/1cd00465-5018-4347-94a0-cea970e02810-4983/)**
 
+<kbd>
+  <img src=".github/assets/images/schema.svg" alt="schema">
+</kbd>
+
 <br>
 
 ## :computer: Technologies
