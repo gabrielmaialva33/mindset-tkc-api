@@ -1,9 +1,19 @@
-import { BelongsTo, belongsTo, column, HasMany, hasMany } from '@ioc:Adonis/Lucid/Orm'
+import {
+  afterFetch,
+  afterFind,
+  afterPaginate,
+  BelongsTo,
+  belongsTo,
+  column,
+  HasMany,
+  hasMany,
+} from '@ioc:Adonis/Lucid/Orm'
 import { DateTime } from 'luxon'
 
 import BaseCustomModel from 'App/Shared/Model/BaseModel'
 import Question from 'App/Modules/Question/Models/Question'
 import Answer from './Answer'
+import Dependency from 'App/Modules/Question/Models/Dependency'
 
 export default class Choice extends BaseCustomModel {
   public static table = 'choices'
@@ -55,12 +65,27 @@ export default class Choice extends BaseCustomModel {
     foreignKey: 'choice_id',
   })
   public answers: HasMany<typeof Answer>
+
+  @hasMany(() => Dependency, { localKey: 'id', foreignKey: 'choice_id' })
+  public dependencies: HasMany<typeof Dependency>
+
   /**
    * ------------------------------------------------------
    * Hooks
    * ------------------------------------------------------
    * - define auto behaviors
    */
+  @afterFind()
+  public static async loadRelationsOnGet(choice: Choice): Promise<void> {
+    await choice.load('dependencies', (builder) => builder.orderBy('order'))
+  }
+
+  @afterFetch()
+  @afterPaginate()
+  public static async loadRelationsOnPaginate(choices: Array<Choice>): Promise<void> {
+    for (const choice of choices)
+      await choice.load('dependencies', (builder) => builder.orderBy('order'))
+  }
 
   /**
    * ------------------------------------------------------

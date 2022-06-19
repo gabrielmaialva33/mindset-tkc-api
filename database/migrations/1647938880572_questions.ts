@@ -1,7 +1,7 @@
 import BaseSchema from '@ioc:Adonis/Lucid/Schema'
 import Logger from '@ioc:Adonis/Core/Logger'
 
-export default class Questionnaires extends BaseSchema {
+export default class QuestionnairesSchema extends BaseSchema {
   protected tableName = 'questions'
 
   public async up() {

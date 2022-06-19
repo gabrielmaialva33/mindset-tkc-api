@@ -1,7 +1,7 @@
 import BaseSchema from '@ioc:Adonis/Lucid/Schema'
 import Logger from '@ioc:Adonis/Core/Logger'
 
-export default class Choices extends BaseSchema {
+export default class ChoicesSchema extends BaseSchema {
   protected tableName = 'choices'
 
   public async up() {
@@ -23,6 +23,14 @@ export default class Choices extends BaseSchema {
 
         table.integer('order').defaultTo(0)
         table.boolean('is_deleted').defaultTo(false)
+
+        table
+          .uuid('dependency_id')
+          .references('id')
+          .inTable('choices')
+          .nullable()
+          .onDelete('CASCADE')
+          .onUpdate('CASCADE')
 
         table.timestamp('created_at', { useTz: true })
         table.timestamp('updated_at', { useTz: true })

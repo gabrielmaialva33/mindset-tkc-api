@@ -14,9 +14,6 @@ services:
     env_file:
       - .env
     environment:
-      VIRTUAL_HOST: 18.231.170.205
-      LETSENCRYPT_HOST: 18.231.170.205
-
       PORT: ${PORT}
       HOST: ${HOST}
       NODE_ENV: ${NODE_ENV}
