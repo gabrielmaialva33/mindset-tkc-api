@@ -18,7 +18,6 @@ import BaseCustomModel from 'App/Shared/Model/BaseModel'
 import Token from 'App/Modules/User/Models/Token'
 import Choice from 'App/Modules/Question/Models/Choice'
 import Reply from 'App/Modules/Question/Models/Reply'
-import Dependency from 'App/Modules/Question/Models/Dependency'
 
 export default class User extends BaseCustomModel {
   public static table = 'users'
