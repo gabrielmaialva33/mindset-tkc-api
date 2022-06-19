@@ -10,7 +10,6 @@ services:
       - '8080:3333'
     depends_on:
       - postgres
-      - redis
     env_file:
       - .env
     environment:
