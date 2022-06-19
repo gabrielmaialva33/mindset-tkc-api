@@ -11,6 +11,7 @@ import {
   LikertChoicesDefault,
   MeasurableChoicesDefault,
   MotivadoresChoicesDefault,
+  NumberChoicesDefault,
   OpinionChoicesDefault,
   TimeChoicesDefault,
 } from 'App/Modules/Question/Defaults/ChoicesDefault'
@@ -19,7 +20,7 @@ export default class CreateDefaultChoices extends BaseSchema {
   public async up() {
     const storeDefaultChoices = container.resolve(StoreDefaultChoicesService)
     await storeDefaultChoices.init(LikertChoicesDefault, 1)
-    await storeDefaultChoices.init(MotivadoresChoicesDefault, 2, true, MeasurableChoicesDefault)
+    await storeDefaultChoices.init(MotivadoresChoicesDefault, 2, true, NumberChoicesDefault)
     await storeDefaultChoices.init(AssertividadeChoicesDefault, 3, true)
     await storeDefaultChoices.init(GerencialChoicesDefault, 4, true, LikertChoicesDefault)
     await storeDefaultChoices.init(CerebralChoicesDefault, 5, true)

@@ -113,21 +113,25 @@ export const MeasurableChoicesDefault: Array<IChoice.DTO.Edit> = [
 export const NumberChoicesDefault: Array<IChoice.DTO.Edit> = [
   {
     sentence: '0',
+    label: '0',
     value: 0,
     order: 1,
   },
   {
     sentence: '1',
+    label: '1',
     value: 1,
     order: 2,
   },
   {
     sentence: '2',
+    label: '2',
     value: 2,
     order: 3,
   },
   {
     sentence: '3',
+    label: '3',
     value: 3,
     order: 4,
   },
