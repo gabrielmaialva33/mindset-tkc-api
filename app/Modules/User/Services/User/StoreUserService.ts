@@ -18,11 +18,12 @@ export class StoreUserService {
   private validate = container.resolve(ValidateTokenService)
   private attach = container.resolve(AttachUserOnTokenService)
 
-  public async init({ name, email, password, code }: IUser.DTO.Store): Promise<User> {
+  public async init(data: IUser.DTO.Store): Promise<User> {
+    const { code, ...dto } = data
     const isValid = await this.validate.init(code)
     if (!isValid) throw new BadRequestException('Token invalid.', 401)
 
-    const user = await this.usersRepository.store({ name, email, password })
+    const user = await this.usersRepository.store(dto)
     await this.attach.init(user, code)
 
     await user.refresh()

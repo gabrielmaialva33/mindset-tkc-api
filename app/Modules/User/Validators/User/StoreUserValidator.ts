@@ -14,6 +14,9 @@ export default class StoreUserValidator {
       rules.exists({ table: 'tokens', column: 'code', whereNot: { is_revoked: true } }),
     ]),
     password: schema.string.optional({ trim: true }, [rules.confirmed()]),
+    birth_date: schema.date.optional(),
+    daily_workload: schema.number.optional(),
+    retirement: schema.number.optional(),
   })
 
   public messages = {}
