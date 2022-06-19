@@ -29,7 +29,6 @@
     "@adonisjs/auth": "^8.2.1",
     "@adonisjs/core": "^5.8.3",
     "@adonisjs/lucid": "^18.0.1",
-    "@adonisjs/redis": "^7.3.0",
     "@adonisjs/repl": "^3.1.11",
     "@phc/argon2": "^1.0.9",
     "date-fns": "^2.28.0",

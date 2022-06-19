@@ -21,7 +21,7 @@ export default class StoreAnswerValidator {
             whereNot: { is_deleted: true },
           }),
         ]),
-        choice_id: schema.string.optional({ escape: true, trim: true }, [
+        choice_id: schema.string({ escape: true, trim: true }, [
           rules.exists({
             table: 'choices',
             column: 'id',

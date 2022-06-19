@@ -27,10 +27,6 @@ services:
       PG_DB_NAME: ${PG_DB_NAME}
       PG_DEBUG: ${PG_DEBUG}
 
-      REDIS_CONNECTION: ${REDIS_CONNECTION}
-      REDIS_HOST: redis
-      REDIS_PORT: ${REDIS_PORT}
-      REDIS_PASSWORD: ${REDIS_PASSWORD}
     networks:
       - app-network
 
@@ -57,24 +53,8 @@ services:
     networks:
       - app-network
 
-  redis:
-    image: redis:latest
-    restart: always
-    container_name: mindset-tkc-redis
-    command: redis-server --requirepass redis
-    environment:
-      - REDIS_REPLICATION_MODE=master
-    ports:
-      - '6379:6379'
-    expose:
-      - 6379
-    volumes:
-      - dbredis:/var/lib/redis/data
-    networks:
-      - app-network
 networks:
   app-network:
     driver: bridge
 volumes:
   database:
-  dbredis:

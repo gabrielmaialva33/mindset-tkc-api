@@ -37,15 +37,12 @@ const authConfig: AuthConfig = {
 
       /*
       |--------------------------------------------------------------------------
-      | Redis provider for managing tokens
+      | Tokens provider
       |--------------------------------------------------------------------------
       |
-      | Uses Redis for managing tokens. We recommend using the "redis" driver
-      | over the "database" driver when the tokens based auth is the
-      | primary authentication mode.
-      |
-      | Redis ensure that all the expired tokens gets cleaned up automatically.
-      | Whereas with SQL, you have to cleanup expired tokens manually.
+      | Uses SQL database for managing tokens. Use the "database" driver, when
+      | tokens are the secondary mode of authentication.
+      | For example: The Github personal tokens
       |
       | The foreignKey column is used to make the relationship between the user
       | and the token. You are free to use any column name here.
@@ -53,8 +50,8 @@ const authConfig: AuthConfig = {
       */
       tokenProvider: {
         type: 'api',
-        driver: 'redis',
-        redisConnection: 'local',
+        driver: 'database',
+        table: 'api_tokens',
         foreignKey: 'user_id',
       },
 

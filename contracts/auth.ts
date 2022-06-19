@@ -20,6 +20,7 @@ declare module '@ioc:Adonis/Addons/Auth' {
   | You can also create and register your own custom providers.
   |
   */
+
   interface ProvidersList {
     /*
     |--------------------------------------------------------------------------

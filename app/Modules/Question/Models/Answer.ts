@@ -25,7 +25,7 @@ export default class Answer extends BaseCustomModel {
   public question_id: string
 
   @column()
-  public choice_id?: string
+  public choice_id: string
 
   @column()
   public dependency_id?: string
