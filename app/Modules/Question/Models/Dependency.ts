@@ -20,6 +20,9 @@ export default class Dependency extends BaseCustomModel {
   public choice_id: string
 
   @column()
+  public question_id: string
+
+  @column()
   public sentence: string
 
   @column()

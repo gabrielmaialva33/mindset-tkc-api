@@ -52,6 +52,7 @@ export class StoreDefaultChoicesService {
                 for (let k = 0; k < dependencies.length; k++) {
                   await this.dependenciesRepository.store({
                     choice_id: choiceId,
+                    question_id: questions[i].id,
                     ...dependencies[k],
                   })
                 }

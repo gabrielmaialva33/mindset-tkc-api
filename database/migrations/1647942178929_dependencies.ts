@@ -17,6 +17,14 @@ export default class DependenciesSchema extends BaseSchema {
           .onDelete('CASCADE')
           .onUpdate('CASCADE')
 
+        table
+          .uuid('question_id')
+          .references('id')
+          .inTable('questions')
+          .notNullable()
+          .onDelete('CASCADE')
+          .onUpdate('CASCADE')
+
         table.text('sentence').notNullable()
         table.text('label').nullable()
         table.integer('value').defaultTo(0)

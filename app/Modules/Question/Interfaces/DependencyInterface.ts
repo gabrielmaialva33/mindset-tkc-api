@@ -7,6 +7,7 @@ export namespace IDependency {
   export namespace DTO {
     export type Store = {
       choice_id: string
+      question_id: string
       sentence: string
       label: string
       value: number
