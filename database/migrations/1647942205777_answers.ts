@@ -29,7 +29,15 @@ export default class AnswersSchema extends BaseSchema {
           .uuid('choice_id')
           .references('id')
           .inTable('choices')
-          .notNullable()
+          .nullable()
+          .onDelete('CASCADE')
+          .onUpdate('CASCADE')
+
+        table
+          .uuid('dependency_id')
+          .references('id')
+          .inTable('dependencies')
+          .nullable()
           .onDelete('CASCADE')
           .onUpdate('CASCADE')
 

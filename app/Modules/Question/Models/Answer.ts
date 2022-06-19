@@ -4,6 +4,7 @@ import { DateTime } from 'luxon'
 import User from 'App/Modules/User/Models/User'
 import Question from 'App/Modules/Question/Models/Question'
 import Choice from 'App/Modules/Question/Models/Choice'
+import Dependency from 'App/Modules/Question/Models/Dependency'
 
 export default class Answer extends BaseCustomModel {
   public static table = 'answers'
@@ -24,7 +25,10 @@ export default class Answer extends BaseCustomModel {
   public question_id: string
 
   @column()
-  public choice_id: string
+  public choice_id?: string
+
+  @column()
+  public dependency_id?: string
 
   @column.dateTime({ autoCreate: true, serializeAs: null })
   public created_at: DateTime
@@ -55,6 +59,12 @@ export default class Answer extends BaseCustomModel {
     foreignKey: 'question_id',
   })
   public choice: BelongsTo<typeof Choice>
+
+  @belongsTo(() => Dependency, {
+    localKey: 'id',
+    foreignKey: 'dependency_id',
+  })
+  public dependency: BelongsTo<typeof Dependency>
 
   /**
    * ------------------------------------------------------

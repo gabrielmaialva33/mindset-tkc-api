@@ -21,15 +21,12 @@ export class AttachAnswerService {
     const user = await this.usersRepository.findBy('id', user_id)
     if (!user) throw new NotFoundException('User not found or not available.')
 
-    for (let i = 0; i < choices.length; i++) {
-      const choice = await this.choicesRepository.findBy('id', choices[i].choice_id)
-      if (!choice) throw new NotFoundException('Choice not found or not available.')
-
-      await Database.insertQuery().table('answers').insert({
-        user_id: user_id,
-        question_id: choices[i].question_id,
-        choice_id: choices[i].choice_id,
-      })
-    }
+    for (let i = 0; i < choices.length; i++)
+      await Database.insertQuery()
+        .table('answers')
+        .insert({
+          user_id: user_id,
+          ...choices[i],
+        })
   }
 }

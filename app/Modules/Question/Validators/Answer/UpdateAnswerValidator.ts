@@ -28,6 +28,13 @@ export default class UpdateAnswerValidator {
             whereNot: { is_deleted: true },
           }),
         ]),
+        dependency_id: schema.string.optional({ escape: true, trim: true }, [
+          rules.exists({
+            table: 'dependencies',
+            column: 'id',
+            whereNot: { is_deleted: true },
+          }),
+        ]),
       })
     ),
   })
