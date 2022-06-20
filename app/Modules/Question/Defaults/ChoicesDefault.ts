@@ -36,47 +36,54 @@ export const LikertChoicesDefault: Array<IChoice.DTO.Edit> = [
 export const TimeChoicesDefault: Array<IChoice.DTO.Edit> = [
   {
     sentence: 'NUNCA',
+    label: '1',
     value: 1,
     order: 1,
   },
   {
     sentence: 'ANUALMENTE',
+    label: '2',
     value: 2,
     order: 2,
   },
   {
     sentence: 'MENSALMENTE',
+    label: '3',
     value: 3,
     order: 3,
   },
   {
     sentence: 'SEMANALMENTE',
+    label: '4',
     value: 4,
     order: 4,
   },
   {
     sentence: 'DIARIAMENTE',
+    label: '5',
     value: 5,
     order: 5,
   },
 ]
 
 export const OpinionChoicesDefault: Array<IChoice.DTO.Edit> = [
-  { sentence: 'DISCORDO TOTALMENTE', value: 1, order: 1 },
-  { sentence: 'DISCORDO EM BOA PARTE', value: 2, order: 2 },
-  { sentence: 'NÃO CONCORDO NEM DISCORDO', value: 3, order: 3 },
-  { sentence: 'CONCORDO EM BOA PARTE', value: 4, order: 4 },
-  { sentence: 'CONCORDO TOTALMENTE', value: 5, order: 5 },
+  { sentence: 'DISCORDO TOTALMENTE', label: '1', value: 1, order: 1 },
+  { sentence: 'DISCORDO EM BOA PARTE', label: '2', value: 2, order: 2 },
+  { sentence: 'NÃO CONCORDO NEM DISCORDO', label: '3', value: 3, order: 3 },
+  { sentence: 'CONCORDO EM BOA PARTE', label: '4', value: 4, order: 4 },
+  { sentence: 'CONCORDO TOTALMENTE', label: '5', value: 5, order: 5 },
 ]
 
 export const BinaryChoicesDefault: Array<IChoice.DTO.Edit> = [
   {
     sentence: 'SIM',
+    label: 'SIM',
     value: 1,
     order: 1,
   },
   {
     sentence: 'NÃO',
+    label: 'NÃO',
     value: 0,
     order: 2,
   },
