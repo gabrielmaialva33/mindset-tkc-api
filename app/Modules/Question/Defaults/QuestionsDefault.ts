@@ -144,29 +144,39 @@ export const ImpulsoresQuestionsDefault: Array<IQuestion.DTO.Edit> = [
     group: 'AP',
   },
   {
-    sentence: 'Detesto que me neguem o que quero.',
+    sentence: 'Quando alguém se emociona muito eu critico.',
     order: 29,
     group: 'F',
   },
   {
-    sentence: 'Repito as perguntas que eu faço para facilitar que me compreendam.',
+    sentence: 'Detesto que me neguem o que quero.',
     order: 30,
     group: 'AG',
   },
   {
-    sentence: 'Irrito-me com pessoas lentas.',
+    sentence: 'Exijo dos demais a máxima qualificação no estudo e no trabalho.',
     order: 31,
     group: 'P',
   },
   {
-    sentence: 'Primeiro o dever e a disciplina.',
+    sentence: 'Repito as perguntas que eu faço para facilitar que me compreendam.',
     order: 32,
     group: 'E',
   },
   {
-    sentence: 'Sinto-me responsável em fazer as outras pessoas se sentirem bem.',
+    sentence: 'Irrito-me com pessoas lentas.',
     order: 33,
     group: 'AP',
+  },
+  {
+    sentence: 'Primeiro o dever e a disciplina.',
+    order: 32,
+    group: 'F',
+  },
+  {
+    sentence: 'Sinto-me responsável em fazer as outras pessoas se sentirem bem.',
+    order: 33,
+    group: 'AG',
   },
 ]
 
