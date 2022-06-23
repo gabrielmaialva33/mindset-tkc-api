@@ -92,26 +92,31 @@ export const BinaryChoicesDefault: Array<IChoice.DTO.Edit> = [
 export const MeasurableChoicesDefault: Array<IChoice.DTO.Edit> = [
   {
     sentence: 'Nada',
+    label: '0',
     value: 0,
     order: 1,
   },
   {
     sentence: 'Não muito',
+    label: '1',
     value: 1,
     order: 2,
   },
   {
     sentence: 'Um pouco',
+    label: '2',
     value: 2,
     order: 3,
   },
   {
     sentence: 'Bastante',
+    label: '3',
     value: 3,
     order: 4,
   },
   {
     sentence: 'Totalmente',
+    label: '4',
     value: 4,
     order: 5,
   },
