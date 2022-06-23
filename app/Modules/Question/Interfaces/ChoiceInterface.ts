@@ -10,7 +10,7 @@ export namespace IChoice {
       sentence: string
       label: string
       value: number
-      group: string
+      group?: string
       order?: number
     }
 
