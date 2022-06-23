@@ -5,135 +5,168 @@ export const ImpulsoresQuestionsDefault: Array<IQuestion.DTO.Edit> = [
     sentence:
       'Cada vez que faço algo, exijo de mim a maior perfeição ainda a que atividade demore mais.',
     order: 1,
+    group: 'P',
   },
   {
     sentence: 'Custa-me muito fazer as coisas que a maioria das pessoas fazem.',
     order: 2,
+    group: 'E',
   },
   {
     sentence: 'Evito mostrar minhas emoções, principalmente chorar na frente dos outros.',
     order: 3,
+    group: 'F',
   },
   {
     sentence: 'Faço várias coisas ao mesmo tempo.',
     order: 4,
+    group: 'AP',
   },
   {
     sentence: 'Custa-me dizer não se me pedem algo.',
     order: 5,
+    group: 'AG',
   },
   {
     sentence: 'Valorizo usar bem as palavras.',
     order: 6,
+    group: 'P',
   },
   {
     sentence: 'Percebo que a vida é uma luta continua e que tudo exige um grande esforço.',
     order: 7,
+    group: 'E',
   },
   {
     sentence: 'Necessito trabalhar rápido.',
     order: 8,
+    group: 'AP',
   },
   {
     sentence: 'Aguento em silêncio, mesmo sofrendo.',
     order: 9,
+    group: 'F',
   },
   {
     sentence: 'Desde criança os outros estão sempre em primeiro lugar para mim.',
     order: 10,
+    group: 'AG',
   },
   {
     sentence: 'Ainda que termine de fazer as coisas bem, penso que poderia ter sido feito melhor.',
     order: 11,
+    group: 'P',
   },
   {
     sentence: 'Faço muito rodeio, demoro para responder as coisas.',
     order: 12,
+    group: 'E',
   },
   {
     sentence: 'As pessoas resistem em me acompanhar.',
     order: 13,
+    group: 'AP',
   },
   {
     sentence: 'Responsabilizo-me sozinho pelo trabalho por mais duro que seja.',
     order: 14,
+    group: 'F',
   },
   {
     sentence: 'Necessito estar bem com todas as pessoas.',
     order: 15,
+    group: 'AG',
   },
   {
     sentence: 'Se digo algo positivo, necessito completá-lo com algo negativo.',
     order: 16,
+    group: 'P',
   },
   {
     sentence:
       'É mais difícil para mim fazer as coisas de modo prático e simples. Complico a minha vida.',
     order: 17,
+    group: 'E',
   },
   {
     sentence: 'Faço as tarefas dos outros por não ter paciência de esperá-los.',
     order: 18,
+    group: 'AP',
   },
   {
     sentence: 'Quando todos se sentem enfraquecidos, eu me mantenho e lhes dou apoio.',
     order: 19,
+    group: 'F',
   },
   {
     sentence: 'Gosto que me sirvam.',
     order: 20,
+    group: 'AG',
   },
   {
     sentence: 'Detesto desordem.',
     order: 21,
+    group: 'P',
   },
   {
     sentence: 'Esforço-me ao máximo se as coisas não saem como eu quero.',
     order: 22,
+    group: 'E',
   },
   {
     sentence: 'Tendo a interromper as pessoas para poder terminar o que estava dizendo.',
     order: 23,
+    group: 'AP',
   },
   {
     sentence: 'Detesto ser protegido.',
     order: 24,
+    group: 'F',
   },
   {
     sentence: 'Tento adivinhar o que os outros necessitam para logo agradá-los.',
     order: 25,
+    group: 'AG',
   },
   {
     sentence: 'É insuportável os erros dos demais, é difícil ficar conformado.',
     order: 26,
+    group: 'P',
   },
   {
     sentence: 'Só dou valor ao que se obtém com grande esforço.',
     order: 27,
+    group: 'E',
   },
   {
     sentence: 'Quando quero ou pergunto algo, quero uma resposta imediata.',
     order: 28,
+    group: 'AP',
   },
   {
     sentence: 'Detesto que me neguem o que quero.',
     order: 29,
+    group: 'F',
   },
   {
     sentence: 'Repito as perguntas que eu faço para facilitar que me compreendam.',
     order: 30,
+    group: 'AG',
   },
   {
     sentence: 'Irrito-me com pessoas lentas.',
     order: 31,
+    group: 'P',
   },
   {
     sentence: 'Primeiro o dever e a disciplina.',
     order: 32,
+    group: 'E',
   },
   {
     sentence: 'Sinto-me responsável em fazer as outras pessoas se sentirem bem.',
     order: 33,
+    group: 'AP',
   },
 ]
 

@@ -20,8 +20,7 @@ export class StoreDefaultQuestionService {
       for (let i = 0; i < QuestionsDefault.length; i++)
         await this.questionsRepository.store({
           category_id: category.id,
-          sentence: QuestionsDefault[i].sentence,
-          order: QuestionsDefault[i].order,
+          ...QuestionsDefault[i],
         })
   }
 }

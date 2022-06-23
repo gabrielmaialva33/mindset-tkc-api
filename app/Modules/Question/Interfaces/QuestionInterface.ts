@@ -9,6 +9,7 @@ export namespace IQuestion {
       category_id: string
       sentence: string
       type?: string
+      group: string
       min_choice?: number
       max_choice?: number
       order?: number
@@ -18,6 +19,7 @@ export namespace IQuestion {
       category_id?: string
       sentence?: string
       type?: string
+      group?: string
       min_choice?: number
       max_choice?: number
       order?: number

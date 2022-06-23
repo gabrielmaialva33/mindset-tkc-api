@@ -27,6 +27,9 @@ export default class Question extends BaseCustomModel {
   public type: string
 
   @column()
+  public group: string
+
+  @column()
   public min_choice: number
 
   @column()
