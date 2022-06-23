@@ -149,6 +149,7 @@ export const MotivadoresChoicesDefault: Array<IChoice.DTO.Edit & { question: num
     sentence: 'um salário compatível com as minhas necessidades básicas e as de minha família.',
     value: 0,
     order: 1,
+    group: '',
     question: 1,
   },
   {
@@ -156,6 +157,7 @@ export const MotivadoresChoicesDefault: Array<IChoice.DTO.Edit & { question: num
       'a oportunidade de testar a minha própria capacidade de ter acesso aos meus resultados.',
     value: 0,
     order: 2,
+    group: '',
     question: 1,
   },
   {
@@ -163,6 +165,7 @@ export const MotivadoresChoicesDefault: Array<IChoice.DTO.Edit & { question: num
       'me oferecer normas de trabalho claramente definidas, sólidas garantias de estabilidade e assegurar-me privilégios mais amplos de assistência médico-hospitalar.',
     value: 0,
     order: 3,
+    group: '',
     question: 2,
   },
   {
@@ -170,6 +173,7 @@ export const MotivadoresChoicesDefault: Array<IChoice.DTO.Edit & { question: num
       'me proporcionar autonomia para criar liberdade para experimentar e autoridade para inovar.',
     value: 0,
     order: 4,
+    group: '',
     question: 2,
   },
   {
@@ -177,18 +181,21 @@ export const MotivadoresChoicesDefault: Array<IChoice.DTO.Edit & { question: num
       'não valoriza as boas condições ambientais de trabalho que lhe são oferecidas (instalações físicas confortáveis, bem iluminadas, restaurante interno, etc).',
     value: 0,
     order: 5,
+    group: '',
     question: 3,
   },
   {
     sentence: 'não me confere o devido respeito e consideração.',
     value: 0,
     order: 6,
+    group: '',
     question: 3,
   },
   {
     sentence: 'recebo um salário compatível com minhas necessidades básicas e as de minha família.',
     value: 0,
     order: 7,
+    group: '',
     question: 4,
   },
   {
@@ -196,6 +203,7 @@ export const MotivadoresChoicesDefault: Array<IChoice.DTO.Edit & { question: num
       'mantenho um relacionamento cordial e harmonioso com meus colegas, meus superiores e meus subordinados, bem como a convicção de que sou bem aceito por eles.',
     value: 0,
     order: 8,
+    group: '',
     question: 4,
   },
   {
@@ -203,12 +211,14 @@ export const MotivadoresChoicesDefault: Array<IChoice.DTO.Edit & { question: num
       'me oferecer normas de trabalho claramente definidas, sólidas garantias de estabilidade e assegurar-me privilégios mais amplos de assistência médico-hospitalar.',
     value: 0,
     order: 9,
+    group: '',
     question: 5,
   },
   {
     sentence: 'me conferir maior prestígio e poder.',
     value: 0,
     order: 10,
+    group: '',
     question: 5,
   },
   {
@@ -216,12 +226,14 @@ export const MotivadoresChoicesDefault: Array<IChoice.DTO.Edit & { question: num
       'me delegam responsabilidade que exige minha dedicação pessoal, e fico privado de compartilhar os meus problemas e as minhas idéias com meus companheiros.',
     value: 0,
     order: 11,
+    group: '',
     question: 6,
   },
   {
     sentence: 'as minhas responsabilidades atuais deixarem de representar um desafio.',
     value: 0,
     order: 12,
+    group: '',
     question: 6,
   },
   {
@@ -229,12 +241,14 @@ export const MotivadoresChoicesDefault: Array<IChoice.DTO.Edit & { question: num
       'um supervisor imediato em quem eu possa confiar, condições de trabalho bem organizadas, e um ambiente de trabalho onde quase tudo já foi previsto e planejado.',
     value: 0,
     order: 13,
+    group: '',
     question: 7,
   },
   {
     sentence: 'o reconhecimento que me conferem exclusivamente em função dos meus méritos.',
     value: 0,
     order: 14,
+    group: '',
     question: 7,
   },
   {
@@ -242,6 +256,7 @@ export const MotivadoresChoicesDefault: Array<IChoice.DTO.Edit & { question: num
       'me oferecer boas condições de trabalho: ambiente confortável, amplo e limpo, com boa iluminação e temperatura agradável, restaurante interno com comida saborosa.',
     value: 0,
     order: 15,
+    group: '',
     question: 8,
   },
   {
@@ -249,18 +264,21 @@ export const MotivadoresChoicesDefault: Array<IChoice.DTO.Edit & { question: num
       'me convidar para fazer parte de uma equipe de trabalho, que mantém excelentes relações entre os seus membros.',
     value: 0,
     order: 16,
+    group: '',
     question: 8,
   },
   {
     sentence: 'não me confere o devido respeito e consideração.',
     value: 0,
     order: 17,
+    group: '',
     question: 9,
   },
   {
     sentence: 'resiste a colaborar comigo na experimentação de novas idéias.',
     value: 0,
     order: 18,
+    group: '',
     question: 9,
   },
   {
@@ -268,6 +286,7 @@ export const MotivadoresChoicesDefault: Array<IChoice.DTO.Edit & { question: num
       'tenho um supervisor imediato em quem eu possa confiar, condições de trabalho bem organizadas, e um ambiente de trabalho onde quase tudo já foi previsto e planejado.',
     value: 0,
     order: 19,
+    group: '',
     question: 10,
   },
   {
@@ -275,6 +294,7 @@ export const MotivadoresChoicesDefault: Array<IChoice.DTO.Edit & { question: num
       'me proporcionam a oportunidade de testar a minha própria capacidade e tenho acesso aos meus resultados.',
     value: 0,
     order: 20,
+    group: '',
     question: 10,
   },
   {
@@ -282,12 +302,14 @@ export const MotivadoresChoicesDefault: Array<IChoice.DTO.Edit & { question: num
       'me oferecer boas condições de trabalho: ambiente confortável, amplo e limpo, com boa iluminação e temperatura agradável, restaurante interno com comida saborosa.',
     value: 0,
     order: 21,
+    group: '',
     question: 11,
   },
   {
     sentence: 'me conferir maior prestígio e poder.',
     value: 0,
     order: 22,
+    group: '',
     question: 11,
   },
   {
@@ -295,18 +317,21 @@ export const MotivadoresChoicesDefault: Array<IChoice.DTO.Edit & { question: num
       'sou excessivamente solicitado no exercício de minhas atribuições a ponto de ter que sacrificar sistematicamente o meu horário de almoço ou de saída.',
     value: 0,
     order: 23,
+    group: '',
     question: 12,
   },
   {
     sentence: 'as minhas responsabilidades atuais deixarem de representar um desafio.',
     value: 0,
     order: 24,
+    group: '',
     question: 12,
   },
   {
     sentence: 'um salário compatível com as minhas necessidades básicas e as de minha família.',
     value: 0,
     order: 25,
+    group: '',
     question: 13,
   },
   {
@@ -314,6 +339,7 @@ export const MotivadoresChoicesDefault: Array<IChoice.DTO.Edit & { question: num
       'um supervisor imediato em quem eu possa confiar, condições de trabalho bem organizadas, e um ambiente de trabalho onde quase tudo já foi previsto e planejado.',
     value: 0,
     order: 26,
+    group: '',
     question: 13,
   },
   {
@@ -321,6 +347,7 @@ export const MotivadoresChoicesDefault: Array<IChoice.DTO.Edit & { question: num
       'um supervisor imediato em quem eu possa confiar, condições de trabalho bem organizadas, e um ambiente de trabalho onde quase tudo já foi previsto e planejado.',
     value: 0,
     order: 27,
+    group: '',
     question: 14,
   },
   {
@@ -328,24 +355,28 @@ export const MotivadoresChoicesDefault: Array<IChoice.DTO.Edit & { question: num
       'me convidar para fazer parte de uma equipe de trabalho, que mantém excelentes relações entre os seus membros.',
     value: 0,
     order: 28,
+    group: '',
     question: 14,
   },
   {
     sentence: 'não pensa no dia de amanhã.',
     value: 0,
     order: 29,
+    group: '',
     question: 15,
   },
   {
     sentence: 'é anti-social e confunde qualquer iniciativa de sociabilidade com "puxa-saquismo".',
     value: 0,
     order: 30,
+    group: '',
     question: 15,
   },
   {
     sentence: 'me conferem reconhecimento em função dos meus méritos exclusivamente.',
     value: 0,
     order: 31,
+    group: '',
     question: 16,
   },
   {
@@ -353,6 +384,7 @@ export const MotivadoresChoicesDefault: Array<IChoice.DTO.Edit & { question: num
       'me proporcionam a oportunidade de testar a minha própria capacidade e tenho acesso aos meus resultados.',
     value: 0,
     order: 32,
+    group: '',
     question: 16,
   },
   {
@@ -360,6 +392,7 @@ export const MotivadoresChoicesDefault: Array<IChoice.DTO.Edit & { question: num
       'me oferecer boas condições de trabalho: ambiente confortável, amplo e limpo, com boa iluminação e temperatura agradável, restaurante interno com comida saborosa.',
     value: 0,
     order: 33,
+    group: '',
     question: 17,
   },
   {
@@ -367,6 +400,7 @@ export const MotivadoresChoicesDefault: Array<IChoice.DTO.Edit & { question: num
       'me oferecer normas de trabalho claramente definidas, sólidas garantias de estabilidade e assegurar-me privilégios mais amplos de assistência médico-hospitalar.',
     value: 0,
     order: 34,
+    group: '',
     question: 17,
   },
   {
@@ -374,6 +408,7 @@ export const MotivadoresChoicesDefault: Array<IChoice.DTO.Edit & { question: num
       'me delegam responsabilidade que exige minha dedicação pessoal, e fico privado de compartilhar os meus problemas e as minhas idéias com meus companheiros.',
     value: 0,
     order: 35,
+    group: '',
     question: 18,
   },
   {
@@ -381,6 +416,7 @@ export const MotivadoresChoicesDefault: Array<IChoice.DTO.Edit & { question: num
       'outro executivo, sem as qualificações que possuo, for promovido por mero favoritismo para o cargo que eu estou planejando assumir no futuro próximo.',
     value: 0,
     order: 36,
+    group: '',
     question: 18,
   },
   {
@@ -388,18 +424,21 @@ export const MotivadoresChoicesDefault: Array<IChoice.DTO.Edit & { question: num
       'o relacionamento cordial e harmonioso com os meus colegas, meus superiores e meus subordinados, bem como a convicção de que sou bem aceito por eles.',
     value: 0,
     order: 37,
+    group: '',
     question: 19,
   },
   {
     sentence: 'o reconhecimento que me conferem exclusivamente em função dos meus méritos.',
     value: 0,
     order: 38,
+    group: '',
     question: 19,
   },
   {
     sentence: 'me oferecer um cargo que confira maior prestígio e poder.',
     value: 0,
     order: 39,
+    group: '',
     question: 20,
   },
   {
@@ -407,6 +446,7 @@ export const MotivadoresChoicesDefault: Array<IChoice.DTO.Edit & { question: num
       'me proporcionar autonomia para criar liberdade para experimentar e autoridade para inovar.',
     value: 0,
     order: 40,
+    group: '',
     question: 20,
   },
   {
@@ -414,12 +454,14 @@ export const MotivadoresChoicesDefault: Array<IChoice.DTO.Edit & { question: num
       'não valoriza as boas condições ambientais de trabalho que lhe são oferecidas (instalações físicas confortáveis, bem iluminadas, restaurante interno, etc).',
     value: 0,
     order: 41,
+    group: '',
     question: 21,
   },
   {
     sentence: 'é anti-social e confunde qualquer iniciativa de sociabilidade com "puxa-saquismo".',
     value: 0,
     order: 42,
+    group: '',
     question: 21,
   },
   {
@@ -427,6 +469,7 @@ export const MotivadoresChoicesDefault: Array<IChoice.DTO.Edit & { question: num
       'mantenho um relacionamento cordial e harmonioso com meus colegas, meus superiores e meus subordinados, bem como a convicção de que sou bem aceito por eles.',
     value: 0,
     order: 43,
+    group: '',
     question: 22,
   },
   {
@@ -434,6 +477,7 @@ export const MotivadoresChoicesDefault: Array<IChoice.DTO.Edit & { question: num
       'me proporcionam a oportunidade de testar a minha própria capacidade e tenho acesso aos meus resultados.',
     value: 0,
     order: 44,
+    group: '',
     question: 22,
   },
   {
@@ -441,6 +485,7 @@ export const MotivadoresChoicesDefault: Array<IChoice.DTO.Edit & { question: num
       'me oferecer boas condições de trabalho: ambiente confortável, amplo e limpo, com boa iluminação e temperatura agradável, restaurante interno com comida saborosa.',
     value: 0,
     order: 45,
+    group: '',
     question: 23,
   },
   {
@@ -448,6 +493,7 @@ export const MotivadoresChoicesDefault: Array<IChoice.DTO.Edit & { question: num
       'me proporcionar autonomia para criar liberdade para experimentar e autoridade para inovar.',
     value: 0,
     order: 46,
+    group: '',
     question: 23,
   },
   {
@@ -455,6 +501,7 @@ export const MotivadoresChoicesDefault: Array<IChoice.DTO.Edit & { question: num
       'perco a confiança no meu chefe, desconfio da estabilidade do meu cargo, temo pela sobrevivência da minha organização.',
     value: 0,
     order: 47,
+    group: '',
     question: 24,
   },
   {
@@ -462,24 +509,28 @@ export const MotivadoresChoicesDefault: Array<IChoice.DTO.Edit & { question: num
       'outro executivo, sem as qualificações que possuo, for promovido por mero favoritismo para o cargo que eu estou planejando assumir no futuro próximo.',
     value: 0,
     order: 48,
+    group: '',
     question: 24,
   },
   {
     sentence: 'um salário compatível com as minhas necessidades básicas e as de minha família.',
     value: 0,
     order: 49,
+    group: '',
     question: 25,
   },
   {
     sentence: 'o reconhecimento que me conferem exclusivamente em função dos meus méritos.',
     value: 0,
     order: 50,
+    group: '',
     question: 25,
   },
   {
     sentence: 'me oferecer um cargo que confira maior prestígio e poder.',
     value: 0,
     order: 51,
+    group: '',
     question: 26,
   },
   {
@@ -487,18 +538,21 @@ export const MotivadoresChoicesDefault: Array<IChoice.DTO.Edit & { question: num
       'me convidar para fazer parte de uma equipe de trabalho, que mantém excelentes relações entre os seus membros.',
     value: 0,
     order: 52,
+    group: '',
     question: 26,
   },
   {
     sentence: 'não pensa no dia de amanhã.',
     value: 0,
     order: 53,
+    group: '',
     question: 27,
   },
   {
     sentence: 'resiste a colaborar comigo na experimentação de novas idéias.',
     value: 0,
     order: 54,
+    group: '',
     question: 27,
   },
   {
@@ -506,6 +560,7 @@ export const MotivadoresChoicesDefault: Array<IChoice.DTO.Edit & { question: num
       'tenho um supervisor imediato em quem eu possa confiar, condições de trabalho bem organizadas, e um ambiente de trabalho onde quase tudo já foi previsto e planejado.',
     value: 0,
     order: 55,
+    group: '',
     question: 28,
   },
   {
@@ -513,12 +568,14 @@ export const MotivadoresChoicesDefault: Array<IChoice.DTO.Edit & { question: num
       'mantenho um relacionamento cordial e harmonioso com meus colegas, meus superiores e meus subordinados, bem como a convicção de que sou bem aceito por eles.',
     value: 0,
     order: 56,
+    group: '',
     question: 28,
   },
   {
     sentence: 'trabalho que mantém excelentes relações entre os seus membros.',
     value: 0,
     order: 57,
+    group: '',
     question: 29,
   },
   {
@@ -526,6 +583,7 @@ export const MotivadoresChoicesDefault: Array<IChoice.DTO.Edit & { question: num
       'me proporcionar autonomia para criar liberdade para experimentar e autoridade para inovar.',
     value: 0,
     order: 58,
+    group: '',
     question: 29,
   },
   {
@@ -533,6 +591,7 @@ export const MotivadoresChoicesDefault: Array<IChoice.DTO.Edit & { question: num
       'sou excessivamente solicitado no exercício de minhas atribuições a ponto de ter que sacrificar sistematicamente o meu horário de almoço ou de saída.',
     value: 0,
     order: 59,
+    group: '',
     question: 30,
   },
   {
@@ -540,6 +599,7 @@ export const MotivadoresChoicesDefault: Array<IChoice.DTO.Edit & { question: num
       'perco a confiança no meu chefe, desconfio da estabilidade do meu cargo, temo pela sobrevivência da minha organização.',
     value: 0,
     order: 60,
+    group: '',
     question: 30,
   },
 ]

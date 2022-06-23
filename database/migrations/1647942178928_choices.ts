@@ -21,16 +21,10 @@ export default class ChoicesSchema extends BaseSchema {
         table.text('label').nullable()
         table.integer('value').defaultTo(0)
 
+        table.string('group').nullable()
+
         table.integer('order').defaultTo(0)
         table.boolean('is_deleted').defaultTo(false)
-
-        table
-          .uuid('dependency_id')
-          .references('id')
-          .inTable('choices')
-          .nullable()
-          .onDelete('CASCADE')
-          .onUpdate('CASCADE')
 
         table.timestamp('created_at', { useTz: true })
         table.timestamp('updated_at', { useTz: true })

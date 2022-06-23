@@ -40,6 +40,9 @@ export default class Choice extends BaseCustomModel {
   public value: number
 
   @column()
+  public group: string
+
+  @column()
   public order?: number
 
   @column({ serializeAs: null })
