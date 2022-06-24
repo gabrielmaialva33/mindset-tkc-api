@@ -49,6 +49,7 @@ export default class Category extends BaseCustomModel {
    */
   @hasMany(() => Question, { localKey: 'id', foreignKey: 'category_id' })
   public questions: HasMany<typeof Question>
+
   /**
    * ------------------------------------------------------
    * Hooks
@@ -72,6 +73,7 @@ export default class Category extends BaseCustomModel {
         builder.orderBy('order')
       })
   }
+
   /**
    * ------------------------------------------------------
    * Query Scopes
