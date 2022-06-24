@@ -5,7 +5,8 @@
     "@adonisjs/core/build/commands/index.js",
     "@adonisjs/repl/build/commands",
     "@adonisjs/lucid/build/commands",
-    "pretty-list-routes/build/commands/PrettyRoute.js"
+    "pretty-list-routes/build/commands/PrettyRoute.js",
+    "@adonisjs/mail/build/commands"
   ],
   "exceptionHandlerNamespace": "App/Shared/Exceptions/Handler",
   "aliases": {
@@ -22,9 +23,17 @@
     "./providers/AppProvider",
     "@adonisjs/core",
     "@adonisjs/lucid",
-    "@adonisjs/auth"
+    "@adonisjs/auth",
+    "@adonisjs/mail",
+    "@adonisjs/view"
   ],
   "aceProviders": [
     "@adonisjs/repl"
+  ],
+  "metaFiles": [
+    {
+      "pattern": "resources/views/**/*.edge",
+      "reloadServer": false
+    }
   ]
 }

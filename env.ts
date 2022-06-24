@@ -35,10 +35,9 @@ export default Env.rules({
   PG_DB_NAME: Env.schema.string(),
 
   /**
-   * Redis
+   * SES
    */
-  // REDIS_CONNECTION: Env.schema.enum(['local'] as const),
-  // REDIS_HOST: Env.schema.string({ format: 'host' }),
-  // REDIS_PORT: Env.schema.number(),
-  // REDIS_PASSWORD: Env.schema.string.optional(),
+  SES_ACCESS_KEY: Env.schema.string(),
+  SES_ACCESS_SECRET: Env.schema.string(),
+  SES_REGION: Env.schema.string(),
 })

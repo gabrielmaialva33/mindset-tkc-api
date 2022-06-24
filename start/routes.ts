@@ -42,3 +42,8 @@ import 'App/Modules/Question/Routes/QuestionRoutes'
 import 'App/Modules/Question/Routes/ChoiceRoutes'
 import 'App/Modules/Question/Routes/AnswerRoutes'
 import 'App/Modules/Question/Routes/ReplyRoutes'
+
+/**
+ * Mailer
+ */
+import 'App/Modules/User/Routes/MailerRoutes'

@@ -569,6 +569,23 @@
           "description": "Filter routes by name"
         }
       ]
+    },
+    "make:mailer": {
+      "settings": {},
+      "commandPath": "@adonisjs/mail/build/commands/MakeMailer",
+      "commandName": "make:mailer",
+      "description": "Make a new mailer class",
+      "args": [
+        {
+          "type": "string",
+          "propertyName": "name",
+          "name": "name",
+          "required": true,
+          "description": "Name of the mailer class"
+        }
+      ],
+      "aliases": [],
+      "flags": []
     }
   },
   "aliases": {}
