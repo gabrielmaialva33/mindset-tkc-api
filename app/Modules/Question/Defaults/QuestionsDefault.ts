@@ -196,13 +196,13 @@ export const MotivadoresQuestionsDefault: Array<IQuestion.DTO.Edit> = [
       'Se na minha próxima promoção me for dado escolher entre dois cargos, darei preferência àquele que:',
     order: 5,
   },
-  { sentence: 'A minha produtividade pode ser prejudicada quando:', order: 6, },
+  { sentence: 'A minha produtividade pode ser prejudicada quando:', order: 6 },
   { sentence: 'O que mais incentiva e estimula o meu desempenho é:', order: 7 },
   {
     sentence: 'Se eu tiver que escolher entre duas organizações para trabalhar prefiro aquela que:',
     order: 8,
   },
-  { sentence: 'O tipo de subordinado que mais me irrita é aquele que:', order: 9,  },
+  { sentence: 'O tipo de subordinado que mais me irrita é aquele que:', order: 9 },
   {
     sentence: 'Desenvolvo minhas responsabilidades com maior entusiasmo e eficiência quando:',
     order: 10,
@@ -212,13 +212,13 @@ export const MotivadoresQuestionsDefault: Array<IQuestion.DTO.Edit> = [
       'Se na minha próxima promoção me for dado escolher entre dois cargos, darei preferência àquele que:',
     order: 11,
   },
-  { sentence: 'A minha produtividade pode ser prejudicada quando:', order: 12, },
+  { sentence: 'A minha produtividade pode ser prejudicada quando:', order: 12 },
   { sentence: 'O que mais incentiva e estimula o meu desempenho é:', order: 13 },
   {
     sentence: 'Se eu tiver que escolher entre duas organizações para trabalhar prefiro aquela que:',
     order: 14,
   },
-  { sentence: 'O tipo de subordinado que mais me irrita é aquele que:', order: 15, },
+  { sentence: 'O tipo de subordinado que mais me irrita é aquele que:', order: 15 },
   {
     sentence: 'Desenvolvo minhas responsabilidades com maior entusiasmo e eficiência quando:',
     order: 16,
@@ -270,14 +270,21 @@ export const AssertividadeQuestionsDefault: Array<IQuestion.DTO.Edit> = [
     order: 1,
     group: 'MEDO',
   },
-  { sentence: 'Numa festa acontece algo muito engraçado. O que você faz?', order: 2, group: 'ALEGRIA',},
-  { sentence: 'Quando uma pessoa comete uma injustiça flagrante com você. O que faz?', order: 3, group: 'RAIVA', },
+  {
+    sentence: 'Numa festa acontece algo muito engraçado. O que você faz?',
+    order: 2,
+    group: 'ALEGRIA',
+  },
+  {
+    sentence: 'Quando uma pessoa comete uma injustiça flagrante com você. O que faz?',
+    order: 3,
+    group: 'RAIVA',
+  },
   {
     sentence:
       'Suponha que você tem um filho de oito anos. Num dia em que você está muito triste, ele percebe que há algo diferente no seu comportamento e lhe pergunta: o que tem, mamãe (papai)? O que você responde?',
     order: 4,
     group: 'TRISTEZA',
-
   },
   {
     sentence:
@@ -325,7 +332,6 @@ export const AssertividadeQuestionsDefault: Array<IQuestion.DTO.Edit> = [
       'Uma pessoa de quem você gosta muito, lhe pede um aparelho de som emprestado. Você quer ouvir música naquela noite, mas não quer desgostar a pessoa amiga. O que faz?',
     order: 12,
     group: 'NEGACAO',
-
   },
   {
     sentence:
@@ -368,7 +374,6 @@ export const AssertividadeQuestionsDefault: Array<IQuestion.DTO.Edit> = [
       'Você vai visitar um amigo. A mulher dele lhe oferece um doce que você não gosta. O que faz?',
     order: 19,
     group: 'NEGACAO',
-
   },
   {
     sentence:
@@ -511,7 +516,11 @@ export const TempoQuestionsDefault: Array<IQuestion.DTO.Edit> = [
     order: 5,
     group: 'C',
   },
-  { sentence: 'Eu escrevo e planejo tudo o que preciso fazer durante a minha semana.', order: 6, group: 'C', },
+  {
+    sentence: 'Eu escrevo e planejo tudo o que preciso fazer durante a minha semana.',
+    order: 6,
+    group: 'C',
+  },
   {
     sentence:
       'Eu geralmente prorrogo a entrega de relatórios, cálculo de declarações de imposto de renda, compras de natal, estudo para um teste e outras atividades para uma data perto do prazo.',
@@ -535,7 +544,11 @@ export const TempoQuestionsDefault: Array<IQuestion.DTO.Edit> = [
     order: 10,
     group: 'B',
   },
-  { sentence: 'Minhas tarefas ou reuniões ficaram atrasadas nas últimas semanas.', order: 11, group: 'B', },
+  {
+    sentence: 'Minhas tarefas ou reuniões ficaram atrasadas nas últimas semanas.',
+    order: 11,
+    group: 'B',
+  },
   {
     sentence:
       'Não consigo terminar tudo o que planejei fazer para o meu dia e preciso trabalhar horas extras ou até mesmo levar o trabalho para casa.',
