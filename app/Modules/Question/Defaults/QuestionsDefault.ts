@@ -196,13 +196,13 @@ export const MotivadoresQuestionsDefault: Array<IQuestion.DTO.Edit> = [
       'Se na minha próxima promoção me for dado escolher entre dois cargos, darei preferência àquele que:',
     order: 5,
   },
-  { sentence: 'A minha produtividade pode ser prejudicada quando:', order: 6 },
+  { sentence: 'A minha produtividade pode ser prejudicada quando:', order: 6, },
   { sentence: 'O que mais incentiva e estimula o meu desempenho é:', order: 7 },
   {
     sentence: 'Se eu tiver que escolher entre duas organizações para trabalhar prefiro aquela que:',
     order: 8,
   },
-  { sentence: 'O tipo de subordinado que mais me irrita é aquele que:', order: 9 },
+  { sentence: 'O tipo de subordinado que mais me irrita é aquele que:', order: 9,  },
   {
     sentence: 'Desenvolvo minhas responsabilidades com maior entusiasmo e eficiência quando:',
     order: 10,
@@ -212,13 +212,13 @@ export const MotivadoresQuestionsDefault: Array<IQuestion.DTO.Edit> = [
       'Se na minha próxima promoção me for dado escolher entre dois cargos, darei preferência àquele que:',
     order: 11,
   },
-  { sentence: 'A minha produtividade pode ser prejudicada quando:', order: 12 },
+  { sentence: 'A minha produtividade pode ser prejudicada quando:', order: 12, },
   { sentence: 'O que mais incentiva e estimula o meu desempenho é:', order: 13 },
   {
     sentence: 'Se eu tiver que escolher entre duas organizações para trabalhar prefiro aquela que:',
     order: 14,
   },
-  { sentence: 'O tipo de subordinado que mais me irrita é aquele que:', order: 15 },
+  { sentence: 'O tipo de subordinado que mais me irrita é aquele que:', order: 15, },
   {
     sentence: 'Desenvolvo minhas responsabilidades com maior entusiasmo e eficiência quando:',
     order: 16,
@@ -268,132 +268,161 @@ export const AssertividadeQuestionsDefault: Array<IQuestion.DTO.Edit> = [
     sentence:
       'Suponha que você está numa roda de amigos e surge um desentendimento entre dois deles. A situação vai se complicando e você sente muito medo. O que faz?',
     order: 1,
+    group: 'MEDO',
   },
-  { sentence: 'Numa festa acontece algo muito engraçado. O que você faz?', order: 2 },
-  { sentence: 'Quando uma pessoa comete uma injustiça flagrante com você. O que faz?', order: 3 },
+  { sentence: 'Numa festa acontece algo muito engraçado. O que você faz?', order: 2, group: 'ALEGRIA',},
+  { sentence: 'Quando uma pessoa comete uma injustiça flagrante com você. O que faz?', order: 3, group: 'RAIVA', },
   {
     sentence:
       'Suponha que você tem um filho de oito anos. Num dia em que você está muito triste, ele percebe que há algo diferente no seu comportamento e lhe pergunta: o que tem, mamãe (papai)? O que você responde?',
     order: 4,
+    group: 'TRISTEZA',
+
   },
   {
     sentence:
       'Você viu um filme que achou muito bom. Quando chega ao trabalho, entra numa rodinha de seis colegas que estão exatamente fazendo os piores comentários sobre o filme. No momento em que chega, os seis estão ridicularizando exatamente a cena de que você mais gostou. O que você faz?',
     order: 5,
+    group: 'AMOR',
   },
   {
     sentence:
       'Chega à sua casa um vendedor. Está bem vestido e é muito falante. Você naquele momento, não quer e não pode comprar coisa alguma. Ele, porém, é delicadamente insistente e quer mostrar-lhe o produto na esperança de convencê-lo a comprar. O que você faz?',
     order: 6,
+    group: 'NEGACAO',
   },
   {
     sentence: 'Você compra uma roupa nova. Em casa percebe que está defeituosa. O que você faz?',
     order: 7,
+    group: 'DEFESA',
   },
   {
     sentence:
       'Suponha que você tem um filho e está numa situação perigosa, de fato, com muito medo de enfrentá-la. O que você faz?',
     order: 8,
+    group: 'MEDO',
   },
   {
     sentence:
       'Quando você tem uma felicidade grande demais, costuma ficar apreensivo, com medo de que algo de ruim lhe aconteça?',
     order: 9,
+    group: 'ALEGRIA',
   },
   {
     sentence:
       'Você tem um grande amigo. Para sua surpresa e raiva ele trai sua confiança. O que você faz?',
     order: 10,
+    group: 'RAIVA',
   },
   {
     sentence:
       'Você está assistindo a um filme em companhia da pessoa que ama. O filme é muito comovente. Na cena mais expressiva e dolorosa, quando você se entristece como se você fosse o próprio ator, o que faz?',
     order: 11,
+    group: 'TRISTEZA',
   },
   {
     sentence:
       'Uma pessoa de quem você gosta muito, lhe pede um aparelho de som emprestado. Você quer ouvir música naquela noite, mas não quer desgostar a pessoa amiga. O que faz?',
     order: 12,
+    group: 'NEGACAO',
+
   },
   {
     sentence:
       'Faz alguns meses que você emprestou a um amigo quantia correspondente à metade de seu salário, na época. O pagamento tinha sido prometido para o mês seguinte. O que você faz?',
     order: 13,
+    group: 'DEFESA',
   },
   {
     sentence:
       'Você é convidado para uma reunião social importante e formal. Você quer ir mas teme cometer gafes. O que faz?',
     order: 14,
+    group: 'MEDO',
   },
   {
     sentence:
       '"Quem procura conter ou ocultar sua alegria, evita profundas decepções". Esta frase está:',
     order: 15,
+    group: 'ALEGRIA',
   },
   {
     sentence:
       'Você está na fila do ônibus há muito tempo e alguém "fura" a fila à sua frente. Cansado(a) você sente raiva. O que faz?',
     order: 16,
+    group: 'RAIVA',
   },
   {
     sentence:
       'Quando você está enfrentando situações que lhe dão grande tristeza, o que acha melhor fazer?',
     order: 17,
+    group: 'TRISTEZA',
   },
   {
     sentence:
       'Entre seu pai, sua mãe ou algum irmão escolha aquele de quem mais gosta e com quem convive atualmente. Responda agora: Quando foi a última vez em que, olhando nos olhos, e tocando fisicamente nele ou nela, você lhe disse: Eu gosto de você!',
     order: 18,
+    group: 'AMOR',
   },
   {
     sentence:
       'Você vai visitar um amigo. A mulher dele lhe oferece um doce que você não gosta. O que faz?',
     order: 19,
+    group: 'NEGACAO',
+
   },
   {
     sentence:
       'Você chega a uma festa de formatura que deve durar duas horas e meia, mais ou menos. A entrada do auditório está um pouco congestionada, pois embora haja lugares nas cinco primeiras filas, muitas pessoas preferiram ficar de pé no fundo do salão. O que você faz?',
     order: 20,
+    group: 'DEFESA',
   },
   {
     sentence:
       'Você está, de madrugada, no meio do quarteirão de uma rua mal iluminada. Na esquina, à sua frente, surge um homem que caminha em sua direção. Você passa para o passeio do lado oposto. O estranho também. Você sente grande medo. As pernas tremem. Quando está a cinco metros dele, ele lhe chama pelo nome. É um amigo seu. Então, você tremulo de medo, responde ofegante ao cumprimento. De que forma responde?',
     order: 21,
+    group: 'MEDO',
   },
   {
     sentence:
       '"Pode-se confiar muito mais naquelas pessoas que não riem, mesmo quando estão alegres. Seriedade significa segurança, confiança". Esta frase está:',
     order: 22,
+    group: 'ALEGRIA',
   },
   {
     sentence:
       'Um colega de trabalho está lhe aborrecendo há algum tempo. É um exemplo de indivíduo chato e irritante. O que você faz?',
     order: 23,
+    group: 'RAIVA',
   },
   {
     sentence:
       'Uma pessoa muito querida adoece. Pode ser coisa grave, mas não é certo. O que vocês faz diante dela?',
     order: 24,
+    group: 'TRISTEZA',
   },
   {
     sentence:
       'Uma pessoa que realmente gosta de outra não precisa falar que gosta diretamente. Na verdade, dizer diretamente "Eu te amo" causa mais constrangimento do que bem estar. Esta frase, na sua opinião está:',
     order: 25,
+    group: 'AMOR',
   },
   {
     sentence:
       'Seu chefe lhe pede para fazer determinado serviço. Se você o fizer, isso pode complicar e atrasar demais seu serviço rotineiro. O que você faz?',
     order: 26,
+    group: 'NEGACAO',
   },
   {
     sentence:
       'Todas as vezes que você compra em determinada loja do seu bairro o caixa fica devendo-lhe o troco alegando que não tem moedas. Nas primeiras vezes você não se importou, mas agora você se sente prejudicado pela constância do fato. O que faz?',
     order: 27,
+    group: 'DEFESA',
   },
   {
     sentence:
       'Todas as vezes que você compra em determinada loja do seu bairro o caixa fica devendo-lhe o troco alegando que não tem moedas. Nas primeiras vezes você não se importou, mas agora você se sente prejudicado pela constância do fato. O que faz?',
     order: 28,
+    group: 'AMOR',
   },
 ]
 
@@ -457,81 +486,97 @@ export const TempoQuestionsDefault: Array<IQuestion.DTO.Edit> = [
     sentence:
       'Costumo ir a eventos, festas ou cursos, mesmo que contra minha vontade, para agradar meu chefe, meus amigos ou família.',
     order: 1,
+    group: 'C',
   },
   {
     sentence: 'É comum que problemas não planejados apareçam durante as minhas atividades diárias.',
     order: 2,
+    group: 'A',
   },
   {
     sentence:
       'É comum reduzir minha hora de almoço ou até mesmo comer enquanto trabalhava para concluir um projeto ou tarefas.',
     order: 3,
+    group: 'A',
   },
   {
     sentence:
       'Estou acostumado a visitar pessoas importantes para minha vida, como amigos, parentes e crianças.',
     order: 4,
+    group: 'B',
   },
   {
     sentence:
       'Eu comprometo-me com outras pessoas ou aceito novos cargos na empresa, mesmo que não goste muito dessa nova atividade, se isso resultar em um aumento salarial ou em uma nova promoção.',
     order: 5,
+    group: 'C',
   },
-  { sentence: 'Eu escrevo e planejo tudo o que preciso fazer durante a minha semana.', order: 6 },
+  { sentence: 'Eu escrevo e planejo tudo o que preciso fazer durante a minha semana.', order: 6, group: 'C', },
   {
     sentence:
       'Eu geralmente prorrogo a entrega de relatórios, cálculo de declarações de imposto de renda, compras de natal, estudo para um teste e outras atividades para uma data perto do prazo.',
     order: 7,
+    group: 'A',
   },
   {
     sentence:
       'Eu leio muitos e-mails desnecessários, contendo piadas, correntes, propagandas, apresentações em powerpoint, mensagens no whatsapp, etc.',
     order: 8,
+    group: 'C',
   },
   {
     sentence:
       'Eu rotineiramente pratico esportes, me alimento corretamente e tenho o tempo de lazer que desejo.',
     order: 9,
+    group: 'C',
   },
   {
     sentence: 'Eu tenho algum tempo determinado para mim e nele posso fazer o que quiser:',
     order: 10,
+    group: 'B',
   },
-  { sentence: 'Minhas tarefas ou reuniões ficaram atrasadas nas últimas semanas.', order: 11 },
+  { sentence: 'Minhas tarefas ou reuniões ficaram atrasadas nas últimas semanas.', order: 11, group: 'B', },
   {
     sentence:
       'Não consigo terminar tudo o que planejei fazer para o meu dia e preciso trabalhar horas extras ou até mesmo levar o trabalho para casa.',
     order: 12,
+    group: 'A',
   },
   {
     sentence:
       'Nos dias que eu descanso, eu normalmente passo boa parte do dia assistindo televisão, jogando ou navegando nas mídias sociais.',
     order: 13,
+    group: 'A',
   },
   {
     sentence:
       'Posso dizer com segurança que sou capaz de fazer tudo o que eu gosto na minha vida e que o tempo está passando no ritmo certo.',
     order: 14,
+    group: 'C',
   },
   {
     sentence:
       'Quando quero algo, defino esse objetivo escrevendo, estabelecendo prazos em minha agenda, monitorando os resultados alcançados e comparando-os com os de início.',
     order: 15,
+    group: 'B',
   },
   {
     sentence:
       'Quando recebo uma nova mensagem de e-mail ou whatsapp, normalmente dou uma olhada rápida para visualizar seu conteúdo.',
     order: 16,
+    group: 'B',
   },
   {
     sentence:
       'Tenho melhores resultados e me sinto mais produtivo quando estou sob pressão ou trabalhando em um prazo apertado.',
     order: 17,
+    group: 'C',
   },
   {
     sentence:
       'Eu normalmente participo de reuniões sem conhecer totalmente o tema que está sendo discutido, simplesmente porque eu acho que eu deveria participar ou pelos resultados que podem surgir dessas reuniões.',
     order: 18,
+    group: 'A',
   },
 ]
 
