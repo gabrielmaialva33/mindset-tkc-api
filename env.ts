@@ -28,6 +28,7 @@ export default Env.rules({
   /**
    * Database
    */
+  DATABASE_URL: Env.schema.string.optional(),
   PG_HOST: Env.schema.string({ format: 'host' }),
   PG_PORT: Env.schema.number(),
   PG_USER: Env.schema.string(),

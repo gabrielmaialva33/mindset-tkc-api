@@ -7,6 +7,9 @@
 
 import Env from '@ioc:Adonis/Core/Env'
 import { DatabaseConfig } from '@ioc:Adonis/Lucid/Database'
+import Url from 'url-parse'
+
+const DATABASE_URL = new Url(Env.get('DATABASE_URL'))
 
 const databaseConfig: DatabaseConfig = {
   /*
@@ -36,19 +39,23 @@ const databaseConfig: DatabaseConfig = {
     pg: {
       client: 'pg',
       connection: {
-        host: Env.get('PG_HOST', 'localhost'),
-        port: Env.get('PG_PORT', 5432),
-        user: Env.get('PG_USER', 'postgres'),
-        password: Env.get('PG_PASSWORD', 'postgres'),
-        database: Env.get('PG_DB_NAME', 'postgres'),
-        ssl: Env.get('PG_SSL', false),
+        host: Env.get('PG_HOST', DATABASE_URL.hostname),
+        port: Env.get('PG_PORT', DATABASE_URL.port),
+        user: Env.get('PG_USER', DATABASE_URL.username),
+        password: Env.get('PG_PASSWORD', DATABASE_URL.password),
+        database: Env.get('PG_DB_NAME', DATABASE_URL.pathname.substr(1)),
+        ssl:
+          Env.get('PG_SSL', 'true') === 'true'
+            ? {
+                rejectUnauthorized: false,
+              }
+            : false,
       },
       migrations: {
         naturalSort: true,
       },
-
       healthCheck: true,
-      debug: Env.get('PG_DEBUG', false),
+      debug: Env.get('PG_DB_DEBUG', false),
     },
   },
 }
