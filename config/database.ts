@@ -41,10 +41,12 @@ const databaseConfig: DatabaseConfig = {
         user: Env.get('PG_USER', 'postgres'),
         password: Env.get('PG_PASSWORD', 'postgres'),
         database: Env.get('PG_DB_NAME', 'postgres'),
+        ssl: Env.get('PG_SSL', false),
       },
       migrations: {
         naturalSort: true,
       },
+
       healthCheck: true,
       debug: Env.get('PG_DEBUG', false),
     },
