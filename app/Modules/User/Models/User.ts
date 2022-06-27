@@ -105,16 +105,12 @@ export default class User extends BaseCustomModel {
   @afterFind()
   public static async loadRelationsOnGet(user: User): Promise<void> {
     await user.load('tokens')
-    await user.load('choices', (builder) => builder.orderBy('created_at'))
   }
 
   @afterFetch()
   @afterPaginate()
   public static async loadRelationsOnPaginate(users: Array<User>): Promise<void> {
-    for (const user of users) {
-      await user.load('tokens')
-      await user.load('choices', (builder) => builder.orderBy('created_at'))
-    }
+    for (const user of users) await user.load('tokens')
   }
 
   /**

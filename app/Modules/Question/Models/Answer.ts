@@ -18,7 +18,7 @@ export default class Answer extends BaseCustomModel {
   @column({ isPrimary: true })
   public id: string
 
-  @column()
+  @column({ serializeAs: null })
   public user_id: string
 
   @column()

@@ -1,12 +1,25 @@
 import { container } from 'tsyringe'
 import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 
-import { AttachAnswerService, DetachAnswerService } from 'App/Modules/Question/Services/Answer'
+import {
+  AttachAnswerService,
+  DetachAnswerService,
+  ListAnswerService,
+} from 'App/Modules/Question/Services/Answer'
 
 import StoreAnswerValidator from 'App/Modules/Question/Validators/Answer/StoreAnswerValidator'
 import UpdateAnswerValidator from 'App/Modules/Question/Validators/Answer/UpdateAnswerValidator'
 
 export default class AnswersController {
+  public async list({ request, response }: HttpContextContract): Promise<void> {
+    const userId = request.input('user_id', null)
+
+    const listAnswer = container.resolve(ListAnswerService)
+    const answers = await listAnswer.init(userId)
+
+    return response.json(answers)
+  }
+
   public async attach({ request, response }: HttpContextContract): Promise<void> {
     const answerDto = await request.validate(StoreAnswerValidator)
 
