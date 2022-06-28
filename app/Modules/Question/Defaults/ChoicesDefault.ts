@@ -276,7 +276,7 @@ export const MotivadoresChoicesDefault: Array<IChoice.DTO.Edit & { question: num
     sentence: 'não me confere o devido respeito e consideração.',
     value: 0,
     order: 17,
-    group: 'V',
+    group: 'Y',
     question: 9,
   },
   {
@@ -314,7 +314,7 @@ export const MotivadoresChoicesDefault: Array<IChoice.DTO.Edit & { question: num
     sentence: 'me conferir maior prestígio e poder.',
     value: 0,
     order: 22,
-    group: 'X',
+    group: 'Y',
     question: 11,
   },
   {
@@ -490,7 +490,7 @@ export const MotivadoresChoicesDefault: Array<IChoice.DTO.Edit & { question: num
       'me oferecer boas condições de trabalho: ambiente confortável, amplo e limpo, com boa iluminação e temperatura agradável, restaurante interno com comida saborosa.',
     value: 0,
     order: 45,
-    group: 'Z',
+    group: 'X',
     question: 23,
   },
   {
@@ -498,7 +498,7 @@ export const MotivadoresChoicesDefault: Array<IChoice.DTO.Edit & { question: num
       'me proporcionar autonomia para criar liberdade para experimentar e autoridade para inovar.',
     value: 0,
     order: 46,
-    group: 'V',
+    group: 'Z',
     question: 23,
   },
   {
@@ -506,7 +506,7 @@ export const MotivadoresChoicesDefault: Array<IChoice.DTO.Edit & { question: num
       'perco a confiança no meu chefe, desconfio da estabilidade do meu cargo, temo pela sobrevivência da minha organização.',
     value: 0,
     order: 47,
-    group: 'Z',
+    group: 'W',
     question: 24,
   },
   {
@@ -514,14 +514,14 @@ export const MotivadoresChoicesDefault: Array<IChoice.DTO.Edit & { question: num
       'outro executivo, sem as qualificações que possuo, for promovido por mero favoritismo para o cargo que eu estou planejando assumir no futuro próximo.',
     value: 0,
     order: 48,
-    group: 'W',
+    group: 'Y',
     question: 24,
   },
   {
     sentence: 'um salário compatível com as minhas necessidades básicas e as de minha família.',
     value: 0,
     order: 49,
-    group: 'Y',
+    group: 'V',
     question: 25,
   },
   {

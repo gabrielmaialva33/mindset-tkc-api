@@ -11,6 +11,7 @@ type DTO = {
   label?: string
   value?: number
   order?: number
+  group?: string
   question?: number
 }
 
@@ -45,6 +46,7 @@ export class StoreDefaultChoicesService {
                 sentence: ChoicesDefault[j].sentence,
                 label: ChoicesDefault[j].label,
                 value: ChoicesDefault[j].value,
+                group: ChoicesDefault[j].group,
                 order: ChoicesDefault[j].order,
               })
 
