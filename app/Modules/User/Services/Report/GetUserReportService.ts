@@ -104,6 +104,49 @@ export class GetUserReportService {
   }
 
   public async assertividade(userId: string) {
-    return userId
+    const groups: Array<string> = [
+      'MEDO',
+      'AMOR',
+      'RAIVA',
+      'DEFESA',
+      'TRISTEZA',
+      'ALEGRIA',
+      'NEGACAO',
+    ]
+
+    let data: Array<number> = []
+    let reports: Array<{ group: string; sum: number; performance?: number }> = []
+    for (const group of groups) {
+      const { rows } = await Database.rawQuery(
+        'select sum(c.value) from answers as a join questions as q on a.question_id = q.id join choices as c on a.choice_id = c.id where q.group = :group and a.user_id = :user_id',
+        {
+          group,
+          user_id: userId,
+        }
+      )
+
+      data.push(Number(rows[0].sum))
+      reports.push({ group, sum: Number(rows[0].sum) })
+    }
+
+    const max = maxArr(data)
+    const performance = data.map((value) => {
+      if (value / max > 1) return (1 - (value / max - 1)) * 100
+      else return (value / max) * 100
+    })
+
+    for (let i = 0; i < performance.length; i++)
+      reports[i].performance = Number(performance[i].toFixed(2))
+
+    return {
+      potential: Number(average(performance).toFixed(1)),
+      need: Number(Number(100 - Number(average(performance).toFixed(1))).toFixed(1)),
+      average: Math.round(average(data)),
+      median: median(data),
+      max,
+      min: minArr(data),
+      groups,
+      reports,
+    }
   }
 }
