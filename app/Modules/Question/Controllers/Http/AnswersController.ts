@@ -13,9 +13,10 @@ import UpdateAnswerValidator from 'App/Modules/Question/Validators/Answer/Update
 export default class AnswersController {
   public async list({ request, response }: HttpContextContract): Promise<void> {
     const userId = request.input('user_id', null)
+    const categoryName = request.input('category', '')
 
     const listAnswer = container.resolve(ListAnswerService)
-    const answers = await listAnswer.init(userId)
+    const answers = await listAnswer.init(userId, categoryName)
 
     return response.json(answers)
   }

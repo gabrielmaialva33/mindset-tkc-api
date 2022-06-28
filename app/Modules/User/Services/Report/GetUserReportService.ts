@@ -18,8 +18,9 @@ export class GetUserReportService {
     if (!user) throw new NotFoundException('User not found or not available.')
 
     const reports = {
-      impulsores: this.impulsores(userId),
-      motivadores: this.motivadores(userId),
+      impulsores: await this.impulsores(userId),
+      motivadores: await this.motivadores(userId),
+      assertividade: await this.assertividade(userId),
     }
 
     return reports[category.trim().toLowerCase()]
@@ -100,5 +101,9 @@ export class GetUserReportService {
       groups,
       reports,
     }
+  }
+
+  public async assertividade(userId: string) {
+    return userId
   }
 }
