@@ -432,11 +432,11 @@ export const AssertividadeQuestionsDefault: Array<IQuestion.DTO.Edit> = [
 ]
 
 export const GerencialQuestionsDefault: Array<IQuestion.DTO.Edit> = [
-  { sentence: 'Tomada de decisão', group: 'A', order: 1 },
-  { sentence: 'Programação de atividades', group: 'B', order: 2 },
-  { sentence: 'Execução de atividades', group: 'C', order: 3 },
-  { sentence: 'Controle das atividades', group: 'D', order: 4 },
-  { sentence: 'Mudanças organizacionais', group: 'E', order: 5 },
+  { sentence: 'Tomada de decisão', order: 1 },
+  { sentence: 'Programação de atividades', order: 2 },
+  { sentence: 'Execução de atividades', order: 3 },
+  { sentence: 'Controle das atividades', order: 4 },
+  { sentence: 'Mudanças organizacionais', order: 5 },
 ]
 
 export const CerebralQuestionsDefault: Array<IQuestion.DTO.Edit> = [
