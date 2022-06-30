@@ -33,6 +33,33 @@ export const LikertChoicesDefault: Array<IChoice.DTO.Edit> = [
   },
 ]
 
+export const LikertAbsoluteChoicesDefault: Array<IChoice.DTO.Edit> = [
+  {
+    sentence: 'NUNCA',
+    label: '0',
+    value: 0,
+    order: 1,
+  },
+  {
+    sentence: 'ALGUMAS VEZES',
+    label: '1',
+    value: 1,
+    order: 2,
+  },
+  {
+    sentence: 'QUASE SEMPRE',
+    label: '2',
+    value: 2,
+    order: 3,
+  },
+  {
+    sentence: 'SEMPRE',
+    label: '3',
+    value: 3,
+    order: 4,
+  },
+]
+
 export const TimeChoicesDefault: Array<IChoice.DTO.Edit> = [
   {
     sentence: 'NUNCA',

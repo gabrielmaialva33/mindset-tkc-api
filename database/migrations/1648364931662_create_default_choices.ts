@@ -8,6 +8,7 @@ import {
   BinaryChoicesDefault,
   CerebralChoicesDefault,
   GerencialChoicesDefault,
+  LikertAbsoluteChoicesDefault,
   LikertChoicesDefault,
   MeasurableChoicesDefault,
   MotivadoresChoicesDefault,
@@ -22,7 +23,7 @@ export default class CreateDefaultChoices extends BaseSchema {
     await storeDefaultChoices.init(LikertChoicesDefault, 1)
     await storeDefaultChoices.init(MotivadoresChoicesDefault, 2, true, NumberChoicesDefault)
     await storeDefaultChoices.init(AssertividadeChoicesDefault, 3, true)
-    await storeDefaultChoices.init(GerencialChoicesDefault, 4, true, LikertChoicesDefault)
+    await storeDefaultChoices.init(GerencialChoicesDefault, 4, true, LikertAbsoluteChoicesDefault)
     await storeDefaultChoices.init(CerebralChoicesDefault, 5, true)
     await storeDefaultChoices.init(LikertChoicesDefault, 6)
     await storeDefaultChoices.init(TimeChoicesDefault, 7)
