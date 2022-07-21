@@ -8,9 +8,7 @@ export default class MailersController {
     const { id: userId } = params
     const user = await User.query().where('id', userId).first()
     if (user) {
-      user.was_sent_email = true
-      await user.save()
-
+      //if (!user.was_sent_email)
       await Mail.send((message) => {
         message
           .subject('Relatório TCK')
@@ -25,6 +23,9 @@ export default class MailersController {
             url: `https://mindset-tkc.mrootx.xyz/feedback/${userId}`,
           })
       })
+
+      user.was_sent_email = true
+      await user.save()
 
       return response.json({ message: 'Email enviado com sucesso' })
     }
