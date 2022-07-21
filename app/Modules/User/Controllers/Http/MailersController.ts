@@ -15,7 +15,7 @@ export default class MailersController {
         message
           .subject('Relatório TCK')
           .from('mindset-tkc@mrootx.xyz', 'TKC')
-          .to(user.email, user.email)
+          .to(user.email, user.name)
           .htmlView('emails/welcome', {
             name: user.name,
             email: user.email,
